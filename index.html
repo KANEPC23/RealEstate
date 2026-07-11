@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diamond House</title>
+<title>Diamond House — Property Management & Organization</title>
 <style>
 :root {
   --bg: #0b0d14;
@@ -23,7 +23,8 @@
   --danger: #f87171; --danger-d: rgba(248,113,113,0.13);
   --info: #60a5fa; --info-d: rgba(96,165,250,0.13);
   --coral: #f0856a; --coral-d: rgba(240,133,106,0.13);
-  --sidebar: 224px;
+  --violet: #a78bfa; --violet-d: rgba(167,139,250,0.13);
+  --sidebar: 232px;
   --hdr: 54px;
   --r: 10px;
   --rs: 6px;
@@ -45,21 +46,23 @@ select option{background:#1e2334}
 .role-btn.active{background:var(--gold-dim);color:var(--gold-lt);border:1px solid rgba(200,168,75,0.3)}
 .hdr-spacer{flex:1}
 .prop-select-wrap{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
-#propSelect{width:auto;font-size:13px;padding:5px 10px;display:none}
+#propSelect{width:auto;font-size:13px;padding:5px 10px}
 
 /* ── Sidebar ─────────────────── */
 #sidebar{width:var(--sidebar);background:var(--surface);border-right:1px solid var(--border);position:fixed;top:var(--hdr);bottom:0;left:0;overflow-y:auto;padding:16px 10px;display:flex;flex-direction:column;gap:4px}
-.nav-section{font-size:10px;font-weight:600;letter-spacing:0.1em;color:var(--dim);text-transform:uppercase;padding:12px 10px 6px}
 .nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--r);color:var(--muted);cursor:pointer;transition:all .15s;font-size:13px}
 .nav-item:hover{background:var(--card);color:var(--text)}
 .nav-item.active{background:var(--gold-dim);color:var(--gold-lt);border:1px solid rgba(200,168,75,0.2)}
 .nav-icon{width:18px;text-align:center;font-size:15px;flex-shrink:0}
 .nav-badge{margin-left:auto;background:var(--danger);color:#fff;border-radius:10px;padding:1px 7px;font-size:11px;font-weight:600}
+.nav-badge.gold{background:var(--gold);color:#0b0d14}
 
 /* ── Main ─────────────────────── */
 #main{margin-left:var(--sidebar);margin-top:var(--hdr);padding:28px 28px;min-height:calc(100vh - var(--hdr))}
 .page-title{font-family:'Palatino Linotype',Palatino,Georgia,serif;font-size:24px;font-weight:400;color:var(--gold-lt);margin-bottom:6px}
 .page-sub{color:var(--muted);font-size:13px;margin-bottom:24px}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);cursor:pointer;margin-bottom:12px}
+.back-link:hover{color:var(--gold-lt)}
 
 /* ── Stat Cards ───────────────── */
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
@@ -68,36 +71,38 @@ select option{background:#1e2334}
 .stat-value{font-size:28px;font-weight:600;line-height:1;color:var(--text)}
 .stat-sub{font-size:12px;color:var(--muted);margin-top:6px}
 .stat-accent{color:var(--gold)}
+.stat-danger{color:var(--danger)}
 
-/* ── Cards ───────────────────── */
+/* ── Cards / layout ───────────── */
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
 .card-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
 .card-title small{font-size:12px;font-weight:400;color:var(--muted)}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
 
-/* ── Property Cards ───────────── */
+/* ── Property cards ───────────── */
 .prop-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:border-color .18s}
-.prop-card:hover{border-color:var(--border2)}
-.prop-thumb{height:90px;background:linear-gradient(135deg,#1a2040 0%,#0d1030 100%);display:flex;align-items:center;justify-content:center;font-size:32px;position:relative}
+.prop-card:hover{border-color:var(--gold)}
+.prop-thumb{height:90px;background:linear-gradient(135deg,#1a2040 0%,#0d1030 100%);display:flex;align-items:center;justify-content:center;font-size:44px;position:relative}
 .prop-status-badge{position:absolute;top:10px;right:10px}
 .prop-body{padding:14px 16px}
 .prop-name{font-family:'Palatino Linotype',Palatino,Georgia,serif;font-size:15px;color:var(--gold-lt);margin-bottom:3px}
 .prop-addr{font-size:12px;color:var(--muted);margin-bottom:10px}
-.prop-owner{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.prop-owner{font-size:12px;color:var(--muted)}
 .prop-stats{display:flex;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
 .prop-stat{text-align:center;flex:1}
 .prop-stat-n{font-size:16px;font-weight:600;color:var(--text)}
 .prop-stat-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 
 /* ── Badges ───────────────────── */
-.badge{display:inline-flex;align-items:center;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:.03em}
+.badge{display:inline-flex;align-items:center;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:.03em;white-space:nowrap}
 .badge-ok{background:var(--ok-d);color:var(--ok)}
 .badge-warn{background:var(--warn-d);color:var(--warn)}
 .badge-danger{background:var(--danger-d);color:var(--danger)}
 .badge-info{background:var(--info-d);color:var(--info)}
 .badge-dim{background:var(--card2);color:var(--muted)}
 .badge-gold{background:var(--gold-dim);color:var(--gold-lt)}
+.badge-violet{background:var(--violet-d);color:var(--violet)}
 
 /* ── Task rows ─────────────────── */
 .task-list{display:flex;flex-direction:column;gap:8px}
@@ -111,9 +116,89 @@ select option{background:#1e2334}
 .task-meta{font-size:11px;color:var(--muted);margin-top:2px}
 .task-cat{font-size:11px;background:var(--card2);color:var(--muted);border-radius:4px;padding:2px 8px;white-space:nowrap}
 .task-date{font-size:11px;color:var(--muted);white-space:nowrap}
+.task-date.over{color:var(--danger);font-weight:600}
 .filter-bar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .filter-btn{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;color:var(--muted);background:var(--card);border:1px solid var(--border);cursor:pointer;transition:all .15s}
 .filter-btn.active{background:var(--gold-dim);color:var(--gold-lt);border-color:rgba(200,168,75,0.3)}
+
+/* ── Tabs ──────────────────────── */
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.tab{padding:9px 18px;font-size:13px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;cursor:pointer;transition:all .15s}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+
+/* ── Systems ───────────────────── */
+.sys-cat-head{display:flex;align-items:center;gap:10px;margin:22px 0 10px;font-size:13px;font-weight:600;color:var(--text)}
+.sys-cat-head:first-child{margin-top:0}
+.sys-cat-icon{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.sys-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.sys-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;cursor:pointer;transition:border-color .15s}
+.sys-card:hover{border-color:var(--border2)}
+.sys-card.open{border-color:rgba(200,168,75,0.35)}
+.sys-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+.sys-name{font-size:13px;font-weight:600;line-height:1.35}
+.sys-model{font-size:11px;color:var(--muted);margin-top:2px}
+.sys-meta{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.sys-meta-item{font-size:11px}
+.sys-meta-l{color:var(--dim);text-transform:uppercase;letter-spacing:.05em;font-size:9.5px;font-weight:600}
+.sys-meta-v{color:var(--muted);margin-top:1px}
+.sys-meta-v.hot{color:var(--warn)}
+.sys-meta-v.bad{color:var(--danger)}
+.sys-history{margin-top:12px;padding-top:10px;border-top:1px dashed var(--border2)}
+.sys-hist-item{display:flex;gap:8px;font-size:11.5px;color:var(--muted);padding:4px 0;line-height:1.4}
+.sys-hist-date{color:var(--dim);white-space:nowrap;min-width:72px}
+.sys-note{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5;font-style:italic}
+
+/* ── Schedule rows ─────────────── */
+.sched-row{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:12px 16px;display:grid;grid-template-columns:34px 1fr auto auto auto;align-items:center;gap:12px}
+.sched-icon{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--card2)}
+.sched-freq{font-size:11px;color:var(--muted);background:var(--card2);border-radius:4px;padding:2px 8px;white-space:nowrap}
+.sched-group-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:18px 0 8px}
+
+/* ── Inventory ─────────────────── */
+.inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.inv-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;transition:border-color .15s}
+.inv-card:hover{border-color:var(--border2)}
+.inv-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.inv-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.inv-name{font-size:13px;font-weight:600;line-height:1.3;margin-bottom:3px}
+.inv-room{font-size:11px;color:var(--muted)}
+.inv-detail{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.inv-d-item{font-size:11px}
+.inv-d-l{color:var(--dim);font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.inv-d-v{color:var(--muted);margin-top:1px}
+.inv-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.inv-value{font-size:14px;font-weight:600;color:var(--gold)}
+.inv-flags{display:flex;gap:5px}
+.inv-flag{font-size:12px;opacity:.85;cursor:default}
+.inv-notes{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5}
+
+/* ── Storage / containers ──────── */
+.cont-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.cont-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;cursor:pointer;transition:border-color .15s}
+.cont-card:hover{border-color:var(--border2)}
+.cont-card.open{border-color:rgba(200,168,75,0.35)}
+.cont-head{display:flex;align-items:flex-start;gap:12px}
+.cont-icon{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;background:var(--card2)}
+.cont-name{font-size:13px;font-weight:600;margin-bottom:2px}
+.cont-loc{font-size:11px;color:var(--muted);line-height:1.4}
+.cont-count{margin-left:auto;text-align:right;flex-shrink:0}
+.cont-count-n{font-size:20px;font-weight:600;color:var(--gold)}
+.cont-count-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.cont-items{margin-top:12px;padding-top:10px;border-top:1px dashed var(--border2)}
+.cont-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);padding:4px 0}
+.cont-item .linked{color:var(--gold-lt)}
+.cont-item-dot{width:5px;height:5px;border-radius:50%;background:var(--dim);flex-shrink:0}
+
+/* ── Search / Find my stuff ────── */
+.search-hero{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 24px;margin-bottom:20px;text-align:center}
+.search-hero input{max-width:520px;margin:0 auto;font-size:15px;padding:12px 18px;text-align:center}
+.search-hint{font-size:12px;color:var(--muted);margin-top:10px}
+.result-row{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:12px 16px;display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.result-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;background:var(--card2);flex-shrink:0}
+.result-name{font-size:13px;font-weight:600}
+.result-where{font-size:11.5px;color:var(--muted);margin-top:2px}
+.result-where b{color:var(--gold-lt);font-weight:600}
 
 /* ── Staff ─────────────────────── */
 .staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:24px}
@@ -124,24 +209,13 @@ select option{background:#1e2334}
 .av-green{background:rgba(74,222,128,0.2);color:#4ade80}
 .av-amber{background:rgba(251,191,36,0.2);color:var(--warn)}
 .av-coral{background:rgba(240,133,106,0.2);color:var(--coral)}
+.av-violet{background:rgba(167,139,250,0.2);color:var(--violet)}
 .staff-name{font-size:14px;font-weight:600;margin-bottom:4px}
 .staff-role{font-size:12px;color:var(--muted);margin-bottom:10px}
 .staff-stats{display:flex;justify-content:center;gap:16px}
 .staff-stat{text-align:center}
 .staff-stat-n{font-size:18px;font-weight:600}
 .staff-stat-l{font-size:10px;color:var(--muted)}
-
-/* ── Inventory ─────────────────── */
-.inv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
-.inv-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px}
-.inv-cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.inv-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
-.inv-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.inv-name{font-size:13px;font-weight:600;line-height:1.3;margin-bottom:3px}
-.inv-room{font-size:11px;color:var(--muted)}
-.inv-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
-.inv-value{font-size:14px;font-weight:600;color:var(--gold)}
-.inv-notes{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5}
 
 /* ── Activity feed ─────────────── */
 .feed{display:flex;flex-direction:column;gap:0}
@@ -157,6 +231,12 @@ select option{background:#1e2334}
 .form-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 .submit-btn{background:var(--gold);color:#0b0d14;border-radius:var(--rs);padding:9px 22px;font-size:13px;font-weight:700;letter-spacing:.03em;border:none;cursor:pointer;transition:opacity .15s}
 .submit-btn:hover{opacity:.88}
+.ghost-btn{background:var(--card2);color:var(--text);border:1px solid var(--border2);border-radius:var(--rs);padding:8px 18px;font-size:12.5px;font-weight:600;cursor:pointer;transition:border-color .15s}
+.ghost-btn:hover{border-color:var(--gold)}
+
+/* ── Toast ─────────────────────── */
+#toast{position:fixed;bottom:24px;right:24px;background:var(--card2);border:1px solid rgba(200,168,75,0.4);border-radius:var(--r);padding:13px 20px;font-size:13px;box-shadow:0 8px 30px rgba(0,0,0,.5);z-index:300;opacity:0;transform:translateY(12px);transition:all .25s;pointer-events:none;max-width:380px;line-height:1.45}
+#toast.show{opacity:1;transform:translateY(0)}
 
 /* ── Scrollbar ─────────────────── */
 ::-webkit-scrollbar{width:5px}
@@ -193,66 +273,189 @@ select option{background:#1e2334}
 <!-- Main -->
 <div id="main"></div>
 
+<!-- Toast -->
+<div id="toast"></div>
+
 <script>
-// ── Data ───────────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+//  DATA  ·  demo date: Saturday, July 11, 2026
+// ═══════════════════════════════════════════════════════════════════════════════
 const STAFF=[
-  {id:1,name:"Marco Rivera",role:"Plumbing & HVAC",initials:"MR",av:"av-blue"},
-  {id:2,name:"Sandra Lee",role:"Interior & Cleaning",initials:"SL",av:"av-teal"},
-  {id:3,name:"Derek Thomas",role:"Landscaping & Exterior",initials:"DT",av:"av-green"},
-  {id:4,name:"Pat O'Brien",role:"Electrical & Security",initials:"PO",av:"av-amber"},
-  {id:5,name:"Kira Voss",role:"General Maintenance",initials:"KV",av:"av-coral"},
+  {id:1,name:"Marco Rivera",role:"Plumbing & HVAC",type:"Staff",initials:"MR",av:"av-blue"},
+  {id:2,name:"Sandra Lee",role:"Interior & Cleaning",type:"Staff",initials:"SL",av:"av-teal"},
+  {id:3,name:"Derek Thomas",role:"Landscaping & Exterior",type:"Vendor",initials:"DT",av:"av-green"},
+  {id:4,name:"Pat O'Brien",role:"Electrical, Network & Security",type:"Staff",initials:"PO",av:"av-amber"},
+  {id:5,name:"Kira Voss",role:"General Maintenance",type:"Staff",initials:"KV",av:"av-coral"},
 ];
 const PROPS=[
   {id:1,name:"The Whitmore Estate",addr:"412 Pelican Bay Dr, Sarasota FL",owner:"Gerald & Anne Whitmore",status:"active",icon:"🏛"},
   {id:2,name:"Casa Serena",addr:"88 Osprey Cove, Longboat Key FL",owner:"Donovan Pierce",status:"active",icon:"🌴"},
   {id:3,name:"The Hargrove Residence",addr:"1204 Bayou Club Blvd, Lakewood Ranch FL",owner:"The Hargrove Family",status:"maintenance",icon:"🏡"},
 ];
-let TASKS=[
-  {id:1,propId:1,title:"Pool pump replacement",cat:"Plumbing",status:"complete",who:1,priority:"high",date:"Mar 28",note:"Pentair pump replaced, pressure OK"},
-  {id:2,propId:1,title:"Quarterly HVAC service",cat:"HVAC",status:"in-progress",who:1,priority:"medium",date:"Apr 2",note:""},
-  {id:3,propId:1,title:"Trim royal palms (front drive)",cat:"Landscaping",status:"pending",who:3,priority:"low",date:"Apr 10",note:""},
-  {id:4,propId:2,title:"Deep clean before owner arrival",cat:"Cleaning",status:"complete",who:2,priority:"high",date:"Mar 30",note:"All surfaces, linens replaced"},
-  {id:5,propId:2,title:"Security camera offline – Zone 3",cat:"Electrical",status:"in-progress",who:4,priority:"high",date:"Apr 1",note:"DVR firmware update pending"},
-  {id:6,propId:2,title:"Touch-up paint – guest bath",cat:"Maintenance",status:"pending",who:5,priority:"low",date:"Apr 15",note:""},
-  {id:7,propId:3,title:"Garage door spring replacement",cat:"Maintenance",status:"complete",who:5,priority:"high",date:"Mar 25",note:"Both springs replaced"},
-  {id:8,propId:3,title:"Exterior pressure wash",cat:"Exterior",status:"pending",who:3,priority:"medium",date:"Apr 8",note:""},
-  {id:9,propId:3,title:"Generator monthly fuel check",cat:"Maintenance",status:"pending",who:5,priority:"medium",date:"Apr 5",note:""},
+const SYSCATS=[
+  {key:"Electrical",icon:"⚡",color:"var(--warn)"},
+  {key:"Plumbing",icon:"🚰",color:"var(--info)"},
+  {key:"HVAC",icon:"❄️",color:"#7dd3fc"},
+  {key:"Internet & Network",icon:"🌐",color:"var(--violet)"},
+  {key:"Yard & Irrigation",icon:"🌿",color:"var(--ok)"},
+  {key:"Security",icon:"🛡️",color:"var(--coral)"},
+  {key:"Pool & Spa",icon:"🏊",color:"#22d3ee"},
+  {key:"Backup Power",icon:"🔋",color:"var(--gold)"},
 ];
+// status: ok | due | issue | warn
+const SYSTEMS=[
+  // ── Whitmore Estate ──
+  {id:1,propId:1,cat:"Electrical",name:"Main Panel — Square D QO 200A",model:"QO142M200PC",serial:"QO-88-20441",installed:"2014",warranty:"—",lastSvc:"Feb 12, 2026 · inspection",nextSvc:"Feb 2027",who:4,status:"ok",notes:"Whole-home surge protector added 2024.",
+   history:[{d:"Feb 12, 2026",t:"Annual inspection passed — all breakers torqued"},{d:"Aug 3, 2024",t:"Surge protective device installed"}]},
+  {id:2,propId:1,cat:"Backup Power",name:"Generac Guardian 24kW Standby",model:"G0072101",serial:"3002211088",installed:"2021",warranty:"Jul 2026 ⚠",lastSvc:"Jun 14, 2026 · exercise + fuel",nextSvc:"Jul 14, 2026",who:4,status:"due",notes:"Warranty expires this month — extended plan quote requested.",
+   history:[{d:"Jun 14, 2026",t:"Monthly exercise cycle OK, propane at 62%"},{d:"May 12, 2026",t:"Exercise cycle OK"},{d:"Apr 20, 2026",t:"Annual service — oil, plugs, air filter"}]},
+  {id:3,propId:1,cat:"Plumbing",name:"Rheem Marathon 85gal Water Heater",model:"MR85245",serial:"RH-19-55302",installed:"2019",warranty:"2031",lastSvc:"Jan 8, 2026 · anode check",nextSvc:"Jan 2027",who:1,status:"ok",notes:"Utility room, recirc pump on timer.",
+   history:[{d:"Jan 8, 2026",t:"Anode rod inspected — 60% remaining"},{d:"Jan 6, 2025",t:"Flush + anode check"}]},
+  {id:4,propId:1,cat:"Pool & Spa",name:"Pentair IntelliFlo3 VSF Pool Pump",model:"011075",serial:"PT-26-08871",installed:"Jun 2026",warranty:"Jun 2029",lastSvc:"Jun 28, 2026 · install",nextSvc:"Dec 2026",who:1,status:"ok",notes:"Replaced failed unit; pressure verified at 14 PSI.",
+   history:[{d:"Jun 28, 2026",t:"New pump installed, primed, pressure OK"},{d:"Jun 24, 2026",t:"Old pump failed — seal leak, motor seized"}]},
+  {id:5,propId:1,cat:"HVAC",name:"Carrier Infinity 19VS — Zone 1 (Main)",model:"24VNA9",serial:"CA-20-33108",installed:"2020",warranty:"2030",lastSvc:"Apr 2, 2026 · quarterly",nextSvc:"Oct 2026",who:1,status:"ok",notes:"",
+   history:[{d:"Apr 2, 2026",t:"Coils cleaned, refrigerant nominal"},{d:"Jan 5, 2026",t:"Filter change"}]},
+  {id:6,propId:1,cat:"HVAC",name:"Carrier Infinity 19VS — Zone 2 (Guest Wing)",model:"24VNA9",serial:"CA-20-33109",installed:"2020",warranty:"2030",lastSvc:"Apr 2, 2026 · quarterly",nextSvc:"Oct 2026",who:1,status:"warn",notes:"Refrigerant trending slightly low — monitoring, possible micro-leak.",
+   history:[{d:"Apr 2, 2026",t:"Refrigerant 4% below spec — flagged for monitoring"},{d:"Jan 5, 2026",t:"Filter change"}]},
+  {id:7,propId:1,cat:"Internet & Network",name:"Frontier Fiber 2 Gig + Eero Pro 6E (5 nodes)",model:"Eero Pro 6E",serial:"Acct FTR-88412",installed:"2023",warranty:"—",lastSvc:"Jul 3, 2026 · node reboot",nextSvc:"—",who:4,status:"ok",notes:"ONT + primary node in AV closet. Guest network: WhitmoreGuest.",
+   history:[{d:"Jul 3, 2026",t:"Node 4 (lanai) offline — power-cycled, back online"},{d:"Mar 15, 2026",t:"Firmware updated across mesh"}]},
+  {id:8,propId:1,cat:"Yard & Irrigation",name:"Rain Bird ESP-TM2 Irrigation — 12 zones",model:"ESP-TM2",serial:"RB-18-71203",installed:"2018",warranty:"—",lastSvc:"Jun 20, 2026 · zone 7 head",nextSvc:"Aug 15, 2026",who:3,status:"ok",notes:"Well-fed irrigation; rain sensor on garage eave.",
+   history:[{d:"Jun 20, 2026",t:"Zone 7 rotor head replaced"},{d:"Apr 12, 2026",t:"Spring adjustment, all 12 zones tested"}]},
+  {id:9,propId:1,cat:"Security",name:"Alarm.com Panel + 8 Cameras",model:"ADC-VDB770 / IQ4",serial:"AD-22-90441",installed:"2022",warranty:"2027",lastSvc:"Jul 1, 2026 · DVR firmware",nextSvc:"Jan 2027",who:4,status:"ok",notes:"Monitored — central station. Gate keypad code rotated quarterly.",
+   history:[{d:"Jul 1, 2026",t:"DVR firmware updated, all 8 cameras verified"},{d:"Apr 2, 2026",t:"Gate code rotation"}]},
+  // ── Casa Serena ──
+  {id:10,propId:2,cat:"Electrical",name:"Eaton BR 150A Panel",model:"BR3040B150",serial:"ET-16-20997",installed:"2016",warranty:"—",lastSvc:"Mar 4, 2026 · inspection",nextSvc:"Mar 2027",who:4,status:"ok",notes:"",
+   history:[{d:"Mar 4, 2026",t:"Annual inspection passed"}]},
+  {id:11,propId:2,cat:"Plumbing",name:"Navien NPE-240A Tankless Water Heater",model:"NPE-240A2",serial:"NV-21-33810",installed:"2021",warranty:"2036 (HX)",lastSvc:"Jul 2025 · descale",nextSvc:"Jul 18, 2026",who:1,status:"due",notes:"Annual descale due — hard water area, do not skip.",
+   history:[{d:"Jul 20, 2025",t:"Descale + inlet filter clean"},{d:"Jul 18, 2024",t:"Descale"}]},
+  {id:12,propId:2,cat:"HVAC",name:"Trane XV18 Heat Pump",model:"4TWV8060",serial:"TR-19-44120",installed:"2019",warranty:"2029",lastSvc:"May 9, 2026 · seasonal",nextSvc:"Nov 2026",who:1,status:"ok",notes:"",
+   history:[{d:"May 9, 2026",t:"Pre-summer service — coils, capacitor tested"}]},
+  {id:13,propId:2,cat:"Internet & Network",name:"Xfinity 1.2 Gig + Netgear Orbi Mesh",model:"RBK863S",serial:"Acct XF-30112",installed:"2022",warranty:"—",lastSvc:"Jul 9, 2026 · diagnostics",nextSvc:"—",who:4,status:"issue",notes:"Owner reports Wi-Fi drops in guest casita — satellite relocation scheduled.",
+   history:[{d:"Jul 9, 2026",t:"Remote diagnostics — casita satellite weak backhaul"},{d:"Jul 6, 2026",t:"Owner reported intermittent drops"}]},
+  {id:14,propId:2,cat:"Yard & Irrigation",name:"Hunter Pro-C Irrigation — 8 zones",model:"PC-401",serial:"HN-17-88213",installed:"2017",warranty:"—",lastSvc:"May 30, 2026 · adjust",nextSvc:"Sep 2026",who:3,status:"ok",notes:"",
+   history:[{d:"May 30, 2026",t:"Summer schedule set, all zones OK"}]},
+  {id:15,propId:2,cat:"Security",name:"Ring Alarm Pro + 6 Cameras",model:"B08HSVXFVV",serial:"RG-23-11842",installed:"2023",warranty:"2026",lastSvc:"Jul 10, 2026 · firmware",nextSvc:"—",who:4,status:"issue",notes:"Zone 3 (dock camera) offline — DVR firmware update pending.",
+   history:[{d:"Jul 10, 2026",t:"Zone 3 camera unresponsive after storm — replacement ordered"},{d:"Jun 2, 2026",t:"All cameras verified"}]},
+  {id:16,propId:2,cat:"Pool & Spa",name:"Hayward TriStar VS + Salt Cell",model:"W3SP3202VSP",serial:"HW-20-55671",installed:"2020",warranty:"2027",lastSvc:"May 15, 2026 · cell clean",nextSvc:"Aug 5, 2026",who:1,status:"ok",notes:"Salt cell inspection quarterly.",
+   history:[{d:"May 15, 2026",t:"Salt cell cleaned, output 92%"}]},
+  // ── Hargrove Residence ──
+  {id:17,propId:3,cat:"Electrical",name:"GE 200A Panel + Tesla Wall Connector",model:"TM3220 / Gen 3",serial:"GE-15-90332",installed:"2015 / 2023",warranty:"WC: 2027",lastSvc:"Jan 22, 2026 · inspection",nextSvc:"Jan 2027",who:4,status:"ok",notes:"EV charger on dedicated 60A circuit.",
+   history:[{d:"Jan 22, 2026",t:"Inspection passed, EV circuit load-tested"}]},
+  {id:18,propId:3,cat:"Plumbing",name:"A.O. Smith 75gal Gas Water Heater",model:"GPVL-75",serial:"AO-13-20871",installed:"2013",warranty:"Expired 2019",lastSvc:"Feb 2026 · flush",nextSvc:"Quote in progress",who:1,status:"warn",notes:"13 years old — proactive replacement recommended before failure. Quote requested Jul 8.",
+   history:[{d:"Feb 10, 2026",t:"Flush — sediment heavy, replacement discussed"},{d:"Feb 2025",t:"Flush"}]},
+  {id:19,propId:3,cat:"HVAC",name:"Lennox XC21 — Units 1 & 2",model:"XC21-060",serial:"LX-16-30281/2",installed:"2016",warranty:"2026",lastSvc:"Jun 19, 2026 · capacitor",nextSvc:"Sep 2026",who:1,status:"ok",notes:"Unit 2 capacitor replaced under warranty.",
+   history:[{d:"Jun 19, 2026",t:"Unit 2 run capacitor replaced"},{d:"Apr 28, 2026",t:"Seasonal service both units"}]},
+  {id:20,propId:3,cat:"Internet & Network",name:"Verizon Fios 1 Gig",model:"CR1000A router",serial:"Acct VZ-77120",installed:"2021",warranty:"—",lastSvc:"—",nextSvc:"—",who:4,status:"ok",notes:"Router in den closet; family manages own mesh.",
+   history:[{d:"Nov 2025",t:"Router swapped by Verizon"}]},
+  {id:21,propId:3,cat:"Yard & Irrigation",name:"Rachio 3 Smart Controller — 10 zones",model:"16ZULW-C",serial:"RC-22-61092",installed:"2022",warranty:"—",lastSvc:"Jun 5, 2026 · zone audit",nextSvc:"Sep 2026",who:3,status:"ok",notes:"Weather-intelligent schedule enabled.",
+   history:[{d:"Jun 5, 2026",t:"Zone audit — 2 nozzles replaced"}]},
+  {id:22,propId:3,cat:"Backup Power",name:"Generac 22kW Standby",model:"G007042",serial:"3001998234",installed:"2020",warranty:"2025 (expired)",lastSvc:"Jun 5, 2026 · fuel check",nextSvc:"Jul 5, 2026 ⚠",who:5,status:"issue",notes:"Monthly fuel check OVERDUE — was due Jul 5.",
+   history:[{d:"Jun 5, 2026",t:"Fuel 48%, exercise OK"},{d:"May 5, 2026",t:"Fuel check OK"}]},
+];
+// due: overdue | due | later
+const SCHEDULE=[
+  {id:1,propId:1,title:"Generator exercise + fuel check",cat:"Backup Power",freq:"Monthly",next:"Jul 14",due:"due",who:4},
+  {id:2,propId:1,title:"HVAC filter change — all zones",cat:"HVAC",freq:"Quarterly",next:"Jul 20",due:"due",who:5},
+  {id:3,propId:1,title:"Royal palm trimming (front drive)",cat:"Yard & Irrigation",freq:"Semi-annual",next:"Jul 9",due:"overdue",who:3},
+  {id:4,propId:1,title:"Irrigation seasonal adjustment",cat:"Yard & Irrigation",freq:"Quarterly",next:"Aug 15",due:"later",who:3},
+  {id:5,propId:1,title:"Gutter cleaning + roof visual",cat:"Yard & Irrigation",freq:"Semi-annual",next:"Oct 1",due:"later",who:3},
+  {id:6,propId:2,title:"Tankless water heater descale",cat:"Plumbing",freq:"Annual",next:"Jul 18",due:"due",who:1},
+  {id:7,propId:2,title:"Pest control — perimeter treatment",cat:"Yard & Irrigation",freq:"Quarterly",next:"Jul 6",due:"overdue",who:5},
+  {id:8,propId:2,title:"Deep clean before owner arrival",cat:"Interior",freq:"Owner schedule",next:"Jul 24",due:"later",who:2},
+  {id:9,propId:2,title:"Salt cell inspection",cat:"Pool & Spa",freq:"Quarterly",next:"Aug 5",due:"later",who:1},
+  {id:10,propId:3,title:"Generator fuel check",cat:"Backup Power",freq:"Monthly",next:"Jul 5",due:"overdue",who:5},
+  {id:11,propId:3,title:"Water heater replacement decision",cat:"Plumbing",freq:"One-time",next:"Jul 25",due:"later",who:1},
+  {id:12,propId:3,title:"Exterior pressure wash",cat:"Yard & Irrigation",freq:"Annual",next:"Jul 30",due:"later",who:3},
+];
+let TASKS=[
+  {id:1,propId:1,title:"Generator service — exercise cycle + fuel",cat:"Backup Power",status:"pending",who:4,priority:"high",date:"Jul 14",over:false,note:"Warranty expires this month"},
+  {id:2,propId:1,title:"Quarterly HVAC filter change (all zones)",cat:"HVAC",status:"in-progress",who:5,priority:"medium",date:"Jul 20",over:false,note:""},
+  {id:3,propId:1,title:"Trim royal palms (front drive)",cat:"Yard Work",status:"pending",who:3,priority:"low",date:"Jul 9",over:true,note:"Overdue — vendor rescheduling"},
+  {id:4,propId:2,title:"Deep clean before owner arrival",cat:"Cleaning",status:"pending",who:2,priority:"high",date:"Jul 24",over:false,note:"Owner arrives Jul 26"},
+  {id:5,propId:2,title:"Security camera offline — Zone 3 (dock)",cat:"Security",status:"in-progress",who:4,priority:"high",date:"Jul 12",over:false,note:"Replacement camera ordered"},
+  {id:6,propId:2,title:"Wi-Fi drops in guest casita",cat:"Internet",status:"in-progress",who:4,priority:"medium",date:"Jul 15",over:false,note:"Mesh satellite relocation"},
+  {id:7,propId:2,title:"Tankless water heater descale",cat:"Plumbing",status:"pending",who:1,priority:"medium",date:"Jul 18",over:false,note:""},
+  {id:8,propId:3,title:"Water heater replacement quote",cat:"Plumbing",status:"pending",who:1,priority:"high",date:"Jul 25",over:false,note:"13-yr-old unit, proactive replacement"},
+  {id:9,propId:3,title:"Exterior pressure wash",cat:"Exterior",status:"pending",who:3,priority:"medium",date:"Jul 30",over:false,note:""},
+  {id:10,propId:3,title:"Generator monthly fuel check",cat:"Backup Power",status:"pending",who:5,priority:"medium",date:"Jul 5",over:true,note:"Overdue"},
+  {id:11,propId:1,title:"Pool pump replacement — Pentair IntelliFlo3",cat:"Pool & Spa",status:"complete",who:1,priority:"high",date:"Jun 28",over:false,note:"New pump installed, pressure verified"},
+  {id:12,propId:2,title:"Touch-up paint — guest bath",cat:"Maintenance",status:"complete",who:5,priority:"low",date:"Jul 2",over:false,note:"Color-matched, complete"},
+  {id:13,propId:3,title:"HVAC capacitor replacement — Unit 2",cat:"HVAC",status:"complete",who:1,priority:"high",date:"Jun 19",over:false,note:"Under warranty"},
+];
+// containerId links an inventory item into a storage container (null = placed in home)
 const INVENTORY=[
-  {id:1,propId:1,name:"Wedgwood China Set (12 place)",room:"Kitchen",cat:"Dishware",qty:1,val:2400,notes:"Upper cabinet, dining side",icon:"🍽"},
-  {id:2,propId:1,name:"Waterford Crystal Stemware",room:"Dining Room",cat:"Dishware",qty:12,val:1800,notes:"Hanging rack, china cabinet",icon:"🥂"},
-  {id:3,propId:1,name:"Rolex Submariner",room:"Master Bedroom",cat:"Valuables",qty:1,val:14000,notes:"Locked jewelry box, top dresser",icon:"⌚"},
-  {id:4,propId:1,name:"Pearl Necklace Set",room:"Master Bedroom",cat:"Valuables",qty:1,val:3200,notes:"Locked jewelry box",icon:"💎"},
-  {id:5,propId:1,name:'Sony 85" OLED Television',room:"Living Room",cat:"Electronics",qty:1,val:4500,notes:"Wall mounted over media console",icon:"📺"},
-  {id:6,propId:1,name:"Original Oil Painting – Coastal",room:"Living Room",cat:"Artwork",qty:1,val:6000,notes:"Signed 'Alvarez', above fireplace",icon:"🖼"},
-  {id:7,propId:1,name:"Cast Iron Skillet Set (3)",room:"Kitchen",cat:"Dishware",qty:3,val:180,notes:"Lower cabinet, stove side",icon:"🍳"},
-  {id:8,propId:2,name:"Le Creuset Cookware Set",room:"Kitchen",cat:"Dishware",qty:1,val:800,notes:"Hanging pot rack",icon:"🍳"},
-  {id:9,propId:2,name:"Traeger Pro 780 Grill",room:"Outdoor Kitchen",cat:"Appliances",qty:1,val:1200,notes:"Covered patio, under awning",icon:"🔥"},
-  {id:10,propId:2,name:"Vintage Watch Collection",room:"Master Closet",cat:"Valuables",qty:4,val:22000,notes:"Watch winder safe, closet",icon:"⌚"},
-  {id:11,propId:3,name:"Craftsman Tool Cabinet",room:"Garage",cat:"Tools",qty:1,val:600,notes:"Left wall, full set included",icon:"🔧"},
-  {id:12,propId:3,name:"Dining Set (table + 8 chairs)",room:"Dining Room",cat:"Furniture",qty:1,val:3800,notes:"Restoration Hardware, dining room",icon:"🪑"},
+  {id:1,propId:1,name:"Wedgwood China Set (12 place)",room:"Kitchen",cat:"Dishware",qty:1,val:2400,serial:"—",purchased:"2015",price:2900,warranty:"—",receipt:true,photos:4,cond:"Excellent",notes:"Upper cabinet, dining side",icon:"🍽",containerId:null},
+  {id:2,propId:1,name:"Waterford Crystal Stemware",room:"Dining Room",cat:"Dishware",qty:12,val:1800,serial:"—",purchased:"2012",price:2200,warranty:"—",receipt:false,photos:2,cond:"Excellent",notes:"Hanging rack, china cabinet",icon:"🥂",containerId:null},
+  {id:3,propId:1,name:"Rolex Submariner",room:"Master Bedroom",cat:"Valuables",qty:1,val:14000,serial:"S126610LN-8842",purchased:"2019",price:9150,warranty:"2024 (intl)",receipt:true,photos:6,cond:"Excellent",notes:"Dive watch — appraised 2025, rider on homeowner policy",icon:"⌚",containerId:2},
+  {id:4,propId:1,name:"Pearl Necklace Set",room:"Master Bedroom",cat:"Valuables",qty:1,val:3200,serial:"—",purchased:"2008",price:2600,warranty:"—",receipt:false,photos:3,cond:"Excellent",notes:"Insurance rider — appraisal on file",icon:"💎",containerId:2},
+  {id:5,propId:1,name:'Sony 85" OLED Television',room:"Living Room",cat:"Electronics",qty:1,val:4500,serial:"SN-A85K-102284",purchased:"2023",price:5499,warranty:"Jul 2026 ⚠",receipt:true,photos:2,cond:"Excellent",notes:"Wall mounted over media console — warranty expiring",icon:"📺",containerId:null},
+  {id:6,propId:1,name:"Original Oil Painting — Coastal",room:"Living Room",cat:"Artwork",qty:1,val:6000,serial:"—",purchased:"2017",price:4200,warranty:"—",receipt:true,photos:5,cond:"Excellent",notes:"Signed 'Alvarez', above fireplace. Appraised 2024.",icon:"🖼",containerId:null},
+  {id:7,propId:1,name:"Dyson V15 + Attachments",room:"Utility Room",cat:"Appliances",qty:1,val:450,serial:"DY-V15-88213",purchased:"2024",price:749,warranty:"2026",receipt:true,photos:1,cond:"Good",notes:"",icon:"🧹",containerId:null},
+  {id:8,propId:1,name:"Christmas Village Collection (Dept 56)",room:"Garage",cat:"Seasonal",qty:14,val:2100,serial:"—",purchased:"2005–2020",price:2800,warranty:"—",receipt:false,photos:8,cond:"Excellent",notes:"Fragile — bubble-wrapped individually",icon:"🎄",containerId:1},
+  {id:9,propId:2,name:"Le Creuset Cookware Set",room:"Kitchen",cat:"Dishware",qty:1,val:800,serial:"—",purchased:"2021",price:1100,warranty:"Lifetime",receipt:true,photos:2,cond:"Excellent",notes:"Hanging pot rack",icon:"🍳",containerId:null},
+  {id:10,propId:2,name:"Traeger Pro 780 Grill",room:"Outdoor Kitchen",cat:"Appliances",qty:1,val:1200,serial:"TG-780-30112",purchased:"2022",price:1000,warranty:"2025",receipt:true,photos:2,cond:"Good",notes:"Covered patio, under awning",icon:"🔥",containerId:null},
+  {id:11,propId:2,name:"Vintage Watch Collection",room:"Master Closet",cat:"Valuables",qty:4,val:22000,serial:"Inventory list on file",purchased:"Various",price:16500,warranty:"—",receipt:true,photos:12,cond:"Excellent",notes:"Watch winder safe — scheduled on policy",icon:"⌚",containerId:4},
+  {id:12,propId:2,name:"Paddleboards (2) + Gear",room:"Garage",cat:"Recreation",qty:2,val:1400,serial:"—",purchased:"2023",price:1800,warranty:"—",receipt:false,photos:2,cond:"Good",notes:"",icon:"🏄",containerId:5},
+  {id:13,propId:3,name:"Craftsman Tool Cabinet (full set)",room:"Garage",cat:"Tools",qty:1,val:600,serial:"CM-2000-88",purchased:"2018",price:900,warranty:"Lifetime (hand tools)",receipt:false,photos:3,cond:"Good",notes:"Left wall",icon:"🔧",containerId:null},
+  {id:14,propId:3,name:"Dining Set — Table + 8 Chairs",room:"Dining Room",cat:"Furniture",qty:1,val:3800,serial:"—",purchased:"2020",price:5200,warranty:"—",receipt:true,photos:3,cond:"Excellent",notes:"Restoration Hardware",icon:"🪑",containerId:null},
+  {id:15,propId:3,name:"Ski Gear — Family (4 sets)",room:"Offsite",cat:"Recreation",qty:4,val:2400,serial:"—",purchased:"2022–2024",price:3600,warranty:"—",receipt:false,photos:4,cond:"Good",notes:"Boots, skis, helmets, bags",icon:"⛷",containerId:6},
+  {id:16,propId:3,name:"Canon R6 + Lens Kit",room:"Den",cat:"Electronics",qty:1,val:3200,serial:"CN-R6-441820",purchased:"2023",price:3900,warranty:"2025",receipt:true,photos:2,cond:"Excellent",notes:"Den closet, top shelf, camera bag",icon:"📷",containerId:null},
+];
+const CONTAINERS=[
+  {id:1,propId:1,label:"Bin G-01 · Holiday Décor",type:"Bin",icon:"📦",loc:"Garage — steel rack, top left",
+   loose:["Pre-lit tree (9 ft, 3 boxes)","Ornament boxes ×6","Exterior light strands ×12","Wreaths ×4"]},
+  {id:2,propId:1,label:"Master Safe",type:"Safe",icon:"🔐",loc:"Master closet — floor, bolted",
+   loose:["Passports ×4","Estate documents (blue folder)","Coin collection (albums ×2)","Spare house keys"]},
+  {id:3,propId:1,label:"Attic Tote A-3 · Memorabilia",type:"Bin",icon:"📦",loc:"Attic — east eave, third tote",
+   loose:["Family photo albums ×9","Kids' school keepsakes","Wedding album + video (digitized 2024)"]},
+  {id:4,propId:2,label:"Owner's Closet",type:"Locked closet",icon:"🚪",loc:"Hallway — keypad lock (code w/ office)",
+   loose:["Personal linens","Owner electronics drawer","Wine — 18 bottles, rack"]},
+  {id:5,propId:2,label:"Bin P-02 · Pool & Patio",type:"Bin",icon:"📦",loc:"Garage — right wall shelving",
+   loose:["Pool floats + toys","Patio umbrella (winter)","Outdoor cushion covers"]},
+  {id:6,propId:3,label:"Storage Unit #214 — CubeSmart Bradenton",type:"Offsite unit",icon:"🏬",loc:"6015 SR-64 E, Bradenton · gate code on file",
+   loose:["Patio furniture (off-season)","Kayaks ×2","Holiday inflatables","File boxes 2019–2023 ×8"]},
+  {id:7,propId:3,label:"Bin W-07 · Winter Clothes",type:"Bin",icon:"📦",loc:"Guest closet — top shelf",
+   loose:["Family coats + winter gear","Ski apparel","Boot bags ×2"]},
 ];
 const ACTIVITY=[
-  {text:"Pool pump replacement at Whitmore Estate marked complete",time:"Today, 10:24 AM",dot:"var(--ok)"},
-  {text:"Security camera issue reported at Casa Serena – Pat O'Brien assigned",time:"Today, 9:15 AM",dot:"var(--warn)"},
-  {text:"Deep clean complete – Casa Serena ready for owner arrival",time:"Yesterday, 4:40 PM",dot:"var(--ok)"},
-  {text:"New inventory item added: Vintage Watch Collection at Casa Serena",time:"Yesterday, 2:12 PM",dot:"var(--info)"},
-  {text:"Hargrove Residence – garage door springs replaced by Kira Voss",time:"Mar 25, 11:00 AM",dot:"var(--ok)"},
+  {text:"Zone 3 dock camera at Casa Serena — replacement camera ordered by Pat O'Brien",time:"Today, 9:40 AM",dot:"var(--warn)"},
+  {text:"Wi-Fi diagnostics at Casa Serena — casita mesh satellite flagged for relocation",time:"Yesterday, 3:15 PM",dot:"var(--info)"},
+  {text:"Generator fuel check at Hargrove Residence is now overdue (due Jul 5)",time:"Yesterday, 8:00 AM",dot:"var(--danger)"},
+  {text:"Touch-up paint at Casa Serena marked complete by Kira Voss",time:"Jul 2, 4:22 PM",dot:"var(--ok)"},
+  {text:"New inventory item: Canon R6 + Lens Kit added at Hargrove Residence",time:"Jul 1, 11:05 AM",dot:"var(--info)"},
+  {text:"Pool pump replaced at Whitmore Estate — Pentair IntelliFlo3, pressure verified",time:"Jun 28, 10:24 AM",dot:"var(--ok)"},
 ];
 
-// ── State ──────────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════════════════════════════
 let role="manager";
 let view="dashboard";
 let selectedProp=1;
 let taskFilter="all";
 let invRoom="all";
-let nextTaskId=10;
+let sysPropFilter=1;      // manager systems view property filter
+let detailProp=null;      // manager property-detail view
+let detailTab="systems";
+let openSys=new Set();    // expanded system cards
+let openCont=new Set();   // expanded containers
+let findQuery="";
+let nextTaskId=20;
 
-// ── Helpers ────────────────────────────────────────────────────────────────────
-function getStaff(id){return STAFF.find(s=>s.id===id)||{name:"Unassigned",initials:"?",av:"av-blue"}}
+// ═══════════════════════════════════════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════════════════════════════════════
+function getStaff(id){return STAFF.find(s=>s.id===id)||{name:"Unassigned",initials:"?",av:"av-blue",role:""}}
 function getProp(id){return PROPS.find(p=>p.id===id)}
+function getCat(key){return SYSCATS.find(c=>c.key===key)||{icon:"⚙️",color:"var(--muted)"}}
+function getContainer(id){return CONTAINERS.find(c=>c.id===id)}
 function propTasks(propId){return TASKS.filter(t=>t.propId===propId)}
 function openCount(propId){return TASKS.filter(t=>t.propId===propId&&t.status!=="complete").length}
+function propSystems(propId){return SYSTEMS.filter(s=>s.propId===propId)}
+function propInv(propId){return INVENTORY.filter(i=>i.propId===propId)}
+function propConts(propId){return CONTAINERS.filter(c=>c.propId===propId)}
+function contItemCount(c){return c.loose.length+INVENTORY.filter(i=>i.containerId===c.id).length}
+function fmt(n){return"$"+n.toLocaleString()}
 function statusBadge(s){
   if(s==="complete")return`<span class="badge badge-ok">Complete</span>`;
   if(s==="in-progress")return`<span class="badge badge-info">In Progress</span>`;
@@ -264,39 +467,184 @@ function priorityBadge(p){
   if(p==="medium")return`<span class="badge badge-warn">Med</span>`;
   return`<span class="badge badge-dim">Low</span>`;
 }
-function catColor(c){
-  const m={Dishware:"var(--info)",Valuables:"var(--gold)",Electronics:"var(--ok)",Artwork:"var(--coral)",Appliances:"var(--warn)",Tools:"var(--muted)",Furniture:"#a78bfa"};
+function sysBadge(s){
+  if(s==="ok")return`<span class="badge badge-ok">Healthy</span>`;
+  if(s==="due")return`<span class="badge badge-warn">Service Due</span>`;
+  if(s==="warn")return`<span class="badge badge-warn">Watch</span>`;
+  if(s==="issue")return`<span class="badge badge-danger">Issue</span>`;
+  return`<span class="badge badge-dim">${s}</span>`;
+}
+function dueBadge(d){
+  if(d==="overdue")return`<span class="badge badge-danger">Overdue</span>`;
+  if(d==="due")return`<span class="badge badge-warn">Due Soon</span>`;
+  return`<span class="badge badge-dim">Scheduled</span>`;
+}
+function invCatColor(c){
+  const m={Dishware:"var(--info)",Valuables:"var(--gold)",Electronics:"var(--ok)",Artwork:"var(--coral)",Appliances:"var(--warn)",Tools:"var(--muted)",Furniture:"var(--violet)",Seasonal:"#4ade80",Recreation:"#22d3ee"};
   return m[c]||"var(--muted)";
 }
-function fmt(n){return"$"+n.toLocaleString()}
+function toast(msg){
+  const t=document.getElementById("toast");
+  t.innerHTML=msg;t.classList.add("show");
+  clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),3600);
+}
 function setRole(r){
-  role=r;
-  view="dashboard";
-  taskFilter="all";
-  invRoom="all";
+  role=r;view="dashboard";taskFilter="all";invRoom="all";detailProp=null;findQuery="";
   document.getElementById("mgr-btn").classList.toggle("active",r==="manager");
   document.getElementById("hw-btn").classList.toggle("active",r==="homeowner");
-  const w=document.getElementById("prop-select-wrap");
-  if(w)w.style.display=r==="homeowner"?"flex":"none";
+  document.getElementById("prop-select-wrap").style.display=r==="homeowner"?"flex":"none";
+  document.getElementById("propSelect").value=String(selectedProp);
   renderAll();
 }
-function setView(v){view=v;renderAll()}
+function setView(v){view=v;detailProp=null;renderAll()}
 function setTaskFilter(f){taskFilter=f;renderAll()}
 function setInvRoom(r){invRoom=r;renderAll()}
+function setSysProp(id){sysPropFilter=id;renderAll()}
+function openPropDetail(id){detailProp=id;detailTab="systems";renderAll()}
+function setDetailTab(t){detailTab=t;renderAll()}
+function toggleSys(id){openSys.has(id)?openSys.delete(id):openSys.add(id);renderAll()}
+function toggleCont(id){openCont.has(id)?openCont.delete(id):openCont.add(id);renderAll()}
+// ═══════════════════════════════════════════════════════════════════════════════
+//  SHARED COMPONENTS
+// ═══════════════════════════════════════════════════════════════════════════════
+function renderSysCard(s){
+  const cat=getCat(s.cat), st=getStaff(s.who), open=openSys.has(s.id);
+  return`<div class="sys-card ${open?"open":""}" onclick="toggleSys(${s.id})">
+    <div class="sys-top">
+      <div style="min-width:0">
+        <div class="sys-name">${s.name}</div>
+        <div class="sys-model">${s.model} · S/N ${s.serial}</div>
+      </div>
+      ${sysBadge(s.status)}
+    </div>
+    <div class="sys-meta">
+      <div class="sys-meta-item"><div class="sys-meta-l">Installed</div><div class="sys-meta-v">${s.installed}</div></div>
+      <div class="sys-meta-item"><div class="sys-meta-l">Warranty</div><div class="sys-meta-v ${s.warranty.includes("⚠")||s.warranty.includes("Expired")?"hot":""}">${s.warranty}</div></div>
+      <div class="sys-meta-item"><div class="sys-meta-l">Last Service</div><div class="sys-meta-v">${s.lastSvc}</div></div>
+      <div class="sys-meta-item"><div class="sys-meta-l">Next Service</div><div class="sys-meta-v ${s.nextSvc.includes("⚠")?"bad":""}">${s.nextSvc}</div></div>
+    </div>
+    ${open?`
+      <div class="sys-history">
+        <div class="sys-meta-l" style="margin-bottom:5px">Service History</div>
+        ${s.history.map(h=>`<div class="sys-hist-item"><span class="sys-hist-date">${h.d}</span><span>${h.t}</span></div>`).join("")}
+        <div class="sys-hist-item" style="margin-top:6px"><span class="sys-hist-date">Handled by</span><span style="color:var(--gold-lt)">${st.name} — ${st.role}</span></div>
+      </div>
+      ${s.notes?`<div class="sys-note">${s.notes}</div>`:""}
+    `:`<div style="font-size:10.5px;color:var(--dim);margin-top:9px">Click for service history ▸</div>`}
+  </div>`;
+}
+function renderSystemsFor(propId){
+  const systems=propSystems(propId);
+  const cats=SYSCATS.filter(c=>systems.some(s=>s.cat===c.key));
+  return cats.map(c=>{
+    const list=systems.filter(s=>s.cat===c.key);
+    return`
+      <div class="sys-cat-head">
+        <div class="sys-cat-icon" style="background:${c.color}22">${c.icon}</div>
+        ${c.key} <span style="color:var(--dim);font-weight:400">· ${list.length}</span>
+      </div>
+      <div class="sys-grid">${list.map(renderSysCard).join("")}</div>`;
+  }).join("");
+}
+function renderTaskRow(t,showProp){
+  const s=getStaff(t.who), done=t.status==="complete";
+  return`<div class="task-row">
+    <div class="task-check ${done?"done":""}" onclick="toggleTask(${t.id})">${done?"✓":""}</div>
+    <div class="task-title-col">
+      <div class="task-name ${done?"done":""}">${t.title}</div>
+      <div class="task-meta">${showProp?getProp(t.propId).name+" · ":""}${s.name}${t.note?` · ${t.note}`:""}</div>
+    </div>
+    <span class="task-cat">${t.cat}</span>
+    ${statusBadge(t.status)}
+    <span class="task-date ${t.over?"over":""}">${t.over?"⚠ ":""}${t.date}</span>
+  </div>`;
+}
+function renderInvCard(item){
+  const c=getContainer(item.containerId);
+  return`<div class="inv-card">
+    <div class="inv-header">
+      <div class="inv-icon" style="background:${invCatColor(item.cat)}22">${item.icon}</div>
+      <div style="min-width:0">
+        <div class="inv-name">${item.name}</div>
+        <div class="inv-room">📍 ${c?`${c.label}`:item.room}</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <span class="badge" style="background:${invCatColor(item.cat)}22;color:${invCatColor(item.cat)}">${item.cat}</span>
+      ${item.qty>1?`<span class="badge badge-dim">Qty: ${item.qty}</span>`:""}
+      <span class="badge badge-dim">${item.cond}</span>
+    </div>
+    <div class="inv-detail">
+      <div class="inv-d-item"><div class="inv-d-l">Serial #</div><div class="inv-d-v">${item.serial}</div></div>
+      <div class="inv-d-item"><div class="inv-d-l">Purchased</div><div class="inv-d-v">${item.purchased} · ${fmt(item.price)}</div></div>
+      <div class="inv-d-item"><div class="inv-d-l">Warranty</div><div class="inv-d-v ${item.warranty.includes("⚠")?"hot":""}" ${item.warranty.includes("⚠")?'style="color:var(--warn)"':""}>${item.warranty}</div></div>
+      <div class="inv-d-item"><div class="inv-d-l">Records</div><div class="inv-d-v">${item.photos} photos${item.receipt?" · receipt ✓":""}</div></div>
+    </div>
+    ${item.notes?`<div class="inv-notes">${item.notes}</div>`:""}
+    <div class="inv-footer">
+      <div class="inv-value">${fmt(item.val)}</div>
+      <span class="badge badge-dim">Est. value</span>
+    </div>
+  </div>`;
+}
+function renderContCard(c){
+  const linked=INVENTORY.filter(i=>i.containerId===c.id);
+  const open=openCont.has(c.id);
+  const count=contItemCount(c);
+  return`<div class="cont-card ${open?"open":""}" onclick="toggleCont(${c.id})">
+    <div class="cont-head">
+      <div class="cont-icon">${c.icon}</div>
+      <div style="min-width:0">
+        <div class="cont-name">${c.label}</div>
+        <div class="cont-loc">📍 ${c.loc}</div>
+        <div style="margin-top:5px"><span class="badge badge-dim">${c.type}</span></div>
+      </div>
+      <div class="cont-count"><div class="cont-count-n">${count}</div><div class="cont-count-l">items</div></div>
+    </div>
+    ${open?`
+      <div class="cont-items">
+        ${linked.map(i=>`<div class="cont-item"><div class="cont-item-dot" style="background:var(--gold)"></div><span class="linked">${i.icon} ${i.name}</span><span style="margin-left:auto;color:var(--gold)">${fmt(i.val)}</span></div>`).join("")}
+        ${c.loose.map(x=>`<div class="cont-item"><div class="cont-item-dot"></div>${x}</div>`).join("")}
+      </div>`
+    :`<div style="font-size:10.5px;color:var(--dim);margin-top:10px">Click to see contents ▸</div>`}
+  </div>`;
+}
+function renderSchedRow(r,showProp){
+  const cat=getCat(r.cat), s=getStaff(r.who);
+  return`<div class="sched-row">
+    <div class="sched-icon">${cat.icon}</div>
+    <div class="task-title-col">
+      <div class="task-name">${r.title}</div>
+      <div class="task-meta">${showProp?getProp(r.propId).name+" · ":""}${s.name}</div>
+    </div>
+    <span class="sched-freq">${r.freq}</span>
+    ${dueBadge(r.due)}
+    <span class="task-date ${r.due==="overdue"?"over":""}">${r.next}</span>
+  </div>`;
+}
 
-// ── Sidebar ────────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+//  SIDEBAR
+// ═══════════════════════════════════════════════════════════════════════════════
 function renderSidebar(){
+  const openWO=TASKS.filter(t=>t.status!=="complete").length;
+  const overdueM=SCHEDULE.filter(s=>s.due==="overdue").length;
   const mgrNav=[
     {v:"dashboard",icon:"◈",label:"Dashboard"},
     {v:"properties",icon:"⬡",label:"Properties"},
-    {v:"tasks",icon:"☰",label:"Work Orders",badge:TASKS.filter(t=>t.status==="pending"||t.status==="in-progress").length},
+    {v:"tasks",icon:"☰",label:"Work Orders",badge:openWO},
+    {v:"maintenance",icon:"↻",label:"Maintenance",badge:overdueM||null},
+    {v:"systems",icon:"⚙",label:"Home Systems"},
     {v:"staff",icon:"◉",label:"Staff & Vendors"},
   ];
   const hwNav=[
     {v:"dashboard",icon:"◈",label:"My Home"},
+    {v:"systems",icon:"⚙",label:"Home Systems"},
     {v:"requests",icon:"+",label:"Add Request"},
-    {v:"handlers",icon:"◉",label:"Who's Handling It"},
     {v:"inventory",icon:"▦",label:"Inventory"},
+    {v:"storage",icon:"⧈",label:"Storage & Bins"},
+    {v:"find",icon:"🔍",label:"Find My Stuff",gold:true},
+    {v:"handlers",icon:"◉",label:"Who's Handling It"},
   ];
   const nav=role==="manager"?mgrNav:hwNav;
   return nav.map(n=>`
@@ -308,26 +656,34 @@ function renderSidebar(){
   `).join("")+`
     <div style="flex:1"></div>
     <div style="padding:12px 10px;border-top:1px solid var(--border);margin-top:8px">
-      <div style="font-size:11px;color:var(--muted)">Demo v1.0</div>
+      <div style="font-size:11px;color:var(--muted)">Demo v2.0 · July 2026</div>
       <div style="font-size:11px;color:var(--dim);margin-top:2px">Kane PC App Dev</div>
     </div>`;
 }
 
-// ── Views ──────────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+//  MANAGER VIEWS
+// ═══════════════════════════════════════════════════════════════════════════════
 function renderManagerDashboard(){
   const totalOpen=TASKS.filter(t=>t.status!=="complete").length;
-  const totalDone=TASKS.filter(t=>t.status==="complete").length;
+  const overdue=SCHEDULE.filter(s=>s.due==="overdue").length+TASKS.filter(t=>t.over&&t.status!=="complete").length;
+  const sysIssues=SYSTEMS.filter(s=>s.status==="issue"||s.status==="warn").length;
   const invTotal=INVENTORY.reduce((a,i)=>a+i.val,0);
+  const dueSoon=SCHEDULE.filter(s=>s.due!=="later").sort((a,b)=>(a.due==="overdue"?0:1)-(b.due==="overdue"?0:1));
   return`
     <div class="page-title">Good afternoon, William</div>
-    <div class="page-sub">Portfolio overview · Wednesday, April 1, 2026</div>
+    <div class="page-sub">Portfolio overview · Saturday, July 11, 2026</div>
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-label">Properties</div><div class="stat-value">3</div><div class="stat-sub">All active</div></div>
-      <div class="stat-card"><div class="stat-label">Open Tasks</div><div class="stat-value stat-accent">${totalOpen}</div><div class="stat-sub">${TASKS.filter(t=>t.priority==="high"&&t.status!=="complete").length} high priority</div></div>
-      <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value">${totalDone}</div><div class="stat-sub">This month</div></div>
-      <div class="stat-card"><div class="stat-label">Inventory Value</div><div class="stat-value" style="font-size:22px">${fmt(invTotal)}</div><div class="stat-sub">Across all properties</div></div>
+      <div class="stat-card"><div class="stat-label">Open Work Orders</div><div class="stat-value stat-accent">${totalOpen}</div><div class="stat-sub">${TASKS.filter(t=>t.priority==="high"&&t.status!=="complete").length} high priority</div></div>
+      <div class="stat-card"><div class="stat-label">Overdue Items</div><div class="stat-value ${overdue?"stat-danger":""}">${overdue}</div><div class="stat-sub">Maintenance + work orders</div></div>
+      <div class="stat-card"><div class="stat-label">Systems Flagged</div><div class="stat-value">${sysIssues}</div><div class="stat-sub">of ${SYSTEMS.length} tracked systems</div></div>
+      <div class="stat-card"><div class="stat-label">Inventory Value</div><div class="stat-value" style="font-size:22px">${fmt(invTotal)}</div><div class="stat-sub">${INVENTORY.length} items · 3 properties</div></div>
     </div>
     <div class="two-col">
+      <div class="card">
+        <div class="card-title">Needs Attention <small>overdue & due soon</small></div>
+        <div class="task-list">${dueSoon.map(r=>renderSchedRow(r,true)).join("")}</div>
+      </div>
       <div class="card">
         <div class="card-title">Recent Activity</div>
         <div class="feed">${ACTIVITY.map(a=>`
@@ -337,39 +693,25 @@ function renderManagerDashboard(){
           </div>`).join("")}
         </div>
       </div>
-      <div class="card">
-        <div class="card-title">Open Items by Property</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Open Items by Property</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
         ${PROPS.map(p=>{
           const open=openCount(p.id);
           const total=propTasks(p.id).length;
           const pct=total?Math.round((total-open)/total*100):0;
-          return`<div style="margin-bottom:16px">
+          const flagged=propSystems(p.id).filter(s=>s.status!=="ok").length;
+          return`<div style="cursor:pointer" onclick="openPropDetail(${p.id})">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-              <span style="font-size:13px;font-weight:500">${p.name}</span>
-              <span style="font-size:12px;color:var(--muted)">${open} open / ${total} total</span>
+              <span style="font-size:13px;font-weight:500;color:var(--gold-lt)">${p.name}</span>
+              <span style="font-size:12px;color:var(--muted)">${open} open</span>
             </div>
             <div style="background:var(--card2);border-radius:4px;height:6px;overflow:hidden">
-              <div style="background:var(--gold);width:${pct}%;height:100%;border-radius:4px;transition:width .4s"></div>
+              <div style="background:var(--gold);width:${pct}%;height:100%;border-radius:4px"></div>
             </div>
-            <div style="font-size:11px;color:var(--muted);margin-top:4px">${pct}% complete</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:5px">${pct}% complete · ${flagged?`<span style="color:var(--warn)">${flagged} system${flagged>1?"s":""} flagged</span>`:'<span style="color:var(--ok)">systems healthy</span>'}</div>
           </div>`}).join("")}
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">High Priority Tasks <small>requiring attention</small></div>
-      <div class="task-list">
-        ${TASKS.filter(t=>t.priority==="high"&&t.status!=="complete").map(t=>{
-          const s=getStaff(t.who);
-          return`<div class="task-row">
-            <div class="task-check" style="border-color:var(--danger)">&nbsp;</div>
-            <div class="task-title-col">
-              <div class="task-name">${t.title}</div>
-              <div class="task-meta">${getProp(t.propId).name} · ${s.name}</div>
-            </div>
-            <span class="task-cat">${t.cat}</span>
-            ${statusBadge(t.status)}
-            <span class="task-date">${t.date}</span>
-          </div>`;}).join("")}
       </div>
     </div>`;
 }
@@ -377,11 +719,11 @@ function renderManagerDashboard(){
 function renderProperties(){
   return`
     <div class="page-title">Properties</div>
-    <div class="page-sub">Managing ${PROPS.length} properties</div>
+    <div class="page-sub">Managing ${PROPS.length} properties · click a property for full detail</div>
     <div class="three-col">
       ${PROPS.map(p=>`
-        <div class="prop-card">
-          <div class="prop-thumb" style="font-size:48px">
+        <div class="prop-card" onclick="openPropDetail(${p.id})">
+          <div class="prop-thumb">
             ${p.icon}
             <div class="prop-status-badge">${p.status==="active"?'<span class="badge badge-ok">Active</span>':'<span class="badge badge-warn">Maintenance</span>'}</div>
           </div>
@@ -390,40 +732,78 @@ function renderProperties(){
             <div class="prop-addr">${p.addr}</div>
             <div class="prop-owner">Owner: ${p.owner}</div>
             <div class="prop-stats">
-              <div class="prop-stat"><div class="prop-stat-n">${propTasks(p.id).length}</div><div class="prop-stat-l">Tasks</div></div>
+              <div class="prop-stat"><div class="prop-stat-n">${propSystems(p.id).length}</div><div class="prop-stat-l">Systems</div></div>
               <div class="prop-stat"><div class="prop-stat-n" style="color:var(--warn)">${openCount(p.id)}</div><div class="prop-stat-l">Open</div></div>
-              <div class="prop-stat"><div class="prop-stat-n" style="color:var(--info)">${INVENTORY.filter(i=>i.propId===p.id).length}</div><div class="prop-stat-l">Items</div></div>
+              <div class="prop-stat"><div class="prop-stat-n" style="color:var(--info)">${propInv(p.id).length}</div><div class="prop-stat-l">Items</div></div>
+              <div class="prop-stat"><div class="prop-stat-n" style="color:var(--violet)">${propConts(p.id).length}</div><div class="prop-stat-l">Bins</div></div>
             </div>
           </div>
         </div>`).join("")}
     </div>`;
 }
 
-function renderTasks(tasks,showProp){
-  const filtered=taskFilter==="all"?tasks:tasks.filter(t=>t.status===taskFilter);
+function renderPropDetail(){
+  const p=getProp(detailProp);
+  const tabs=[["systems","Home Systems"],["tasks","Work Orders"],["inventory","Inventory"],["storage","Storage"]];
+  let body="";
+  if(detailTab==="systems")body=renderSystemsFor(p.id);
+  else if(detailTab==="tasks")body=`<div class="task-list">${propTasks(p.id).map(t=>renderTaskRow(t,false)).join("")}</div>`;
+  else if(detailTab==="inventory")body=`<div class="inv-grid">${propInv(p.id).map(renderInvCard).join("")}</div>`;
+  else if(detailTab==="storage")body=`<div class="cont-grid">${propConts(p.id).map(renderContCard).join("")}</div>`;
+  const inv=propInv(p.id);
+  return`
+    <div class="back-link" onclick="setView('properties')">← All properties</div>
+    <div class="page-title">${p.icon} ${p.name}</div>
+    <div class="page-sub">${p.addr} · Owner: ${p.owner}</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-label">Systems Tracked</div><div class="stat-value">${propSystems(p.id).length}</div><div class="stat-sub">${propSystems(p.id).filter(s=>s.status!=="ok").length} flagged</div></div>
+      <div class="stat-card"><div class="stat-label">Open Work Orders</div><div class="stat-value stat-accent">${openCount(p.id)}</div><div class="stat-sub">of ${propTasks(p.id).length} total</div></div>
+      <div class="stat-card"><div class="stat-label">Inventory</div><div class="stat-value">${inv.length}</div><div class="stat-sub">${fmt(inv.reduce((a,i)=>a+i.val,0))} tracked value</div></div>
+      <div class="stat-card"><div class="stat-label">Storage</div><div class="stat-value">${propConts(p.id).length}</div><div class="stat-sub">${propConts(p.id).reduce((a,c)=>a+contItemCount(c),0)} stored items</div></div>
+    </div>
+    <div class="tabs">${tabs.map(([k,l])=>`<div class="tab ${detailTab===k?"active":""}" onclick="setDetailTab('${k}')">${l}</div>`).join("")}</div>
+    ${body}`;
+}
+
+function renderTasksView(){
+  const filtered=taskFilter==="all"?TASKS:TASKS.filter(t=>t.status===taskFilter);
   return`
     <div class="page-title">Work Orders</div>
-    <div class="page-sub">${tasks.length} total tasks across portfolio</div>
+    <div class="page-sub">${TASKS.length} total across portfolio · categories now include Internet, Yard Work, Backup Power, Pool & Spa</div>
     <div class="filter-bar">
       ${["all","pending","in-progress","complete"].map(f=>`
-        <button class="filter-btn ${taskFilter===f?"active":""}" onclick="setTaskFilter('${f}')">${f==="all"?"All Tasks":f==="in-progress"?"In Progress":f.charAt(0).toUpperCase()+f.slice(1)}</button>
+        <button class="filter-btn ${taskFilter===f?"active":""}" onclick="setTaskFilter('${f}')">${f==="all"?"All":f==="in-progress"?"In Progress":f.charAt(0).toUpperCase()+f.slice(1)}</button>
       `).join("")}
     </div>
     <div class="task-list">
-      ${filtered.map(t=>{
-        const s=getStaff(t.who);
-        const done=t.status==="complete";
-        return`<div class="task-row">
-          <div class="task-check ${done?"done":""}" onclick="toggleTask(${t.id})">${done?"✓":""}</div>
-          <div class="task-title-col">
-            <div class="task-name ${done?"done":""}">${t.title}</div>
-            <div class="task-meta">${showProp?getProp(t.propId).name+" · ":""}${s.name}${t.note?` · ${t.note}`:""}</div>
-          </div>
-          <span class="task-cat">${t.cat}</span>
-          ${statusBadge(t.status)}
-          <span class="task-date">${t.date}</span>
-        </div>`;}).join("")||'<div style="text-align:center;padding:32px;color:var(--muted)">No tasks match this filter</div>'}
+      ${filtered.map(t=>renderTaskRow(t,true)).join("")||'<div style="text-align:center;padding:32px;color:var(--muted)">No tasks match this filter</div>'}
     </div>`;
+}
+
+function renderMaintenance(){
+  const groups=[["overdue","Overdue","var(--danger)"],["due","Due Soon (next 14 days)","var(--warn)"],["later","Scheduled","var(--muted)"]];
+  return`
+    <div class="page-title">Maintenance Schedule</div>
+    <div class="page-sub">Recurring maintenance across the portfolio — the work that prevents the 2 AM phone call</div>
+    ${groups.map(([k,label,color])=>{
+      const list=SCHEDULE.filter(s=>s.due===k);
+      if(!list.length)return"";
+      return`<div class="sched-group-label" style="color:${color}">${label} · ${list.length}</div>
+        <div class="task-list">${list.map(r=>renderSchedRow(r,true)).join("")}</div>`;
+    }).join("")}`;
+}
+
+function renderManagerSystems(){
+  const p=getProp(sysPropFilter);
+  const flagged=propSystems(sysPropFilter).filter(s=>s.status!=="ok").length;
+  return`
+    <div class="page-title">Home Systems Registry</div>
+    <div class="page-sub">Every system on record — make, model, serial, warranty, and full service history</div>
+    <div class="filter-bar">
+      ${PROPS.map(pp=>`<button class="filter-btn ${sysPropFilter===pp.id?"active":""}" onclick="setSysProp(${pp.id})">${pp.name}</button>`).join("")}
+    </div>
+    <div style="margin-bottom:14px;font-size:13px;color:var(--muted)">${propSystems(sysPropFilter).length} systems at ${p.name} · ${flagged?`<span style="color:var(--warn)">${flagged} flagged</span>`:'<span style="color:var(--ok)">all healthy</span>'}</div>
+    ${renderSystemsFor(sysPropFilter)}`;
 }
 
 function renderStaff(){
@@ -438,6 +818,7 @@ function renderStaff(){
           <div class="avatar ${s.av}">${s.initials}</div>
           <div class="staff-name">${s.name}</div>
           <div class="staff-role">${s.role}</div>
+          <div style="margin-bottom:10px"><span class="badge ${s.type==="Vendor"?"badge-violet":"badge-dim"}">${s.type}</span></div>
           <div class="staff-stats">
             <div class="staff-stat"><div class="staff-stat-n">${assigned.length}</div><div class="staff-stat-l">Assigned</div></div>
             <div class="staff-stat"><div class="staff-stat-n" style="color:var(--warn)">${open}</div><div class="staff-stat-l">Open</div></div>
@@ -462,30 +843,50 @@ function renderStaff(){
       </div>
     </div>`;
 }
-
+// ═══════════════════════════════════════════════════════════════════════════════
+//  HOMEOWNER VIEWS
+// ═══════════════════════════════════════════════════════════════════════════════
 function renderHomeownerDashboard(){
   const p=getProp(selectedProp);
   const tasks=propTasks(selectedProp);
   const open=tasks.filter(t=>t.status!=="complete");
   const done=tasks.filter(t=>t.status==="complete");
-  const inv=INVENTORY.filter(i=>i.propId===selectedProp);
+  const systems=propSystems(selectedProp);
+  const flagged=systems.filter(s=>s.status!=="ok");
+  const inv=propInv(selectedProp);
   const invVal=inv.reduce((a,i)=>a+i.val,0);
+  const sched=SCHEDULE.filter(s=>s.propId===selectedProp&&s.due!=="later");
   return`
     <div class="page-title">${p.name}</div>
-    <div class="page-sub">${p.addr}</div>
+    <div class="page-sub">${p.addr} · Saturday, July 11, 2026</div>
     <div class="stat-grid">
-      <div class="stat-card"><div class="stat-label">Open Tasks</div><div class="stat-value stat-accent">${open.length}</div><div class="stat-sub">Requires attention</div></div>
-      <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value">${done.length}</div><div class="stat-sub">This month</div></div>
-      <div class="stat-card"><div class="stat-label">Inventory Items</div><div class="stat-value">${inv.length}</div><div class="stat-sub">Tracked</div></div>
-      <div class="stat-card"><div class="stat-label">Tracked Value</div><div class="stat-value" style="font-size:20px">${fmt(invVal)}</div><div class="stat-sub">Across categories</div></div>
+      <div class="stat-card"><div class="stat-label">Open Requests</div><div class="stat-value stat-accent">${open.length}</div><div class="stat-sub">Being handled for you</div></div>
+      <div class="stat-card"><div class="stat-label">Home Systems</div><div class="stat-value">${systems.length}</div><div class="stat-sub">${flagged.length?`<span style="color:var(--warn)">${flagged.length} need attention</span>`:'<span style="color:var(--ok)">All healthy</span>'}</div></div>
+      <div class="stat-card"><div class="stat-label">Items Documented</div><div class="stat-value">${inv.length}</div><div class="stat-sub">+ ${propConts(selectedProp).length} storage locations</div></div>
+      <div class="stat-card"><div class="stat-label">Documented Value</div><div class="stat-value" style="font-size:20px">${fmt(invVal)}</div><div class="stat-sub">Insurance-ready records</div></div>
     </div>
+    ${flagged.length?`
+    <div class="card" style="margin-bottom:24px;border-color:rgba(245,166,35,0.3)">
+      <div class="card-title">⚠ Systems Needing Attention</div>
+      <div class="task-list">
+        ${flagged.map(s=>{const st=getStaff(s.who);return`<div class="task-row" style="grid-template-columns:34px 1fr auto auto">
+          <div class="sched-icon">${getCat(s.cat).icon}</div>
+          <div class="task-title-col">
+            <div class="task-name">${s.name}</div>
+            <div class="task-meta">${s.notes||s.nextSvc} · ${st.name} is on it</div>
+          </div>
+          ${sysBadge(s.status)}
+          <span class="task-date">${s.nextSvc}</span>
+        </div>`}).join("")}
+      </div>
+    </div>`:""}
     <div class="two-col">
       <div class="card">
         <div class="card-title">Current & Upcoming</div>
         <div class="task-list">
           ${open.length?open.map(t=>{
             const s=getStaff(t.who);
-            return`<div class="task-row">
+            return`<div class="task-row" style="grid-template-columns:22px 1fr auto">
               <div class="task-check">&nbsp;</div>
               <div class="task-title-col">
                 <div class="task-name">${t.title}</div>
@@ -494,41 +895,57 @@ function renderHomeownerDashboard(){
               ${statusBadge(t.status)}
             </div>`;}).join(""):'<div style="text-align:center;padding:24px;color:var(--muted)">All caught up ✓</div>'}
         </div>
+        ${sched.length?`<div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border)">
+          <div class="sys-meta-l" style="margin-bottom:8px">Scheduled maintenance coming up</div>
+          ${sched.map(r=>`<div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:4px 0"><span>${getCat(r.cat).icon} ${r.title}</span><span class="${r.due==='overdue'?'task-date over':''}">${r.next}</span></div>`).join("")}
+        </div>`:""}
       </div>
       <div class="card">
         <div class="card-title">Recently Completed</div>
         <div class="task-list">
           ${done.map(t=>{
             const s=getStaff(t.who);
-            return`<div class="task-row">
+            return`<div class="task-row" style="grid-template-columns:22px 1fr auto">
               <div class="task-check done">✓</div>
               <div class="task-title-col">
                 <div class="task-name done">${t.title}</div>
                 <div class="task-meta">${s.name} · ${t.note||t.date}</div>
               </div>
-            </div>`;}).join("")}
+              <span class="task-date">${t.date}</span>
+            </div>`;}).join("")||'<div style="text-align:center;padding:24px;color:var(--muted)">Nothing yet this month</div>'}
         </div>
       </div>
     </div>`;
+}
+
+function renderHomeownerSystems(){
+  const p=getProp(selectedProp);
+  const systems=propSystems(selectedProp);
+  const flagged=systems.filter(s=>s.status!=="ok").length;
+  return`
+    <div class="page-title">Home Systems</div>
+    <div class="page-sub">Everything that keeps ${p.name} running — electrical, plumbing, HVAC, internet, yard, security — with full service history</div>
+    <div style="margin-bottom:14px;font-size:13px;color:var(--muted)">${systems.length} systems on record · ${flagged?`<span style="color:var(--warn)">${flagged} flagged</span>`:'<span style="color:var(--ok)">all healthy</span>'}</div>
+    ${renderSystemsFor(selectedProp)}`;
 }
 
 function renderRequests(){
   const tasks=propTasks(selectedProp);
   return`
     <div class="page-title">Add a Request</div>
-    <div class="page-sub">Submit a task or concern for your property manager</div>
+    <div class="page-sub">Submit a task or concern — your property manager routes it to the right person</div>
     <div class="req-form">
       <div class="form-row">
         <div class="form-label">What needs attention?</div>
-        <input type="text" id="req-title" placeholder="e.g. Pool light is flickering, Need gutters cleaned...">
+        <input type="text" id="req-title" placeholder="e.g. Pool light flickering, Wi-Fi slow upstairs, sprinkler zone not running...">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div class="form-row">
           <div class="form-label">Category</div>
           <select id="req-cat">
             <option>Plumbing</option><option>Electrical</option><option>HVAC</option>
-            <option>Landscaping</option><option>Cleaning</option><option>Maintenance</option>
-            <option>Security</option><option>Other</option>
+            <option>Internet</option><option>Yard Work</option><option>Pool & Spa</option>
+            <option>Cleaning</option><option>Security</option><option>Maintenance</option><option>Other</option>
           </select>
         </div>
         <div class="form-row">
@@ -542,7 +959,7 @@ function renderRequests(){
       </div>
       <div class="form-row">
         <div class="form-label">Additional notes</div>
-        <textarea id="req-note" rows="3" placeholder="Any helpful details, photos description, location in the home..."></textarea>
+        <textarea id="req-note" rows="3" placeholder="Any helpful details, location in the home, photos description..."></textarea>
       </div>
       <button class="submit-btn" onclick="submitRequest()">Submit Request</button>
     </div>
@@ -551,7 +968,7 @@ function renderRequests(){
       <div class="task-list">
         ${tasks.map(t=>{
           const s=getStaff(t.who);
-          return`<div class="task-row">
+          return`<div class="task-row" style="grid-template-columns:22px 1fr auto auto">
             <div class="task-check ${t.status==="complete"?"done":""}">${t.status==="complete"?"✓":""}</div>
             <div class="task-title-col">
               <div class="task-name ${t.status==="complete"?"done":""}">${t.title}</div>
@@ -562,6 +979,97 @@ function renderRequests(){
           </div>`;}).join("")}
       </div>
     </div>`;
+}
+
+function renderInventoryView(){
+  const inv=propInv(selectedProp);
+  const rooms=[...new Set(inv.map(i=>i.containerId?getContainer(i.containerId).label:i.room))];
+  const filtered=invRoom==="all"?inv:inv.filter(i=>(i.containerId?getContainer(i.containerId).label:i.room)===invRoom);
+  const totalVal=inv.reduce((a,i)=>a+i.val,0);
+  const viewVal=filtered.reduce((a,i)=>a+i.val,0);
+  const receipts=inv.filter(i=>i.receipt).length;
+  const photos=inv.reduce((a,i)=>a+i.photos,0);
+  return`
+    <div class="page-title">Home Inventory</div>
+    <div class="page-sub">Every item documented — serials, receipts, photos, values. Ready for an insurance claim before you ever need one.</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-label">Items</div><div class="stat-value">${inv.length}</div><div class="stat-sub">${photos} photos attached</div></div>
+      <div class="stat-card"><div class="stat-label">Documented Value</div><div class="stat-value" style="font-size:22px">${fmt(totalVal)}</div><div class="stat-sub">Estimated replacement</div></div>
+      <div class="stat-card"><div class="stat-label">Receipts on File</div><div class="stat-value">${receipts}<span style="font-size:15px;color:var(--muted)"> / ${inv.length}</span></div><div class="stat-sub">Proof of purchase</div></div>
+      <div class="stat-card" style="display:flex;flex-direction:column;justify-content:center;gap:8px">
+        <button class="submit-btn" style="width:100%" onclick="insuranceReport()">📄 Insurance Report</button>
+        <button class="ghost-btn" style="width:100%" onclick="toast('📷 In the full app: snap a photo, and the item — name, serial, value — is added automatically.')">+ Add Item</button>
+      </div>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn ${invRoom==="all"?"active":""}" onclick="setInvRoom('all')">All Locations</button>
+      ${rooms.map(r=>`<button class="filter-btn ${invRoom===r?"active":""}" onclick="setInvRoom('${r.replace(/'/g,"\\'")}')">${r}</button>`).join("")}
+    </div>
+    <div style="margin-bottom:16px;display:flex;align-items:center;gap:12px">
+      <span style="font-size:13px;color:var(--muted)">${filtered.length} items ·</span>
+      <span class="badge badge-gold">${fmt(viewVal)} in view</span>
+    </div>
+    <div class="inv-grid">
+      ${filtered.map(renderInvCard).join("")}
+      ${!filtered.length?'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">No items in this location</div>':""}
+    </div>`;
+}
+
+function renderStorage(){
+  const conts=propConts(selectedProp);
+  const totalItems=conts.reduce((a,c)=>a+contItemCount(c),0);
+  return`
+    <div class="page-title">Storage & Bins</div>
+    <div class="page-sub">Bins, safes, closets, attic totes, offsite units — labeled once, findable forever</div>
+    <div style="margin-bottom:16px;display:flex;align-items:center;gap:12px">
+      <span class="badge badge-gold">${conts.length} storage locations</span>
+      <span class="badge badge-dim">${totalItems} items stored</span>
+      <button class="ghost-btn" style="margin-left:auto" onclick="toast('🏷️ In the full app: print a QR label for each bin — scan it with your phone to see the contents without opening the box.')">🏷️ Print QR Labels</button>
+    </div>
+    <div class="cont-grid">${conts.map(renderContCard).join("")}</div>`;
+}
+
+function findResults(q){
+  q=q.trim().toLowerCase();
+  if(!q)return"";
+  const hits=[];
+  propInv(selectedProp).forEach(i=>{
+    if((i.name+" "+i.cat+" "+i.room+" "+i.notes).toLowerCase().includes(q)){
+      const c=getContainer(i.containerId);
+      hits.push({icon:i.icon,name:i.name,where:c?`In <b>${c.label}</b> — ${c.loc}`:`<b>${i.room}</b>${i.notes?` — ${i.notes}`:""}`,val:fmt(i.val)});
+    }
+  });
+  propConts(selectedProp).forEach(c=>{
+    c.loose.forEach(x=>{
+      if(x.toLowerCase().includes(q))hits.push({icon:c.icon,name:x,where:`In <b>${c.label}</b> — ${c.loc}`,val:""});
+    });
+    if((c.label+" "+c.type+" "+c.loc).toLowerCase().includes(q))
+      hits.push({icon:c.icon,name:c.label,where:`${c.type} — ${c.loc} · ${contItemCount(c)} items inside`,val:""});
+  });
+  if(!hits.length)return`<div style="text-align:center;padding:30px;color:var(--muted)">Nothing found for “${q}” — in the full app, this searches photos too.</div>`;
+  return hits.map(h=>`
+    <div class="result-row">
+      <div class="result-icon">${h.icon}</div>
+      <div style="min-width:0;flex:1">
+        <div class="result-name">${h.name}</div>
+        <div class="result-where">${h.where}</div>
+      </div>
+      ${h.val?`<span class="inv-value">${h.val}</span>`:""}
+    </div>`).join("");
+}
+function onFindInput(el){
+  findQuery=el.value;
+  document.getElementById("find-results").innerHTML=findResults(findQuery);
+}
+function renderFind(){
+  return`
+    <div class="page-title">Find My Stuff</div>
+    <div class="page-sub">One search across every room, bin, safe, closet, and storage unit</div>
+    <div class="search-hero">
+      <input type="text" id="find-input" value="${findQuery.replace(/"/g,"&quot;")}" placeholder="Try: christmas, passport, watch, coin, wedding..." oninput="onFindInput(this)" autocomplete="off">
+      <div class="search-hint">Searches item names, categories, notes, bin contents, and locations</div>
+    </div>
+    <div id="find-results">${findResults(findQuery)}</div>`;
 }
 
 function renderHandlers(){
@@ -589,8 +1097,8 @@ function renderHandlers(){
       <div class="task-list">
         ${tasks.map(t=>{
           const s=getStaff(t.who);
-          return`<div class="task-row">
-            <div class="avatar ${s.av}" style="width:28px;height:28px;font-size:11px;flex-shrink:0">${s.initials}</div>
+          return`<div class="task-row" style="grid-template-columns:34px 1fr auto auto">
+            <div class="avatar ${s.av}" style="width:28px;height:28px;font-size:11px;flex-shrink:0;margin:0">${s.initials}</div>
             <div class="task-title-col">
               <div class="task-name">${t.title}</div>
               <div class="task-meta">${s.name} · ${s.role}</div>
@@ -602,84 +1110,61 @@ function renderHandlers(){
     </div>`;
 }
 
-function renderInventory(propId){
-  const inv=INVENTORY.filter(i=>i.propId===propId);
-  const rooms=[...new Set(inv.map(i=>i.room))];
-  const filtered=invRoom==="all"?inv:inv.filter(i=>i.room===invRoom);
-  const totalVal=filtered.reduce((a,i)=>a+i.val,0);
-  return`
-    <div class="page-title">Inventory</div>
-    <div class="page-sub">${inv.length} items tracked · Total value ${fmt(inv.reduce((a,i)=>a+i.val,0))}</div>
-    <div class="filter-bar">
-      <button class="filter-btn ${invRoom==="all"?"active":""}" onclick="setInvRoom('all')">All Rooms</button>
-      ${rooms.map(r=>`<button class="filter-btn ${invRoom===r?"active":""}" onclick="setInvRoom('${r}')">${r}</button>`).join("")}
-    </div>
-    <div style="margin-bottom:16px;display:flex;align-items:center;gap:12px">
-      <span style="font-size:13px;color:var(--muted)">${filtered.length} items · </span>
-      <span class="badge badge-gold">${fmt(totalVal)} in view</span>
-    </div>
-    <div class="inv-grid">
-      ${filtered.map(item=>`
-        <div class="inv-card">
-          <div class="inv-header">
-            <div class="inv-icon" style="background:${catColor(item.cat)}22">${item.icon}</div>
-            <div style="min-width:0">
-              <div class="inv-name">${item.name}</div>
-              <div class="inv-room">📍 ${item.room}</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <span class="badge" style="background:${catColor(item.cat)}22;color:${catColor(item.cat)}">${item.cat}</span>
-            ${item.qty>1?`<span class="badge badge-dim">Qty: ${item.qty}</span>`:""}
-          </div>
-          ${item.notes?`<div class="inv-notes">${item.notes}</div>`:""}
-          <div class="inv-footer">
-            <div class="inv-value">${fmt(item.val)}</div>
-            <span class="badge badge-dim">Est. value</span>
-          </div>
-        </div>`).join("")}
-      ${!filtered.length?'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">No items in this room</div>':""}
-    </div>`;
-}
-
-// ── Actions ────────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+//  ACTIONS
+// ═══════════════════════════════════════════════════════════════════════════════
 function toggleTask(id){
   const t=TASKS.find(t=>t.id===id);
   if(!t)return;
   const cycle=["pending","in-progress","complete"];
   t.status=cycle[(cycle.indexOf(t.status)+1)%cycle.length];
+  if(t.status==="complete")t.over=false;
   renderAll();
 }
-
 function submitRequest(){
   const title=document.getElementById("req-title").value.trim();
-  if(!title){alert("Please enter a task description.");return;}
+  if(!title){toast("Please describe what needs attention.");return;}
   const cat=document.getElementById("req-cat").value;
   const priority=document.getElementById("req-priority").value;
   const note=document.getElementById("req-note").value.trim();
-  TASKS.push({id:nextTaskId++,propId:selectedProp,title,cat,status:"pending",who:5,priority,date:"Apr "+Math.floor(Math.random()*20+2),note});
-  view="requests";
+  TASKS.push({id:nextTaskId++,propId:selectedProp,title,cat,status:"pending",who:5,priority,date:"Jul "+(12+TASKS.length%15),over:false,note});
   renderAll();
+  toast(`✓ Request submitted — your property manager has been notified.`);
+}
+function insuranceReport(){
+  const inv=propInv(selectedProp);
+  const val=inv.reduce((a,i)=>a+i.val,0);
+  const receipts=inv.filter(i=>i.receipt).length;
+  const photos=inv.reduce((a,i)=>a+i.photos,0);
+  toast(`📄 <b>Insurance report generated</b><br>${inv.length} items · ${fmt(val)} documented · ${photos} photos · ${receipts} receipts. In the full app this exports a PDF your adjuster will love.`);
 }
 
-// ── Render All ─────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════════════════
+//  RENDER
+// ═══════════════════════════════════════════════════════════════════════════════
 function renderAll(){
   document.getElementById("sidebar").innerHTML=renderSidebar();
   let content="";
   if(role==="manager"){
-    if(view==="dashboard")content=renderManagerDashboard();
+    if(detailProp)content=renderPropDetail();
+    else if(view==="dashboard")content=renderManagerDashboard();
     else if(view==="properties")content=renderProperties();
-    else if(view==="tasks")content=renderTasks(TASKS,true);
+    else if(view==="tasks")content=renderTasksView();
+    else if(view==="maintenance")content=renderMaintenance();
+    else if(view==="systems")content=renderManagerSystems();
     else if(view==="staff")content=renderStaff();
   } else {
     if(view==="dashboard")content=renderHomeownerDashboard();
+    else if(view==="systems")content=renderHomeownerSystems();
     else if(view==="requests")content=renderRequests();
+    else if(view==="inventory")content=renderInventoryView();
+    else if(view==="storage")content=renderStorage();
+    else if(view==="find")content=renderFind();
     else if(view==="handlers")content=renderHandlers();
-    else if(view==="inventory")content=renderInventory(selectedProp);
   }
   document.getElementById("main").innerHTML=content;
+  if(view==="find"&&role==="homeowner"){const el=document.getElementById("find-input");if(el)el.focus();}
 }
-
 renderAll();
 </script>
 </body>
