@@ -9,47 +9,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --night:      #08182A;
-  --night-2:    #0F2740;
-  --night-3:    #143251;
-  --night-line: #1D3A57;
-  --day:        #F1F4F7;
-  --day-2:      #FFFFFF;
-  --day-line:   #D6DEE6;
-  --ink:        #0A1F35;
-  --ink-dim:    #55708A;
-  --paint:      #E9EFF5;
-  --paint-dim:  #90A8BF;
-  --taxi:       #3B8FE8;
-  --papi:       #FF9A1F;
-  --papi-deep:  #E07C00;
-  --thresh:     #34C27F;
-
-  --display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-  --body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  --data: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-
-  --pad: clamp(20px, 5vw, 72px);
-  --maxw: 1180px;
+  --night:#08182A; --night-2:#0F2740; --night-3:#143251; --night-line:#1D3A57;
+  --day:#F1F4F7; --day-2:#FFFFFF; --day-line:#D6DEE6;
+  --ink:#0A1F35; --ink-dim:#55708A;
+  --paint:#E9EFF5; --paint-dim:#90A8BF;
+  --taxi:#3B8FE8; --papi:#FF9A1F; --papi-deep:#E07C00; --thresh:#34C27F;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  --data:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --pad:clamp(20px,5vw,72px); --maxw:1180px;
 }
-
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{margin:0;background:var(--day);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 img{max-width:100%;display:block;}
 a{color:inherit;}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
-
-h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-0.03em;line-height:1.02;margin:0;}
-h1{font-size:clamp(42px,7.2vw,86px);}
-h2{font-size:clamp(30px,4.4vw,52px);}
-h3{font-size:20px;letter-spacing:-0.015em;}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:0;}
+h1{font-size:clamp(40px,6.6vw,80px);}
+h2{font-size:clamp(29px,4.2vw,50px);}
+h3{font-size:20px;letter-spacing:-.015em;}
 p{margin:0 0 1em;}
-
 .eyebrow{font-family:var(--data);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;}
 .eyebrow--night{color:var(--taxi);}
 .eyebrow--day{color:var(--papi-deep);}
-.lede{font-size:clamp(17px,2vw,20px);line-height:1.6;color:var(--ink-dim);max-width:60ch;}
+.lede{font-size:clamp(17px,2vw,20px);line-height:1.6;color:var(--ink-dim);max-width:62ch;}
 .lede--night{color:var(--paint-dim);}
 
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--data);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border-radius:2px;border:1px solid transparent;transition:transform .18s ease,background .18s ease,border-color .18s ease,color .18s ease;cursor:pointer;}
@@ -62,25 +46,39 @@ p{margin:0 0 1em;}
 .btn .arrow{transition:transform .18s ease;}
 .btn:hover .arrow{transform:translateX(4px);}
 
-/* nav */
-.nav{position:sticky;top:0;z-index:60;background:rgba(8,24,42,.94);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--night-line);}
-.nav__in{display:flex;align-items:center;gap:26px;height:70px;}
-.mark{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;}
-.mark__glyph{width:34px;height:34px;flex:none;border:1.5px solid var(--taxi);border-radius:2px;display:grid;place-items:center;font-family:var(--data);font-weight:600;font-size:12px;color:var(--taxi);}
-.mark__txt{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.02em;color:var(--paint);line-height:1.1;}
-.mark__sub{font-family:var(--data);font-size:10px;letter-spacing:.18em;color:var(--paint-dim);text-transform:uppercase;}
-.nav__links{display:flex;gap:24px;}
-.nav__links a{font-family:var(--data);font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--paint-dim);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .16s ease,border-color .16s ease;}
-.nav__links a:hover{color:var(--paint);border-bottom-color:var(--papi);}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:80;background:rgba(8,24,42,.95);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--night-line);}
+.nav__in{display:flex;align-items:center;gap:20px;min-height:78px;}
+.logo{display:block;margin-right:auto;text-decoration:none;}
+.logo svg{height:44px;width:auto;display:block;}
+.nav__links{display:flex;gap:19px;align-items:center;}
+.nav__links a{font-family:var(--data);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paint-dim);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;transition:color .16s,border-color .16s;white-space:nowrap;}
+.nav__links a:hover,.nav__links a.is-active{color:var(--paint);border-bottom-color:var(--papi);}
+.nav__social{display:flex;gap:10px;align-items:center;padding-left:6px;border-left:1px solid var(--night-line);margin-left:2px;}
+.nav__social a{color:var(--paint-dim);transition:color .16s;}
+.nav__social a:hover{color:var(--papi);}
+.nav__social svg{width:17px;height:17px;display:block;}
 .nav__tel{font-family:var(--data);font-size:13px;font-weight:600;color:var(--papi);text-decoration:none;white-space:nowrap;}
-@media(max-width:960px){.nav__links{display:none;}}
+.burger{display:none;background:none;border:1px solid var(--night-line);color:var(--paint);padding:9px 12px;border-radius:2px;font-family:var(--data);font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;}
+@media(max-width:1180px){
+  .burger{display:block;}
+  .nav__links{position:absolute;top:100%;left:0;right:0;background:var(--night);border-bottom:1px solid var(--night-line);flex-direction:column;align-items:flex-start;gap:0;padding:8px var(--pad) 20px;display:none;}
+  .nav__links.open{display:flex;}
+  .nav__links a{padding:13px 0;width:100%;border-bottom:1px solid var(--night-line);font-size:13px;}
+  .nav__social{border-left:0;padding-left:0;margin-top:14px;}
+  .nav__tel{display:none;}
+}
 
-/* hero */
+/* ---------- pages ---------- */
+[data-page]{display:none;}
+[data-page].active{display:block;}
+
+/* ---------- hero ---------- */
 .hero{position:relative;background:var(--night);color:var(--paint);overflow:hidden;}
 .hero__field{position:absolute;inset:0;width:100%;height:100%;}
 .hero__jet{position:absolute;right:-2%;bottom:8%;width:min(62%,760px);opacity:.9;pointer-events:none;}
-.hero__veil{position:absolute;inset:0;background:radial-gradient(120% 80% at 46% 92%, rgba(8,24,42,.10) 0%, rgba(8,24,42,.80) 60%, var(--night) 100%),linear-gradient(180deg, rgba(8,24,42,.92) 0%, rgba(8,24,42,.22) 32%, rgba(8,24,42,.60) 100%);}
-.hero__in{position:relative;padding-top:clamp(64px,10vw,112px);}
+.hero__veil{position:absolute;inset:0;background:radial-gradient(120% 80% at 46% 92%,rgba(8,24,42,.10) 0%,rgba(8,24,42,.80) 60%,var(--night) 100%),linear-gradient(180deg,rgba(8,24,42,.92) 0%,rgba(8,24,42,.22) 32%,rgba(8,24,42,.60) 100%);}
+.hero__in{position:relative;padding-top:clamp(60px,9vw,108px);}
 .hero h1{margin:18px 0 22px;max-width:15ch;}
 .hero h1 em{font-style:normal;color:var(--papi);}
 .hero__col{max-width:640px;}
@@ -88,7 +86,6 @@ p{margin:0 0 1em;}
 .hero__status{display:inline-flex;align-items:center;gap:9px;font-family:var(--data);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--paint-dim);margin-top:34px;}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--thresh);box-shadow:0 0 0 3px rgba(52,194,127,.18);}
 
-/* arrival brief */
 .brief{position:relative;z-index:5;margin-top:clamp(46px,6vw,76px);transform:translateY(46px);background:var(--night-2);border:1px solid var(--night-line);border-top:2px solid var(--papi);box-shadow:0 30px 70px -30px rgba(0,0,0,.85);}
 .brief__bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:11px 20px;border-bottom:1px solid var(--night-line);font-family:var(--data);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paint-dim);}
 .brief__bar b{color:var(--paint);font-weight:600;}
@@ -96,67 +93,52 @@ p{margin:0 0 1em;}
 .cell{padding:20px;border-right:1px solid var(--night-line);}
 .cell:last-child{border-right:0;}
 .cell__k{font-family:var(--data);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paint-dim);display:block;margin-bottom:9px;}
-.cell__v{font-family:var(--data);font-size:22px;font-weight:600;color:var(--paint);line-height:1.15;}
+.cell__v{font-family:var(--data);font-size:20px;font-weight:600;color:var(--paint);line-height:1.15;}
 .cell__v small{display:block;font-size:12px;font-weight:400;color:var(--paint-dim);letter-spacing:.04em;margin-top:5px;}
-.cell--fuel .cell__v{color:var(--papi);}
+.cell--hi .cell__v{color:var(--papi);}
 @media(max-width:900px){
   .brief__grid{grid-template-columns:repeat(2,1fr);}
   .cell{border-bottom:1px solid var(--night-line);}
   .cell:nth-child(2n){border-right:0;}
   .cell:last-child{grid-column:1/-1;border-bottom:0;}
-  .hero__jet{width:105%;right:-14%;bottom:auto;top:12%;opacity:.42;}
+  .hero__jet{width:105%;right:-14%;bottom:auto;top:12%;opacity:.4;}
 }
 
-/* sections */
-.sec{padding:clamp(72px,10vw,124px) 0;}
-.sec--first{padding-top:clamp(104px,12vw,152px);}
+/* ---------- page header (inner pages) ---------- */
+.phead{background:var(--night);color:var(--paint);padding:clamp(56px,8vw,96px) 0 clamp(44px,6vw,72px);position:relative;overflow:hidden;}
+.phead__jet{position:absolute;right:-4%;top:10%;width:min(46%,520px);opacity:.35;color:#0C2138;pointer-events:none;}
+.phead h1{position:relative;margin:14px 0 18px;max-width:18ch;font-size:clamp(34px,5.4vw,62px);}
+.phead .lede{position:relative;}
+.crumb{font-family:var(--data);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--taxi);}
+.crumb a{text-decoration:none;}
+.crumb a:hover{color:var(--papi);}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(68px,9vw,116px) 0;}
+.sec--first{padding-top:clamp(100px,11vw,146px);}
 .sec--white{background:var(--day-2);}
 .sec--night{background:var(--night);color:var(--paint);}
-.sec--night h2{color:#fff;}
-.sec__head{max-width:64ch;margin-bottom:52px;}
+.sec--night h2,.sec--night h3{color:#fff;}
+.sec__head{max-width:64ch;margin-bottom:50px;}
 .sec__head h2{margin:14px 0 18px;}
 
-/* PHOTO PLATES */
+/* ---------- plates ---------- */
 .plates{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--night-line);border:1px solid var(--night-line);}
-@media(max-width:900px){.plates{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:520px){.plates{grid-template-columns:1fr;}}
+.plates--3{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.plates,.plates--3{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.plates,.plates--3{grid-template-columns:1fr;}}
 .plate{position:relative;background:var(--night-2);aspect-ratio:4/3;overflow:hidden;display:block;}
 .plate svg,.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .plate__cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(180deg,rgba(8,24,42,0),rgba(8,24,42,.92));z-index:2;}
-.plate__cap b{display:block;font-family:var(--display);font-weight:600;font-size:15px;color:#fff;letter-spacing:-.01em;}
+.plate__cap b{display:block;font-family:var(--display);font-weight:600;font-size:15px;color:#fff;}
 .plate__cap span{font-family:var(--data);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--paint-dim);}
 .plate__tag{position:absolute;top:12px;left:12px;z-index:2;font-family:var(--data);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--taxi);border:1px solid var(--night-line);background:rgba(8,24,42,.6);padding:4px 8px;}
-.plates__note{font-family:var(--data);font-size:11px;letter-spacing:.06em;color:var(--paint-dim);margin:16px 0 0;}
+.plates__note{font-family:var(--data);font-size:11px;color:var(--paint-dim);margin:16px 0 0;}
+.sec--white .plates__note,.sec:not(.sec--night) .plates__note{color:var(--ink-dim);}
 
-/* comparator */
-.calc{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--day-line);background:var(--day-2);}
-.calc__controls{padding:clamp(26px,4vw,44px);border-right:1px solid var(--day-line);}
-.calc__out{padding:clamp(26px,4vw,44px);background:var(--night);color:var(--paint);}
-.field{margin-bottom:28px;}
-.field:last-child{margin-bottom:0;}
-.field__label{font-family:var(--data);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);display:block;margin-bottom:12px;}
-.chips{display:flex;flex-wrap:wrap;gap:8px;}
-.chip{font-family:var(--data);font-size:12px;font-weight:500;padding:9px 14px;border:1px solid var(--day-line);background:transparent;color:var(--ink);cursor:pointer;border-radius:2px;transition:all .16s ease;}
-.chip:hover{border-color:var(--ink-dim);}
-.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink);}
-input[type=range]{width:100%;accent-color:var(--papi-deep);height:26px;cursor:pointer;}
-.gal{font-family:var(--data);font-size:32px;font-weight:600;color:var(--ink);display:flex;align-items:baseline;gap:8px;margin-bottom:6px;}
-.gal span{font-size:13px;font-weight:400;color:var(--ink-dim);letter-spacing:.14em;text-transform:uppercase;}
-.out__k{font-family:var(--data);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paint-dim);}
-.out__save{font-family:var(--display);font-weight:800;font-size:clamp(46px,7vw,72px);color:var(--papi);letter-spacing:-.04em;line-height:1;margin:10px 0 4px;}
-.out__note{font-size:14px;color:var(--paint-dim);margin:0 0 26px;}
-.tbl{width:100%;border-collapse:collapse;font-family:var(--data);font-size:14px;}
-.tbl th{text-align:left;font-weight:500;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--paint-dim);padding:0 0 10px;border-bottom:1px solid var(--night-line);}
-.tbl td{padding:13px 0;border-bottom:1px solid var(--night-line);color:var(--paint);}
-.tbl td:last-child,.tbl th:last-child{text-align:right;}
-.tbl tr:last-child td{border-bottom:0;}
-.tbl .them{color:var(--paint-dim);}
-.calc__fine{font-family:var(--data);font-size:11px;line-height:1.7;color:var(--paint-dim);margin:22px 0 0;}
-@media(max-width:860px){.calc{grid-template-columns:1fr;}.calc__controls{border-right:0;border-bottom:1px solid var(--day-line);}}
-
-/* services */
+/* ---------- services ---------- */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--day-line);border-left:1px solid var(--day-line);}
-.svc__item{padding:32px 28px;border-right:1px solid var(--day-line);border-bottom:1px solid var(--day-line);background:var(--day-2);transition:background .2s ease;}
+.svc__item{padding:32px 28px;border-right:1px solid var(--day-line);border-bottom:1px solid var(--day-line);background:var(--day-2);transition:background .2s;}
 .svc__item:hover{background:#FAFCFE;}
 .svc__ico{width:34px;height:34px;margin-bottom:16px;color:var(--papi-deep);}
 .svc__item h3{margin-bottom:10px;}
@@ -165,7 +147,7 @@ input[type=range]{width:100%;accent-color:var(--papi-deep);height:26px;cursor:po
 @media(max-width:900px){.svc{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.svc{grid-template-columns:1fr;}}
 
-/* split + stats */
+/* ---------- split / stats ---------- */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center;}
 @media(max-width:860px){.split{grid-template-columns:1fr;}}
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--day-line);border:1px solid var(--day-line);}
@@ -177,601 +159,876 @@ input[type=range]{width:100%;accent-color:var(--papi-deep);height:26px;cursor:po
 .ticks li::before{content:"";position:absolute;left:2px;top:20px;width:9px;height:9px;border-radius:50%;background:var(--taxi);box-shadow:0 0 0 3px rgba(59,143,232,.16);}
 .sec--night .ticks li{border-bottom-color:var(--night-line);color:var(--paint);}
 
-/* diagram frames */
+/* ---------- frames ---------- */
 .frame{background:var(--night-2);border:1px solid var(--night-line);padding:clamp(16px,2.4vw,26px);}
 .frame--light{background:var(--day-2);border-color:var(--day-line);}
 .frame__bar{display:flex;justify-content:space-between;gap:14px;font-family:var(--data);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--paint-dim);margin-bottom:16px;}
 .frame--light .frame__bar{color:var(--ink-dim);}
-.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-family:var(--data);font-size:11px;letter-spacing:.06em;color:var(--paint-dim);}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-family:var(--data);font-size:11px;color:var(--paint-dim);}
 .legend i{display:inline-block;width:12px;height:12px;margin-right:7px;vertical-align:-2px;border-radius:2px;}
 
-/* contact */
-.close{background:var(--night);color:var(--paint);padding:clamp(72px,10vw,120px) 0 0;position:relative;overflow:hidden;}
-.close__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);}
-@media(max-width:860px){.close__grid{grid-template-columns:1fr;}}
-.close h2{color:#fff;margin:14px 0 20px;}
+/* ---------- fuel callout (no pricing) ---------- */
+.fuelcard{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid var(--day-line);background:var(--day-2);}
+@media(max-width:860px){.fuelcard{grid-template-columns:1fr;}}
+.fuelcard__body{padding:clamp(28px,4vw,48px);}
+.fuelcard__side{background:var(--night);color:var(--paint);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:center;}
+.fuelcard__side .k{font-family:var(--data);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paint-dim);}
+.fuelcard__side .big{font-family:var(--display);font-weight:800;font-size:clamp(30px,3.6vw,42px);letter-spacing:-.03em;color:#fff;margin:10px 0 6px;line-height:1.05;}
+.fuelcard__side p{color:var(--paint-dim);font-size:15px;}
+
+/* ---------- news ---------- */
+.news{border-top:1px solid var(--day-line);}
+.news__item{display:grid;grid-template-columns:170px 1fr auto;gap:28px;align-items:start;padding:30px 0;border-bottom:1px solid var(--day-line);text-decoration:none;}
+.news__item:hover h3{color:var(--papi-deep);}
+.news__meta{font-family:var(--data);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);padding-top:4px;}
+.news__meta b{display:block;color:var(--papi-deep);font-weight:600;margin-bottom:6px;}
+.news__item h3{margin-bottom:8px;transition:color .16s;}
+.news__item p{font-size:15.5px;color:var(--ink-dim);margin:0;max-width:62ch;}
+.news__go{font-family:var(--data);font-size:18px;color:var(--ink-dim);padding-top:4px;}
+@media(max-width:760px){.news__item{grid-template-columns:1fr;gap:10px;}.news__go{display:none;}}
+
+/* ---------- forms ---------- */
+.formwrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,64px);align-items:start;}
+@media(max-width:900px){.formwrap{grid-template-columns:1fr;}}
+.form{background:var(--night-2);border:1px solid var(--night-line);padding:clamp(24px,3.4vw,36px);}
+.form--light{background:var(--day-2);border-color:var(--day-line);}
+.form__grp{border-top:1px solid var(--night-line);margin-top:26px;padding-top:22px;}
+.form--light .form__grp{border-top-color:var(--day-line);}
+.form__grp:first-of-type{border-top:0;margin-top:0;padding-top:0;}
+.form__legend{font-family:var(--data);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--papi);margin-bottom:18px;}
+.form--light .form__legend{color:var(--papi-deep);}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form__row--3{grid-template-columns:1fr 1fr 1fr;}
+@media(max-width:560px){.form__row,.form__row--3{grid-template-columns:1fr;}}
+.form label{display:block;margin-bottom:14px;}
+.form .lab{font-family:var(--data);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--paint-dim);display:block;margin-bottom:7px;}
+.form--light .lab{color:var(--ink-dim);}
+.form .req{color:var(--papi);}
+.form input,.form select,.form textarea{width:100%;background:var(--night);border:1px solid var(--night-line);color:var(--paint);font-family:var(--body);font-size:15px;padding:12px 13px;border-radius:2px;}
+.form--light input,.form--light select,.form--light textarea{background:#FAFCFE;border-color:var(--day-line);color:var(--ink);}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--taxi);outline-offset:1px;border-color:var(--taxi);}
+.form textarea{resize:vertical;min-height:90px;}
+.form .btn{width:100%;justify-content:center;margin-top:10px;}
+.form__ok{display:none;margin-top:14px;font-family:var(--data);font-size:12px;color:var(--thresh);}
+.form__ok.show{display:block;}
+.checkline{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--paint-dim);margin-bottom:12px;}
+.form--light .checkline{color:var(--ink-dim);}
+.checkline input{width:auto;flex:none;margin-top:4px;}
+
+.aside{background:var(--day-2);border:1px solid var(--day-line);padding:clamp(24px,3vw,32px);}
+.aside--night{background:var(--night-2);border-color:var(--night-line);color:var(--paint);}
+.aside h3{margin-bottom:12px;}
+.aside p{font-size:15px;color:var(--ink-dim);}
+.aside--night p{color:var(--paint-dim);}
+
+/* ---------- contact ---------- */
 .contact-list{list-style:none;padding:0;margin:32px 0 0;}
 .contact-list li{padding:16px 0;border-bottom:1px solid var(--night-line);display:flex;justify-content:space-between;gap:18px;align-items:baseline;}
 .contact-list .k{font-family:var(--data);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--paint-dim);}
 .contact-list .v{font-family:var(--data);font-size:15px;color:var(--paint);text-align:right;text-decoration:none;}
 .contact-list a.v:hover{color:var(--papi);}
-.form{background:var(--night-2);border:1px solid var(--night-line);padding:clamp(24px,3.4vw,34px);}
-.form__row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-@media(max-width:520px){.form__row{grid-template-columns:1fr;}}
-.form label{display:block;margin-bottom:14px;}
-.form .lab{font-family:var(--data);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--paint-dim);display:block;margin-bottom:7px;}
-.form input,.form select,.form textarea{width:100%;background:var(--night);border:1px solid var(--night-line);color:var(--paint);font-family:var(--body);font-size:15px;padding:12px 13px;border-radius:2px;}
-.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--taxi);outline-offset:1px;border-color:var(--taxi);}
-.form textarea{resize:vertical;min-height:84px;}
-.form .btn{width:100%;justify-content:center;margin-top:8px;}
-.form__ok{display:none;margin-top:14px;font-family:var(--data);font-size:12px;color:var(--thresh);}
-.form__ok.show{display:block;}
-.foot{margin-top:clamp(56px,8vw,92px);border-top:1px solid var(--night-line);padding:26px 0;}
-.foot__in{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-family:var(--data);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--paint-dim);}
-.foot__in a{color:var(--paint-dim);text-decoration:none;}
-.foot__in a:hover{color:var(--papi);}
+
+/* ---------- footer ---------- */
+.sitefoot{background:var(--night);color:var(--paint);padding:clamp(56px,7vw,84px) 0 0;}
+.foot__cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:44px;}
+@media(max-width:900px){.foot__cols{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.foot__cols{grid-template-columns:1fr;}}
+.foot__cols h4{font-family:var(--data);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paint-dim);margin:0 0 16px;font-weight:600;}
+.foot__cols ul{list-style:none;padding:0;margin:0;}
+.foot__cols li{margin-bottom:10px;}
+.foot__cols a{font-size:15px;color:var(--paint);text-decoration:none;}
+.foot__cols a:hover{color:var(--papi);}
+.foot__logo svg{height:46px;width:auto;margin-bottom:18px;}
+.foot__cols p{font-size:14.5px;color:var(--paint-dim);max-width:34ch;}
+.social{display:flex;gap:12px;margin-top:20px;}
+.social a{width:38px;height:38px;border:1px solid var(--night-line);border-radius:2px;display:grid;place-items:center;color:var(--paint-dim);transition:all .16s;}
+.social a:hover{color:var(--papi);border-color:var(--papi);transform:translateY(-2px);}
+.social svg{width:18px;height:18px;}
+.foot__bar{border-top:1px solid var(--night-line);padding:24px 0;}
+.foot__bar-in{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-family:var(--data);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--paint-dim);}
+.foot__bar-in a{text-decoration:none;}
+.foot__bar-in a:hover{color:var(--papi);}
 .kane{background:#1B5E20;color:#fff;}
 .kane__in{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:14px 0;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;}
 .kane b{font-weight:700;}
 .kane .accent{color:#FFB74D;}
 
 :focus-visible{outline:2px solid var(--papi);outline-offset:3px;}
-@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important;}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
 </style>
 </head>
 <body>
 
-<!-- ================= SHARED SVG SYMBOLS ================= -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <!-- Business jet, side profile -->
-    <symbol id="jet" viewBox="0 0 440 160">
-      <g fill="currentColor">
-        <path d="M26,92 C32,76 58,67 100,64 L300,58 C324,57 342,62 358,71 L392,88 L358,101 C342,108 322,110 300,110 L62,110 C38,110 22,101 26,92 Z"/>
-        <path d="M156,106 L246,106 L206,146 L124,146 Z" opacity=".78"/>
-        <path d="M320,64 L360,10 L392,10 L396,17 L346,68 Z"/>
-        <path d="M352,10 L426,4 L428,13 L354,19 Z"/>
-        <ellipse cx="300" cy="52" rx="30" ry="14"/>
-        <path d="M282,60 L306,60 L302,70 L286,70 Z"/>
-      </g>
-      <g fill="none" stroke="currentColor" stroke-width="3">
-        <path d="M78,110 L78,132"/><circle cx="78" cy="139" r="7"/>
-        <path d="M196,110 L196,134"/><circle cx="196" cy="141" r="8"/>
-      </g>
-    </symbol>
+<!-- ============ SVG SYMBOLS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 
-    <!-- Fuel truck -->
-    <symbol id="ico-fuel" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="4" y="16" width="24" height="14" rx="7"/>
-        <path d="M28 20h6l6 7v3h-12z"/>
-        <path d="M4 34h36"/>
-        <circle cx="13" cy="35" r="4"/><circle cx="33" cy="35" r="4"/>
-        <path d="M16 16v-5M22 16v-5"/>
-      </g>
-    </symbol>
-    <!-- Hangar -->
-    <symbol id="ico-hangar" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 38V24C4 15 13 9 24 9s20 6 20 15v14"/>
-        <path d="M4 38h40"/><path d="M12 38V26h24v12"/>
-        <path d="M18 38V30h12v8"/>
-      </g>
-    </symbol>
-    <!-- Power / GPU -->
-    <symbol id="ico-power" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M26 4 12 27h10l-2 17 16-24H26z"/>
-      </g>
-    </symbol>
-    <!-- Tie-down / anchor ring -->
-    <symbol id="ico-tie" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="24" cy="12" r="6"/><path d="M24 18v22"/>
-        <path d="M10 30c0 8 6 12 14 12s14-4 14-12"/><path d="M15 24h18"/>
-      </g>
-    </symbol>
-    <!-- Oxygen bottle -->
-    <symbol id="ico-o2" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="16" y="12" width="16" height="30" rx="8"/>
-        <path d="M20 12V8h8v4"/><path d="M16 22h16"/>
-      </g>
-    </symbol>
-    <!-- Wrench -->
-    <symbol id="ico-wrench" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M31 6a11 11 0 0 0-9 17L7 38a4 4 0 0 0 6 6l15-15a11 11 0 0 0 13-16l-7 7-6-2-2-6z"/>
-      </g>
-    </symbol>
-    <!-- Lounge -->
-    <symbol id="ico-lounge" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M10 26v-8a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v8"/>
-        <rect x="6" y="26" width="36" height="10" rx="4"/>
-        <path d="M12 36v5M36 36v5"/>
-      </g>
-    </symbol>
-    <!-- Flight plan -->
-    <symbol id="ico-plan" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="8" y="6" width="32" height="36" rx="3"/>
-        <path d="M15 16h18M15 24h18M15 32h11"/>
-      </g>
-    </symbol>
-    <!-- Catering -->
-    <symbol id="ico-cater" viewBox="0 0 48 48">
-      <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M6 32h36"/><path d="M10 32a14 14 0 0 1 28 0"/>
-        <path d="M24 18v-4"/><path d="M6 38h36"/>
-      </g>
-    </symbol>
-  </defs>
-</svg>
+<!-- LOGO — placeholder wordmark, swap for BAC's supplied artwork -->
+<symbol id="logo" viewBox="0 0 460 116">
+  <path d="M4 78 C60 40 168 22 300 22 C372 22 424 30 456 42 C420 36 366 32 300 32 C176 32 70 50 4 78 Z" fill="#FF9A1F"/>
+  <text x="6" y="52" font-family="Archivo, sans-serif" font-weight="500" font-size="21" letter-spacing="5.5" fill="#E9EFF5">BUSINESS AIRCRAFT</text>
+  <text x="6" y="98" font-family="Archivo, sans-serif" font-weight="800" font-size="42" letter-spacing="-1" fill="#FFFFFF">JET CENTER</text>
+  <text x="300" y="98" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="3" fill="#3B8FE8">KDXR</text>
+</symbol>
 
-<!-- ================= NAV ================= -->
+<symbol id="jet" viewBox="0 0 440 160">
+  <g fill="currentColor">
+    <path d="M26,92 C32,76 58,67 100,64 L300,58 C324,57 342,62 358,71 L392,88 L358,101 C342,108 322,110 300,110 L62,110 C38,110 22,101 26,92 Z"/>
+    <path d="M156,106 L246,106 L206,146 L124,146 Z" opacity=".78"/>
+    <path d="M320,64 L360,10 L392,10 L396,17 L346,68 Z"/>
+    <path d="M352,10 L426,4 L428,13 L354,19 Z"/>
+    <ellipse cx="300" cy="52" rx="30" ry="14"/>
+    <path d="M282,60 L306,60 L302,70 L286,70 Z"/>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="3">
+    <path d="M78,110 L78,132"/><circle cx="78" cy="139" r="7"/>
+    <path d="M196,110 L196,134"/><circle cx="196" cy="141" r="8"/>
+  </g>
+</symbol>
+
+<symbol id="ico-fuel" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="16" width="24" height="14" rx="7"/><path d="M28 20h6l6 7v3h-12z"/><path d="M4 34h36"/><circle cx="13" cy="35" r="4"/><circle cx="33" cy="35" r="4"/><path d="M16 16v-5M22 16v-5"/></g></symbol>
+<symbol id="ico-hangar" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 38V24C4 15 13 9 24 9s20 6 20 15v14"/><path d="M4 38h40"/><path d="M12 38V26h24v12"/><path d="M18 38V30h12v8"/></g></symbol>
+<symbol id="ico-power" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M26 4 12 27h10l-2 17 16-24H26z"/></g></symbol>
+<symbol id="ico-tie" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="12" r="6"/><path d="M24 18v22"/><path d="M10 30c0 8 6 12 14 12s14-4 14-12"/><path d="M15 24h18"/></g></symbol>
+<symbol id="ico-o2" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="12" width="16" height="30" rx="8"/><path d="M20 12V8h8v4"/><path d="M16 22h16"/></g></symbol>
+<symbol id="ico-wrench" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M31 6a11 11 0 0 0-9 17L7 38a4 4 0 0 0 6 6l15-15a11 11 0 0 0 13-16l-7 7-6-2-2-6z"/></g></symbol>
+<symbol id="ico-lounge" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26v-8a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v8"/><rect x="6" y="26" width="36" height="10" rx="4"/><path d="M12 36v5M36 36v5"/></g></symbol>
+<symbol id="ico-plan" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="32" height="36" rx="3"/><path d="M15 16h18M15 24h18M15 32h11"/></g></symbol>
+<symbol id="ico-cater" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32h36"/><path d="M10 32a14 14 0 0 1 28 0"/><path d="M24 18v-4"/><path d="M6 38h36"/></g></symbol>
+<symbol id="ico-bed" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 34V14"/><path d="M5 22h30a8 8 0 0 1 8 8v4"/><path d="M5 34h38"/><circle cx="15" cy="16" r="4"/></g></symbol>
+<symbol id="ico-office" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="6" width="24" height="36"/><path d="M32 18h8v24H8"/><path d="M15 14h10M15 22h10M15 30h10"/></g></symbol>
+
+<!-- socials -->
+<symbol id="s-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23 12s0-3.6-.46-5.32a2.78 2.78 0 0 0-1.95-1.96C18.88 4.25 12 4.25 12 4.25s-6.88 0-8.59.47a2.78 2.78 0 0 0-1.95 1.96C1 8.4 1 12 1 12s0 3.6.46 5.32a2.78 2.78 0 0 0 1.95 1.96c1.71.47 8.59.47 8.59.47s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.96C23 15.6 23 12 23 12zM9.75 15.27V8.73L15.5 12z"/></symbol>
+<symbol id="s-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></symbol>
+<symbol id="s-tw" viewBox="0 0 24 24"><path fill="currentColor" d="M17.53 3h3.11l-6.8 7.77L21.75 21h-6.24l-4.9-6.4L4.95 21H1.84l7.27-8.31L2.25 3h6.4l4.42 5.85zm-1.09 16.13h1.72L7.63 4.78H5.79z"/></symbol>
+<symbol id="s-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></g></symbol>
+</defs></svg>
+
+<!-- ============ NAV ============ -->
 <header class="nav">
   <div class="wrap nav__in">
-    <a class="mark" href="#top">
-      <span class="mark__glyph">BAC</span>
-      <span>
-        <span class="mark__txt">Business Aircraft Center</span><br>
-        <span class="mark__sub">KDXR · Danbury, CT</span>
-      </span>
+    <a class="logo" href="#/home" aria-label="Business Aircraft Jet Center — home">
+      <svg viewBox="0 0 460 116"><use href="#logo"/></svg>
     </a>
-    <nav class="nav__links">
-      <a href="#fuel">Fuel</a>
-      <a href="#gallery">The field</a>
-      <a href="#ramp">Services</a>
-      <a href="#hangar">Hangar</a>
-      <a href="#where">Find us</a>
-      <a href="#contact">Contact</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <nav class="nav__links" id="navlinks">
+      <a href="#/home">Home</a>
+      <a href="#/services">Services</a>
+      <a href="#/amenities">Amenities</a>
+      <a href="#/reservations">Reservations</a>
+      <a href="#/gallery">Gallery</a>
+      <a href="#/news">News</a>
+      <a href="#/newsletter">Newsletter</a>
+      <a href="#/about">About BAC</a>
+      <a href="#/contact">Contact</a>
+      <span class="nav__social">
+        <a href="#" aria-label="YouTube"><svg><use href="#s-yt"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg><use href="#s-fb"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg><use href="#s-tw"/></svg></a>
+      </span>
     </nav>
     <a class="nav__tel" href="tel:+12037487000">203 748 7000</a>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="top">
-  <svg class="hero__field" id="field" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
-  <svg class="hero__jet" viewBox="0 0 440 160" aria-hidden="true" style="color:#04101C">
-    <use href="#jet"/>
-  </svg>
-  <div class="hero__veil"></div>
+<main id="main">
 
-  <div class="wrap hero__in">
-    <div class="hero__col">
-      <span class="eyebrow eyebrow--night">Fixed Base Operation · Est. 1980</span>
-      <h1>Land where the ramp <em>isn't</em> the hard part.</h1>
-      <p class="lede lede--night">
-        Danbury Municipal is a few minutes' flying from Westchester and a fraction of the
-        cost on the ground. Largest FBO on the field, heated hangar, fuel priced for
-        operators who actually read the invoice.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#fuel">See what you'd save <span class="arrow">→</span></a>
-        <a class="btn btn--ghost" href="#contact">Request hangar space</a>
-      </div>
-      <div class="hero__status">
-        <span class="dot" aria-hidden="true"></span>
-        Field open · 0700–1800 daily · 24 hrs on request
-      </div>
-    </div>
-
-    <div class="brief">
-      <div class="brief__bar">
-        <span><b>Arrival brief</b> — KDXR</span>
-        <span>81 Kenosia Ave · North ramp</span>
-      </div>
-      <div class="brief__grid">
-        <div class="cell"><span class="cell__k">Runway 8/26</span><span class="cell__v">4,422 ft<small>Primary · dual access ramp</small></span></div>
-        <div class="cell"><span class="cell__k">Runway 17/35</span><span class="cell__v">3,135 ft<small>Crosswind</small></span></div>
-        <div class="cell cell--fuel"><span class="cell__k">Jet A · full serve</span><span class="cell__v">$5.85<small>per gallon · updated daily</small></span></div>
-        <div class="cell cell--fuel"><span class="cell__k">100LL</span><span class="cell__v">$6.95<small>per gallon · updated daily</small></span></div>
-        <div class="cell"><span class="cell__k">Ramp fee</span><span class="cell__v">$0<small>Waived with fuel uplift</small></span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= GALLERY / PHOTO PLATES ================= -->
-<section class="sec sec--night" id="gallery" style="padding-top:clamp(104px,12vw,150px);">
-  <div class="wrap">
-    <div class="sec__head">
-      <span class="eyebrow eyebrow--night">The field</span>
-      <h2>Five acres on the north side.</h2>
-      <p class="lede lede--night">
-        Dual access to both runways, hangar doors tall enough for the airplanes that
-        actually pay the bills, and a crew that meets you on the ramp.
-      </p>
-    </div>
-
-    <div class="plates">
-      <div class="plate">
-        <span class="plate__tag">Plate 01</span>
-        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="400" height="300" fill="#0F2740"/>
-          <path d="M0 210h400v90H0z" fill="#0B1F35"/>
-          <g opacity=".14" stroke="#3B8FE8" stroke-width="1">
-            <path d="M0 232h400M0 258h400M0 284h400"/>
-          </g>
-          <g color="#2A6DA8" transform="translate(28,74) scale(.78)"><use href="#jet"/></g>
-          <circle cx="330" cy="70" r="34" fill="#FF9A1F" opacity=".14"/>
-          <circle cx="330" cy="70" r="12" fill="#FF9A1F" opacity=".35"/>
-        </svg>
-        <div class="plate__cap"><b>Transient ramp</b><span>Photo plate — supply: jet on the BAC ramp</span></div>
-      </div>
-
-      <div class="plate">
-        <span class="plate__tag">Plate 02</span>
-        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="400" height="300" fill="#12293F"/>
-          <path d="M40 250V150c0-56 54-96 160-96s160 40 160 96v100z" fill="#0C2138"/>
-          <g stroke="#3B8FE8" stroke-width="2" opacity=".5" fill="none">
-            <path d="M40 250V150c0-56 54-96 160-96s160 40 160 96v100"/>
-            <path d="M80 250v-78h240v78M124 250v-46h152v46"/>
-          </g>
-          <g color="#1D4A72" transform="translate(112,178) scale(.42)"><use href="#jet"/></g>
-          <path d="M0 250h400v50H0z" fill="#0A1C30"/>
-          <g fill="#FF9A1F" opacity=".5"><rect x="60" y="262" width="34" height="4"/><rect x="150" y="262" width="34" height="4"/><rect x="240" y="262" width="34" height="4"/><rect x="330" y="262" width="34" height="4"/></g>
-        </svg>
-        <div class="plate__cap"><b>Heated hangar</b><span>Photo plate — supply: hangar interior, doors open</span></div>
-      </div>
-
-      <div class="plate">
-        <span class="plate__tag">Plate 03</span>
-        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="400" height="300" fill="#0F2740"/>
-          <circle cx="200" cy="140" r="96" fill="#143251"/>
-          <g color="#5AA6EE" transform="translate(108,96) scale(3.6)"><use href="#ico-fuel"/></g>
-          <path d="M0 236h400v64H0z" fill="#0B1F35"/>
-          <text x="24" y="274" fill="#FF9A1F" font-family="IBM Plex Mono, monospace" font-size="21" letter-spacing="2">JET A · 100LL</text>
-        </svg>
-        <div class="plate__cap"><b>Full-service fuel</b><span>Photo plate — supply: fuel truck at the wing</span></div>
-      </div>
-
-      <div class="plate">
-        <span class="plate__tag">Plate 04 · live photo</span>
-        <img src="https://www.businessaircraftcenter.com/images/model-self-propelled.jpg"
-             alt="Self-propelled ground power unit at Business Aircraft Center"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="display:none">
-          <rect width="400" height="300" fill="#12293F"/>
-          <g color="#5AA6EE" transform="translate(140,80) scale(2.6)"><use href="#ico-power"/></g>
-        </svg>
-        <div class="plate__cap"><b>GPU service</b><span>Live image pulled from the current site</span></div>
-      </div>
-    </div>
-    <p class="plates__note">
-      Plates 01–03 are illustrated stand-ins. Same crops, same captions — we swap in BAC photography at build.
-    </p>
-  </div>
-</section>
-
-<!-- ================= FUEL COMPARATOR ================= -->
-<section class="sec sec--first" id="fuel">
-  <div class="wrap">
-    <div class="sec__head">
-      <span class="eyebrow eyebrow--day">The Westchester math</span>
-      <h2>Same trip. Different invoice.</h2>
-      <p class="lede">
-        A lot of our transient traffic was headed to HPN and changed its mind on the way.
-        Pick your uplift and see the number your flight department actually cares about.
-      </p>
-    </div>
-
-    <div class="calc">
-      <div class="calc__controls">
-        <div class="field">
-          <span class="field__label" id="acLabel">Typical aircraft</span>
-          <div class="chips" role="group" aria-labelledby="acLabel">
-            <button class="chip" type="button" data-gal="120" aria-pressed="false">Piston twin</button>
-            <button class="chip" type="button" data-gal="380" aria-pressed="true">Light jet</button>
-            <button class="chip" type="button" data-gal="700" aria-pressed="false">Midsize jet</button>
-            <button class="chip" type="button" data-gal="1250" aria-pressed="false">Super-mid / large</button>
-          </div>
-        </div>
-        <div class="field">
-          <span class="field__label">Gallons uplifted</span>
-          <div class="gal"><span id="galNum">380</span><span>gal</span></div>
-          <input id="galRange" type="range" min="50" max="1600" step="10" value="380" aria-label="Gallons uplifted">
-        </div>
-        <div class="field">
-          <span class="field__label">Fuel</span>
-          <div class="chips" role="group" aria-label="Fuel type">
-            <button class="chip" type="button" data-fuel="jeta" aria-pressed="true">Jet A</button>
-            <button class="chip" type="button" data-fuel="100ll" aria-pressed="false">100LL</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="calc__out">
-        <span class="out__k">You keep</span>
-        <div class="out__save" id="saveOut">$1,748</div>
-        <p class="out__note">on this single stop, versus the same uplift at Westchester.</p>
-        <table class="tbl">
-          <thead><tr><th>Line item</th><th>Business Aircraft Center</th><th>HPN</th></tr></thead>
-          <tbody>
-            <tr><td>Fuel</td><td id="fuelUs">$2,223</td><td class="them" id="fuelThem">$3,572</td></tr>
-            <tr><td>Ramp / handling</td><td>Waived</td><td class="them" id="rampThem">$275</td></tr>
-            <tr><td>Overnight tie-down</td><td id="tieUs">$45</td><td class="them" id="tieThem">$169</td></tr>
-            <tr><td><strong>Stop total</strong></td><td><strong id="totUs">$2,268</strong></td><td class="them"><strong id="totThem">$4,016</strong></td></tr>
-          </tbody>
-        </table>
-        <p class="calc__fine">
-          Sample pricing shown. On the live site this panel reads from your fuel desk,
-          so the number is always today's number — no stale price sheet to maintain.
+<!-- ================================================== HOME -->
+<div data-page="home" class="active">
+  <section class="hero">
+    <svg class="hero__field" id="field" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+    <svg class="hero__jet" viewBox="0 0 440 160" aria-hidden="true" style="color:#04101C"><use href="#jet"/></svg>
+    <div class="hero__veil"></div>
+    <div class="wrap hero__in">
+      <div class="hero__col">
+        <span class="eyebrow eyebrow--night">Fixed Base Operation · Est. 1980</span>
+        <h1>Land where the ramp <em>isn't</em> the hard part.</h1>
+        <p class="lede lede--night">
+          Danbury Municipal is a few minutes' flying from Westchester, without the
+          congestion or the cost on the ground. Largest FBO on the field, heated hangar,
+          Shell fuel, and a crew that meets you at the airplane.
         </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#/reservations">Make a reservation <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="#/amenities">See the amenities</a>
+        </div>
+        <div class="hero__status"><span class="dot"></span> Field open · 0700–1800 daily · 24 hrs on request</div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ================= SERVICES ================= -->
-<section class="sec sec--white" id="ramp">
-  <div class="wrap">
-    <div class="sec__head">
-      <span class="eyebrow eyebrow--day">On the ramp</span>
-      <h2>Everything you'd call ahead for, already handled.</h2>
-      <p class="lede">Seven days a week, 0700 to 1800, and after hours whenever you tell us you're coming.</p>
+      <div class="brief">
+        <div class="brief__bar"><span><b>Arrival brief</b> — KDXR</span><span>81 Kenosia Ave · North ramp</span></div>
+        <div class="brief__grid">
+          <div class="cell"><span class="cell__k">Runway 8/26</span><span class="cell__v">4,422 ft<small>Primary · dual access ramp</small></span></div>
+          <div class="cell"><span class="cell__k">Runway 17/35</span><span class="cell__v">3,135 ft<small>Crosswind</small></span></div>
+          <div class="cell cell--hi"><span class="cell__k">Fuel</span><span class="cell__v">Shell<small>Jet A · 100LL · full serve</small></span></div>
+          <div class="cell"><span class="cell__k">Hangar</span><span class="cell__v">Heated<small>Transient &amp; permanent space</small></span></div>
+          <div class="cell"><span class="cell__k">Hours</span><span class="cell__v">0700–1800<small>24 hrs upon request</small></span></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="svc">
-      <div class="svc__item">
-        <span class="tag">New</span>
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-power"/></svg>
-        <h3>GPU service</h3>
-        <p>Self-propelled ground power now available for mid- to large-size jets. No waiting on a cart from across the field.</p>
+  <!-- gallery strip -->
+  <section class="sec sec--night" style="padding-top:clamp(100px,11vw,146px)">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="eyebrow eyebrow--night">The field</span>
+        <h2>Five acres on the north side.</h2>
+        <p class="lede lede--night">Dual access to both runways, hangar doors sized for the airplanes that pay the bills, and a ramp crew that's already walking out when you call final.</p>
       </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-fuel"/></svg>
-        <h3>Jet A &amp; 100LL</h3>
-        <p>Full-service fueling at some of the lowest posted prices between Westchester and central Connecticut. Ramp fee waived on uplift.</p>
+      <div class="plates">
+        <div class="plate"><span class="plate__tag">Plate 01</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#0F2740"/><path d="M0 210h400v90H0z" fill="#0B1F35"/>
+            <g opacity=".14" stroke="#3B8FE8" stroke-width="1"><path d="M0 232h400M0 258h400M0 284h400"/></g>
+            <g color="#2A6DA8" transform="translate(28,74) scale(.78)"><use href="#jet"/></g>
+            <circle cx="330" cy="70" r="34" fill="#FF9A1F" opacity=".14"/><circle cx="330" cy="70" r="12" fill="#FF9A1F" opacity=".35"/>
+          </svg>
+          <div class="plate__cap"><b>Transient ramp</b><span>Photo plate — supply: jet on the BAC ramp</span></div>
+        </div>
+        <div class="plate"><span class="plate__tag">Plate 02</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#12293F"/>
+            <path d="M40 250V150c0-56 54-96 160-96s160 40 160 96v100z" fill="#0C2138"/>
+            <g stroke="#3B8FE8" stroke-width="2" opacity=".5" fill="none"><path d="M40 250V150c0-56 54-96 160-96s160 40 160 96v100"/><path d="M80 250v-78h240v78M124 250v-46h152v46"/></g>
+            <g color="#1D4A72" transform="translate(112,178) scale(.42)"><use href="#jet"/></g>
+            <path d="M0 250h400v50H0z" fill="#0A1C30"/>
+            <g fill="#FF9A1F" opacity=".5"><rect x="60" y="262" width="34" height="4"/><rect x="150" y="262" width="34" height="4"/><rect x="240" y="262" width="34" height="4"/><rect x="330" y="262" width="34" height="4"/></g>
+          </svg>
+          <div class="plate__cap"><b>Heated hangar</b><span>Photo plate — supply: hangar interior, doors open</span></div>
+        </div>
+        <div class="plate"><span class="plate__tag">Plate 03</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#0F2740"/><circle cx="200" cy="140" r="96" fill="#143251"/>
+            <g color="#5AA6EE" transform="translate(108,96) scale(3.6)"><use href="#ico-fuel"/></g>
+            <path d="M0 236h400v64H0z" fill="#0B1F35"/>
+            <text x="24" y="274" fill="#FF9A1F" font-family="IBM Plex Mono, monospace" font-size="19" letter-spacing="2">SHELL · JET A · 100LL</text>
+          </svg>
+          <div class="plate__cap"><b>Full-service fuel</b><span>Photo plate — supply: fuel truck at the wing</span></div>
+        </div>
+        <div class="plate"><span class="plate__tag">Plate 04 · live photo</span>
+          <img src="https://www.businessaircraftcenter.com/images/model-self-propelled.jpg" alt="Ground power unit at Business Aircraft Center" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="display:none">
+            <rect width="400" height="300" fill="#12293F"/><g color="#5AA6EE" transform="translate(140,80) scale(2.6)"><use href="#ico-power"/></g>
+          </svg>
+          <div class="plate__cap"><b>GPU service</b><span>Live image from the current site</span></div>
+        </div>
       </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-hangar"/></svg>
-        <h3>Heated hangar</h3>
-        <p>Transient and permanent space inside. Cold-soak isn't a preflight problem here from November through March.</p>
-      </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-tie"/></svg>
-        <h3>Tie-downs with power</h3>
-        <p>Every tie-down has an electrical outlet for engine preheaters. Transient ramp space available without a reservation.</p>
-      </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-o2"/></svg>
-        <h3>Oxygen &amp; oils</h3>
-        <p>On-field oxygen service and a wide inventory of aviation oils, so a top-off doesn't turn into an overnight.</p>
-      </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-wrench"/></svg>
-        <h3>Maintenance &amp; detailing</h3>
-        <p>Aircraft maintenance, engine preheats, and interior and exterior detailing coordinated on site.</p>
-      </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-lounge"/></svg>
-        <h3>Pilot lounge</h3>
-        <p>Renovated lounge with wireless and HD-TV, plus a conference room when passengers need to work before the car arrives.</p>
-      </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-plan"/></svg>
-        <h3>Flight planning</h3>
-        <p>Weather, filing, and dispatch support at the desk. Building accessible 24/7 for based crews.</p>
-      </div>
-      <div class="svc__item">
-        <svg class="svc__ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#ico-cater"/></svg>
-        <h3>Catering</h3>
-        <p>Catering arranged to your departure time, not ours. Tell us the seat count and the window.</p>
-      </div>
+      <p class="plates__note">Plates 01–03 are illustrated stand-ins with the final crops and captions. BAC photography drops straight in.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= HANGAR ================= -->
-<section class="sec" id="hangar">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow eyebrow--day">Hangar &amp; basing</span>
-      <h2 style="margin:14px 0 18px;">The largest FBO on the field — and there's room right now.</h2>
-      <p class="lede">
-        Thirty-one thousand square feet of hangar and office on five acres, with temporary
-        and permanent space available. Based aircraft get 24/7 building access, powered
-        tie-downs, and a maintenance shop that already knows the airplane.
-      </p>
-      <ul class="ticks">
-        <li>Temporary and permanent hangar space currently available</li>
-        <li>Heated hangar — no winter preheat scramble</li>
-        <li>Dual access ramp to both the 4,422' and 3,135' runways</li>
-        <li>Minutes by air from Westchester, Bridgeport, and Oxford</li>
-      </ul>
-      <p style="margin-top:30px;"><a class="btn btn--ink" href="#contact">Ask about availability <span class="arrow">→</span></a></p>
-    </div>
-    <div>
-      <div class="stats" style="margin-bottom:28px;">
-        <div class="stat"><div class="stat__v">31,500</div><span class="stat__k">Sq ft hangar &amp; office</span></div>
-        <div class="stat"><div class="stat__v">5</div><span class="stat__k">Acres, north side</span></div>
-        <div class="stat"><div class="stat__v">1980</div><span class="stat__k">Serving KDXR since</span></div>
-        <div class="stat"><div class="stat__v">24/7</div><span class="stat__k">Access for based crews</span></div>
+  <!-- why Danbury (no pricing) -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="eyebrow eyebrow--day">The Westchester question</span>
+        <h2>Same trip. Easier ground.</h2>
+        <p class="lede">A lot of our transient traffic was headed to HPN and changed its mind on the way. Here's what changes when you file for Danbury instead.</p>
       </div>
-      <div class="frame frame--light">
-        <div class="frame__bar"><span>Field diagram</span><span>Schematic · not for navigation</span></div>
-        <svg viewBox="0 0 760 430" role="img" aria-label="Schematic diagram of Danbury Municipal Airport showing runway 8/26, runway 17/35, and the Business Aircraft Center ramp on the north side">
-          <rect width="760" height="430" fill="#F6F9FC"/>
-          <!-- runway 8/26 -->
-          <path d="M60 300 L700 274" stroke="#0A1F35" stroke-width="30"/>
-          <path d="M60 300 L700 274" stroke="#F6F9FC" stroke-width="2" stroke-dasharray="16 18"/>
-          <!-- runway 17/35 -->
-          <path d="M406 60 L452 400" stroke="#0A1F35" stroke-width="22"/>
-          <path d="M406 60 L452 400" stroke="#F6F9FC" stroke-width="2" stroke-dasharray="14 16"/>
-          <!-- taxiway -->
-          <path d="M120 232 L690 210" stroke="#3B8FE8" stroke-width="7" opacity=".75"/>
-          <path d="M180 232 L172 262" stroke="#3B8FE8" stroke-width="7" opacity=".75"/>
-          <path d="M330 226 L336 258" stroke="#3B8FE8" stroke-width="7" opacity=".75"/>
-          <!-- BAC ramp -->
-          <rect x="128" y="118" width="240" height="104" fill="#FF9A1F" opacity=".2"/>
-          <rect x="128" y="118" width="240" height="104" fill="none" stroke="#E07C00" stroke-width="2.5"/>
-          <rect x="140" y="130" width="86" height="52" fill="#E07C00" opacity=".85"/>
-          <g color="#0A1F35" transform="translate(244,150) scale(.26)" opacity=".55"><use href="#jet"/></g>
-          <text x="140" y="200" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#7A4200">BUSINESS AIRCRAFT CENTER</text>
-          <text x="140" y="216" font-family="IBM Plex Mono, monospace" font-size="11" fill="#996020">31,500 SQ FT · 5 ACRES</text>
-          <!-- runway numbers -->
-          <text x="66" y="336" font-family="Archivo, sans-serif" font-weight="800" font-size="22" fill="#0A1F35">08</text>
-          <text x="676" y="256" font-family="Archivo, sans-serif" font-weight="800" font-size="22" fill="#0A1F35">26</text>
-          <text x="386" y="52" font-family="Archivo, sans-serif" font-weight="800" font-size="20" fill="#0A1F35">17</text>
-          <text x="452" y="422" font-family="Archivo, sans-serif" font-weight="800" font-size="20" fill="#0A1F35">35</text>
-          <!-- lengths -->
-          <text x="300" y="330" font-family="IBM Plex Mono, monospace" font-size="12" fill="#55708A">RWY 8/26 · 4,422 FT</text>
-          <text x="470" y="120" font-family="IBM Plex Mono, monospace" font-size="12" fill="#55708A">RWY 17/35 · 3,135 FT</text>
-          <!-- road -->
-          <path d="M28 88 L28 400" stroke="#C7D3DE" stroke-width="10"/>
-          <text x="40" y="96" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8FA3B8">KENOSIA AVE</text>
-          <!-- north arrow -->
-          <g transform="translate(710,74)">
-            <path d="M0 26 L9 0 L18 26 L9 19 Z" fill="#0A1F35"/>
-            <text x="4" y="42" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0A1F35">N</text>
+
+      <div class="fuelcard">
+        <div class="fuelcard__body">
+          <ul class="ticks" style="margin-top:0">
+            <li>Low-cost, high-quality Shell aviation fuel — Jet A and 100LL</li>
+            <li>Ramp fee waived with a fuel uplift</li>
+            <li>No slot pressure, no holding, no long taxi to the FBO</li>
+            <li>Minutes by air from Westchester, Bridgeport, and Oxford</li>
+            <li>Same Fairfield County ground destinations, shorter drive from I-84</li>
+          </ul>
+        </div>
+        <div class="fuelcard__side">
+          <span class="k">Today's fuel</span>
+          <div class="big">Call the desk for the current price.</div>
+          <p>Prices move. Our line staff quotes today's number the moment you call, and we'll confirm it in writing with your reservation.</p>
+          <p style="margin-top:18px"><a class="btn btn--primary" href="tel:+12037487000">203 748 7000 <span class="arrow">→</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- services preview -->
+  <section class="sec sec--white">
+    <div class="wrap">
+      <div class="sec__head">
+        <span class="eyebrow eyebrow--day">On the ramp</span>
+        <h2>Everything you'd call ahead for, already handled.</h2>
+        <p class="lede">Seven days a week, 0700 to 1800, and after hours whenever you tell us you're coming.</p>
+      </div>
+      <div class="svc">
+        <div class="svc__item"><span class="tag">New</span><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-power"/></svg><h3>GPU service</h3><p>Self-propelled ground power for mid- to large-size jets. No waiting on a cart from across the field.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-fuel"/></svg><h3>Shell Jet A &amp; 100LL</h3><p>Full-service fueling with the ramp fee waived on uplift. Line crew meets you at the airplane.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-hangar"/></svg><h3>Heated hangar</h3><p>Transient and permanent space inside. Cold-soak isn't a preflight problem here from November through March.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-tie"/></svg><h3>Tie-downs with power</h3><p>Every tie-down has an electrical outlet for engine preheaters. Transient ramp space without a reservation.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-o2"/></svg><h3>Oxygen &amp; oils</h3><p>On-field oxygen service and a wide inventory of aviation oils, so a top-off doesn't turn into an overnight.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-wrench"/></svg><h3>Maintenance &amp; detailing</h3><p>Aircraft maintenance, engine preheats, and interior and exterior detailing coordinated on site.</p></div>
+      </div>
+      <p style="margin-top:34px"><a class="btn btn--ink" href="#/services">All services <span class="arrow">→</span></a></p>
+    </div>
+  </section>
+
+  <!-- hangar + diagram -->
+  <section class="sec">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow eyebrow--day">Hangar &amp; basing</span>
+        <h2 style="margin:14px 0 18px">The largest FBO on the field — and there's room right now.</h2>
+        <p class="lede">Thirty-one thousand square feet of hangar and office on five acres, with temporary and permanent space available. Based aircraft get 24/7 building access, powered tie-downs, and a shop that already knows the airplane.</p>
+        <ul class="ticks">
+          <li>Temporary and permanent hangar space currently available</li>
+          <li>Heated hangar — no winter preheat scramble</li>
+          <li>Dual access ramp to both the 4,422' and 3,135' runways</li>
+          <li>Office suites from 500 to 2,500 sq ft on the field</li>
+        </ul>
+        <p style="margin-top:30px"><a class="btn btn--ink" href="#/contact">Ask about availability <span class="arrow">→</span></a></p>
+      </div>
+      <div>
+        <div class="stats" style="margin-bottom:28px">
+          <div class="stat"><div class="stat__v">31,500</div><span class="stat__k">Sq ft hangar &amp; office</span></div>
+          <div class="stat"><div class="stat__v">5</div><span class="stat__k">Acres, north side</span></div>
+          <div class="stat"><div class="stat__v">1980</div><span class="stat__k">Serving KDXR since</span></div>
+          <div class="stat"><div class="stat__v">24/7</div><span class="stat__k">Access for based crews</span></div>
+        </div>
+        <div class="frame frame--light">
+          <div class="frame__bar"><span>Field diagram</span><span>Schematic · not for navigation</span></div>
+          <svg viewBox="0 0 760 430" role="img" aria-label="Schematic of Danbury Municipal Airport with the Business Aircraft Center ramp on the north side">
+            <rect width="760" height="430" fill="#F6F9FC"/>
+            <path d="M60 300 L700 274" stroke="#0A1F35" stroke-width="30"/>
+            <path d="M60 300 L700 274" stroke="#F6F9FC" stroke-width="2" stroke-dasharray="16 18"/>
+            <path d="M406 60 L452 400" stroke="#0A1F35" stroke-width="22"/>
+            <path d="M406 60 L452 400" stroke="#F6F9FC" stroke-width="2" stroke-dasharray="14 16"/>
+            <path d="M120 232 L690 210" stroke="#3B8FE8" stroke-width="7" opacity=".75"/>
+            <path d="M180 232 L172 262" stroke="#3B8FE8" stroke-width="7" opacity=".75"/>
+            <path d="M330 226 L336 258" stroke="#3B8FE8" stroke-width="7" opacity=".75"/>
+            <rect x="128" y="118" width="240" height="104" fill="#FF9A1F" opacity=".2"/>
+            <rect x="128" y="118" width="240" height="104" fill="none" stroke="#E07C00" stroke-width="2.5"/>
+            <rect x="140" y="130" width="86" height="52" fill="#E07C00" opacity=".85"/>
+            <g color="#0A1F35" transform="translate(244,150) scale(.26)" opacity=".55"><use href="#jet"/></g>
+            <text x="140" y="200" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#7A4200">BUSINESS AIRCRAFT CENTER</text>
+            <text x="140" y="216" font-family="IBM Plex Mono, monospace" font-size="11" fill="#996020">31,500 SQ FT · 5 ACRES</text>
+            <text x="66" y="336" font-family="Archivo, sans-serif" font-weight="800" font-size="22" fill="#0A1F35">08</text>
+            <text x="676" y="256" font-family="Archivo, sans-serif" font-weight="800" font-size="22" fill="#0A1F35">26</text>
+            <text x="386" y="52" font-family="Archivo, sans-serif" font-weight="800" font-size="20" fill="#0A1F35">17</text>
+            <text x="452" y="422" font-family="Archivo, sans-serif" font-weight="800" font-size="20" fill="#0A1F35">35</text>
+            <text x="300" y="330" font-family="IBM Plex Mono, monospace" font-size="12" fill="#55708A">RWY 8/26 · 4,422 FT</text>
+            <text x="470" y="120" font-family="IBM Plex Mono, monospace" font-size="12" fill="#55708A">RWY 17/35 · 3,135 FT</text>
+            <path d="M28 88 L28 400" stroke="#C7D3DE" stroke-width="10"/>
+            <text x="40" y="96" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8FA3B8">KENOSIA AVE</text>
+            <g transform="translate(710,74)"><path d="M0 26 L9 0 L18 26 L9 19 Z" fill="#0A1F35"/><text x="4" y="42" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0A1F35">N</text></g>
+          </svg>
+          <div class="legend" style="color:var(--ink-dim)">
+            <span><i style="background:#0A1F35"></i>Runway</span>
+            <span><i style="background:#3B8FE8"></i>Taxiway</span>
+            <span><i style="background:#E07C00"></i>BAC ramp &amp; hangar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- regional map -->
+  <section class="sec sec--night">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow eyebrow--night">Getting here</span>
+        <h2 style="margin:14px 0 18px">Everything you were flying to is still a few minutes away.</h2>
+        <p class="lede lede--night">Danbury sits inside the same catchment as Westchester and Bridgeport. Fairfield County, lower Litchfield, and northern Westchester are all a short drive — and the car is booked before you're on the ground.</p>
+        <ul class="ticks">
+          <li>Limousine and black car through affiliated Hoyt Livery</li>
+          <li>Rental cars arranged to your ETA</li>
+          <li>Crew hotel recommendations and shuttle</li>
+          <li>I-84 and Route 7 within five minutes by road</li>
+        </ul>
+      </div>
+      <div class="frame">
+        <div class="frame__bar"><span>Regional position</span><span>Distances approximate</span></div>
+        <svg viewBox="0 0 620 540" role="img" aria-label="Map showing Danbury Municipal at center with nearby airports">
+          <rect width="620" height="540" fill="#0B2036"/>
+          <g fill="none" stroke="#1D3A57"><circle cx="310" cy="220" r="80"/><circle cx="310" cy="220" r="160"/><circle cx="310" cy="220" r="240"/></g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#4A6C8C"><text x="316" y="146">10 NM</text><text x="316" y="66">20 NM</text></g>
+          <g stroke="#3B8FE8" stroke-width="1.2" opacity=".55" stroke-dasharray="4 5">
+            <path d="M310 220 L458 268"/><path d="M310 220 L168 384"/><path d="M310 220 L364 436"/><path d="M310 220 L92 468"/>
           </g>
+          <circle cx="310" cy="220" r="26" fill="#FF9A1F" opacity=".16"/><circle cx="310" cy="220" r="9" fill="#FF9A1F"/>
+          <text x="332" y="212" font-family="Archivo, sans-serif" font-weight="800" font-size="21" fill="#FFFFFF">KDXR</text>
+          <text x="332" y="232" font-family="IBM Plex Mono, monospace" font-size="11" fill="#FF9A1F">BUSINESS AIRCRAFT CENTER</text>
+          <text x="332" y="248" font-family="IBM Plex Mono, monospace" font-size="11" fill="#90A8BF">DANBURY, CT</text>
+          <g font-family="IBM Plex Mono, monospace" font-size="12">
+            <circle cx="458" cy="268" r="5" fill="#3B8FE8"/><text x="472" y="266" fill="#E9EFF5">OXC · Oxford</text><text x="472" y="282" fill="#5F87AB" font-size="10">~13 NM E</text>
+            <circle cx="168" cy="384" r="5" fill="#3B8FE8"/><text x="60" y="410" fill="#E9EFF5">HPN · Westchester</text><text x="60" y="426" fill="#5F87AB" font-size="10">~19 NM SW</text>
+            <circle cx="364" cy="436" r="5" fill="#3B8FE8"/><text x="380" y="434" fill="#E9EFF5">BDR · Bridgeport</text><text x="380" y="450" fill="#5F87AB" font-size="10">~24 NM S</text>
+            <circle cx="92" cy="468" r="5" fill="#5F87AB"/><text x="34" y="496" fill="#90A8BF">TEB / NYC metro</text><text x="34" y="512" fill="#5F87AB" font-size="10">~40 NM SW</text>
+          </g>
+          <g color="#1D4A72" transform="translate(392,60) rotate(-14) scale(.42)"><use href="#jet"/></g>
         </svg>
-        <div class="legend" style="color:var(--ink-dim)">
-          <span><i style="background:#0A1F35"></i>Runway</span>
-          <span><i style="background:#3B8FE8"></i>Taxiway</span>
-          <span><i style="background:#E07C00"></i>BAC ramp &amp; hangar</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== SERVICES -->
+<div data-page="services">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › Services</span>
+      <h1>Full-service, seven days a week.</h1>
+      <p class="lede lede--night">Line service, fuel, hangar, and maintenance under one roof on the north side of Danbury Municipal. If you need it before you land, tell us on the way.</p>
+    </div>
+  </section>
+  <section class="sec sec--white">
+    <div class="wrap">
+      <div class="svc">
+        <div class="svc__item"><span class="tag">New</span><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-power"/></svg><h3>GPU service</h3><p>Self-propelled ground power now available for mid- to large-size jets.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-fuel"/></svg><h3>Shell Jet A &amp; 100LL</h3><p>Low-cost, high-quality Shell aviation fuel, full serve. Ramp fee waived on uplift.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-hangar"/></svg><h3>Heated hangar</h3><p>Transient and permanent space, temporary overnight or long-term basing.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-tie"/></svg><h3>Tie-downs with power</h3><p>Electrical outlets at every tie-down for engine preheaters.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-o2"/></svg><h3>Oxygen &amp; aviation oils</h3><p>On-field oxygen service and a deep inventory of oils.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-wrench"/></svg><h3>Maintenance &amp; detailing</h3><p>Airframe maintenance, engine preheats, interior and exterior detailing.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-plan"/></svg><h3>Flight planning</h3><p>Weather, filing, and dispatch support at the desk. 24/7 building access for based crews.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-cater"/></svg><h3>Catering</h3><p>Arranged to your departure time. Give us the seat count and the window.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-office"/></svg><h3>Office rentals</h3><p>Six on-airport suites from 500 to 2,500 sq ft, ample parking, close to I-84 and Route 7.</p></div>
+      </div>
+      <p style="margin-top:34px"><a class="btn btn--ink" href="#/reservations">Make a reservation <span class="arrow">→</span></a></p>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== AMENITIES -->
+<div data-page="amenities">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › Amenities</span>
+      <h1>Somewhere decent to wait.</h1>
+      <p class="lede lede--night">A renovated pilots' lounge, a conference room for the passengers, and an overnight suite with a shower — because a long day shouldn't end in a terminal chair.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <div class="svc" style="border-color:var(--day-line)">
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-lounge"/></svg><h3>Pilots' lounge</h3><p>Newly renovated, wireless throughout, HD-TV, and coffee that doesn't taste like the ramp.</p></div>
+        <div class="svc__item"><span class="tag">Complimentary</span><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-bed"/></svg><h3>Overnight suite</h3><p>Brand-new suite with shower and bath. Free two-day stay for fly-in customers and charter pilots — call the office to reserve.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-plan"/></svg><h3>Conference room</h3><p>For the meeting that has to happen before the car arrives, or the debrief that can't wait.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-cater"/></svg><h3>Catering &amp; concierge</h3><p>Concierge, reservations, and customer service departments — one call handles the trip.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-office"/></svg><h3>Ground transportation</h3><p>Limousine and black car through affiliated Hoyt Livery, plus rental cars to your ETA.</p></div>
+        <div class="svc__item"><svg class="svc__ico" viewBox="0 0 48 48"><use href="#ico-hangar"/></svg><h3>24/7 access</h3><p>Based crews get into the building whenever the trip says so, not whenever the desk is open.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== RESERVATIONS -->
+<div data-page="reservations">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › Reservations</span>
+      <h1>Make an arrival reservation.</h1>
+      <p class="lede lede--night">Tell us what you need and when you're inbound. The more detail you give us, the less you'll have to sort out on the ramp. Prefer to talk it through? Call (203) 748-7000 any time.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap formwrap">
+      <form class="form form--light" data-demo>
+        <div class="form__grp">
+          <div class="form__legend">Who you are</div>
+          <div class="form__row">
+            <label><span class="lab">First name <span class="req">*</span></span><input type="text" required autocomplete="given-name"></label>
+            <label><span class="lab">Last name <span class="req">*</span></span><input type="text" required autocomplete="family-name"></label>
+          </div>
+          <div class="form__row">
+            <label><span class="lab">Phone <span class="req">*</span></span><input type="tel" required placeholder="(000) 000-0000" autocomplete="tel"></label>
+            <label><span class="lab">Email <span class="req">*</span></span><input type="email" required autocomplete="email"></label>
+          </div>
+          <label><span class="lab">Company</span><input type="text" autocomplete="organization"></label>
+          <label><span class="lab">Street address</span><input type="text" autocomplete="address-line1"></label>
+          <div class="form__row form__row--3">
+            <label><span class="lab">City</span><input type="text" autocomplete="address-level2"></label>
+            <label><span class="lab">State</span><input type="text" autocomplete="address-level1"></label>
+            <label><span class="lab">ZIP</span><input type="text" autocomplete="postal-code"></label>
+          </div>
+        </div>
+
+        <div class="form__grp">
+          <div class="form__legend">The aircraft</div>
+          <div class="form__row">
+            <label><span class="lab">Tail number <span class="req">*</span></span><input type="text" required placeholder="N123AB"></label>
+            <label><span class="lab">Aircraft type</span><input type="text" placeholder="Citation CJ3, King Air 350…"></label>
+          </div>
+          <div class="form__row form__row--3">
+            <label><span class="lab">Passengers</span><input type="number" min="0" max="30" value="2"></label>
+            <label><span class="lab">Crew</span><input type="number" min="0" max="10" value="2"></label>
+            <label><span class="lab">Fuel</span>
+              <select><option>None required</option><option>Jet A — top off</option><option>Jet A — partial</option><option>100LL — top off</option><option>100LL — partial</option></select>
+            </label>
+          </div>
+        </div>
+
+        <div class="form__grp">
+          <div class="form__legend">The trip</div>
+          <div class="form__row">
+            <label><span class="lab">Arrival date <span class="req">*</span></span><input type="date" required></label>
+            <label><span class="lab">Arrival time (local)</span><input type="time"></label>
+          </div>
+          <div class="form__row">
+            <label><span class="lab">Departure date</span><input type="date"></label>
+            <label><span class="lab">Departure time (local)</span><input type="time"></label>
+          </div>
+          <label><span class="lab">Parking</span>
+            <select><option>Ramp / tie-down</option><option>Heated hangar — overnight</option><option>Heated hangar — multi-night</option><option>Undecided, please advise</option></select>
+          </label>
+        </div>
+
+        <div class="form__grp">
+          <div class="form__legend">What else we should arrange</div>
+          <label class="checkline"><input type="checkbox"> Ground power (GPU)</label>
+          <label class="checkline"><input type="checkbox"> Lavatory service</label>
+          <label class="checkline"><input type="checkbox"> Catering</label>
+          <label class="checkline"><input type="checkbox"> Rental car</label>
+          <label class="checkline"><input type="checkbox"> Limousine / black car</label>
+          <label class="checkline"><input type="checkbox"> Crew hotel</label>
+          <label class="checkline"><input type="checkbox"> Overnight suite (fly-in customers and charter pilots)</label>
+          <label class="checkline"><input type="checkbox"> Maintenance or detailing</label>
+          <label style="margin-top:14px"><span class="lab">Anything else</span><textarea placeholder="After-hours arrival, oversize baggage, special handling…"></textarea></label>
+        </div>
+
+        <button class="btn btn--primary" type="submit">Send reservation request <span class="arrow">→</span></button>
+        <p class="form__ok">Request received — the reservations desk will confirm by phone. (Demo form: nothing was actually sent.)</p>
+      </form>
+
+      <div>
+        <div class="aside" style="margin-bottom:20px">
+          <h3>Rather call?</h3>
+          <p>Our concierge, reservations, and customer service departments are here to help. One call covers fuel, hangar, catering, and the car.</p>
+          <p style="margin-bottom:0"><a class="btn btn--ink" href="tel:+12037487000">(203) 748-7000</a></p>
+        </div>
+        <div class="aside">
+          <h3>Before you file</h3>
+          <p style="margin-bottom:8px"><b>Field hours</b><br>0700–1800 daily · 24 hours upon request</p>
+          <p style="margin-bottom:8px"><b>Runways</b><br>8/26 — 4,422 ft · 17/35 — 3,135 ft</p>
+          <p style="margin-bottom:0"><b>Where we are</b><br>North side of the field, 81 Kenosia Avenue, Danbury CT 06810</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- ================= WHERE WE ARE ================= -->
-<section class="sec sec--night" id="where">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow eyebrow--night">Getting here</span>
-      <h2 style="margin:14px 0 18px;">Everything you were flying to is still a few minutes away.</h2>
-      <p class="lede lede--night">
-        Danbury sits inside the same catchment as Westchester and Bridgeport. Fairfield
-        County, lower Litchfield, and northern Westchester are all a short drive — and
-        the car is booked before you're on the ground.
-      </p>
-      <ul class="ticks">
-        <li>Limousine and black car through affiliated Hoyt Livery</li>
-        <li>Rental cars arranged to your ETA</li>
-        <li>Crew hotel recommendations and shuttle</li>
-        <li>Danbury Fair and I-84 within five minutes by road</li>
-      </ul>
+<!-- ================================================== GALLERY -->
+<div data-page="gallery">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › Gallery</span>
+      <h1>Flight pictures from BAC &amp; Danbury Aviation clients.</h1>
+      <p class="lede lede--night">Our community is made up of interesting people flying interesting airplanes. Send us yours — in flight, on the ramp, at a fly-in, or somewhere you had no business landing — and we'll put it up here.</p>
     </div>
-    <div class="frame">
-      <div class="frame__bar"><span>Regional position</span><span>Distances approximate</span></div>
-      <svg viewBox="0 0 620 540" role="img" aria-label="Map showing Danbury Municipal Airport at center with nearby airports and approximate distances">
-        <rect width="620" height="540" fill="#0B2036"/>
-        <g fill="none" stroke="#1D3A57" stroke-width="1">
-          <circle cx="310" cy="220" r="80"/><circle cx="310" cy="220" r="160"/><circle cx="310" cy="220" r="240"/>
-        </g>
-        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#4A6C8C">
-          <text x="316" y="146">10 NM</text><text x="316" y="66">20 NM</text><text x="316" y="-14">30 NM</text>
-        </g>
-        <!-- spokes -->
-        <g stroke="#3B8FE8" stroke-width="1.2" opacity=".55" stroke-dasharray="4 5">
-          <path d="M310 220 L458 268"/>
-          <path d="M310 220 L168 384"/>
-          <path d="M310 220 L364 436"/>
-          <path d="M310 220 L92 468"/>
-        </g>
-        <!-- KDXR -->
-        <circle cx="310" cy="220" r="26" fill="#FF9A1F" opacity=".16"/>
-        <circle cx="310" cy="220" r="9" fill="#FF9A1F"/>
-        <text x="332" y="212" font-family="Archivo, sans-serif" font-weight="800" font-size="21" fill="#FFFFFF">KDXR</text>
-        <text x="332" y="232" font-family="IBM Plex Mono, monospace" font-size="11" fill="#FF9A1F">BUSINESS AIRCRAFT CENTER</text>
-        <text x="332" y="248" font-family="IBM Plex Mono, monospace" font-size="11" fill="#90A8BF">DANBURY, CT</text>
-        <!-- others -->
-        <g font-family="IBM Plex Mono, monospace" font-size="12">
-          <circle cx="458" cy="268" r="5" fill="#3B8FE8"/>
-          <text x="472" y="266" fill="#E9EFF5">OXC · Oxford</text>
-          <text x="472" y="282" fill="#5F87AB" font-size="10">~13 NM E</text>
+  </section>
 
-          <circle cx="168" cy="384" r="5" fill="#3B8FE8"/>
-          <text x="60" y="410" fill="#E9EFF5">HPN · Westchester</text>
-          <text x="60" y="426" fill="#5F87AB" font-size="10">~19 NM SW</text>
-
-          <circle cx="364" cy="436" r="5" fill="#3B8FE8"/>
-          <text x="380" y="434" fill="#E9EFF5">BDR · Bridgeport</text>
-          <text x="380" y="450" fill="#5F87AB" font-size="10">~24 NM S</text>
-
-          <circle cx="92" cy="468" r="5" fill="#5F87AB"/>
-          <text x="34" y="496" fill="#90A8BF">TEB / NYC metro</text>
-          <text x="34" y="512" fill="#5F87AB" font-size="10">~40 NM SW</text>
-        </g>
-        <g color="#1D4A72" transform="translate(392,60) rotate(-14) scale(.42)"><use href="#jet"/></g>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="close" id="contact">
-  <div class="wrap close__grid">
-    <div>
-      <span class="eyebrow eyebrow--night">Call ahead or just come</span>
-      <h2>Tell us when you're inbound.</h2>
-      <p class="lede lede--night">
-        Fuel, hangar, GPU, catering, a car — one call at 203 748 7000 covers all of it.
-        After-hours arrivals are no problem with advance notice.
-      </p>
-      <ul class="contact-list">
-        <li><span class="k">Phone</span><a class="v" href="tel:+12037487000">(203) 748-7000</a></li>
-        <li><span class="k">Email</span><a class="v" href="mailto:info@businessaircraftcenter.com">info@businessaircraftcenter.com</a></li>
-        <li><span class="k">Address</span><span class="v">81 Kenosia Avenue<br>Danbury, CT 06810</span></li>
-        <li><span class="k">Hours</span><span class="v">0700–1800 daily<br>24 hrs upon request</span></li>
-      </ul>
-    </div>
-    <div>
-      <form class="form" id="reqForm">
-        <div class="form__row">
-          <label><span class="lab">Name</span><input type="text" name="name" autocomplete="name"></label>
-          <label><span class="lab">Tail number</span><input type="text" name="tail" placeholder="N123AB"></label>
+  <section class="sec sec--night" style="padding-top:0">
+    <div class="wrap">
+      <div class="plates plates--3">
+        <div class="plate"><span class="plate__tag">Plate G1</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#1B4A7A"/><circle cx="320" cy="60" r="34" fill="#FFB04D" opacity=".5"/>
+            <path d="M0 220h400v80H0z" fill="#123353"/>
+            <g stroke="#FF9A1F" stroke-width="4" fill="none" opacity=".9">
+              <path d="M110 150h150M120 190h130"/><path d="M185 150v40"/>
+              <ellipse cx="185" cy="170" rx="66" ry="16"/>
+            </g>
+            <circle cx="130" cy="212" r="9" fill="#0C2138"/><circle cx="240" cy="212" r="9" fill="#0C2138"/>
+          </svg>
+          <div class="plate__cap"><b>Stearman on the ramp</b><span>Photo plate — submitted by clients</span></div>
         </div>
-        <div class="form__row">
-          <label><span class="lab">Phone</span><input type="tel" name="phone" autocomplete="tel"></label>
-          <label><span class="lab">Email</span><input type="email" name="email" autocomplete="email"></label>
+        <div class="plate"><span class="plate__tag">Plate G2</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#0F2740"/>
+            <path d="M0 200c60-26 120-34 200-34s140 8 200 34v100H0z" fill="#1A4A2E"/>
+            <path d="M40 232h320v10H40z" fill="#2A3B4A"/>
+            <g color="#8FB8DE" transform="translate(96,86) scale(.52)"><use href="#jet"/></g>
+          </svg>
+          <div class="plate__cap"><b>Departure off 26</b><span>Photo plate — submitted by clients</span></div>
         </div>
+        <div class="plate"><span class="plate__tag">Plate G3</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#2B4A2A"/>
+            <g fill="#7A4A18" opacity=".8"><circle cx="60" cy="70" r="42"/><circle cx="130" cy="50" r="34"/><circle cx="30" cy="130" r="36"/><circle cx="330" cy="240" r="46"/><circle cx="380" cy="180" r="32"/></g>
+            <g fill="#C4501C" opacity=".7"><circle cx="100" cy="110" r="30"/><circle cx="290" cy="270" r="28"/></g>
+            <path d="M60 210 L360 150 L366 168 L66 228 Z" fill="#3D4B55"/>
+            <path d="M62 219 L362 159" stroke="#E9EFF5" stroke-width="2" stroke-dasharray="14 16"/>
+            <rect x="150" y="176" width="80" height="26" fill="#DCE4EC" opacity=".85" transform="rotate(-11 190 189)"/>
+          </svg>
+          <div class="plate__cap"><b>KDXR in October</b><span>Photo plate — submitted by clients</span></div>
+        </div>
+        <div class="plate"><span class="plate__tag">Plate G4</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#12293F"/>
+            <path d="M40 250V150c0-56 54-96 160-96s160 40 160 96v100z" fill="#0C2138"/>
+            <g stroke="#3B8FE8" stroke-width="2" opacity=".45" fill="none"><path d="M80 250v-78h240v78"/></g>
+            <g color="#1D4A72" transform="translate(112,178) scale(.42)"><use href="#jet"/></g>
+          </svg>
+          <div class="plate__cap"><b>Inside the hangar</b><span>Photo plate — submitted by clients</span></div>
+        </div>
+        <div class="plate"><span class="plate__tag">Plate G5</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#0B2036"/>
+            <g stroke="#EAF3FF" stroke-width="1" opacity=".5"><path d="M0 190h400"/></g>
+            <circle cx="70" cy="72" r="26" fill="#FF9A1F" opacity=".3"/>
+            <g color="#274F78" transform="translate(60,110) scale(.72)"><use href="#jet"/></g>
+            <g fill="#EAF3FF" opacity=".7"><circle cx="60" cy="250" r="4"/><circle cx="140" cy="242" r="3.4"/><circle cx="220" cy="234" r="3"/><circle cx="300" cy="226" r="2.6"/><circle cx="370" cy="220" r="2.2"/></g>
+          </svg>
+          <div class="plate__cap"><b>Last light on the ramp</b><span>Photo plate — submitted by clients</span></div>
+        </div>
+        <div class="plate" style="display:grid;place-items:center;background:var(--night-3)">
+          <div style="position:relative;z-index:2;text-align:center;padding:24px">
+            <svg style="width:34px;height:34px;color:var(--papi);margin:0 auto 14px" viewBox="0 0 24 24"><use href="#s-mail"/></svg>
+            <b style="font-family:var(--display);font-size:19px;color:#fff;display:block;margin-bottom:8px">Send us yours</b>
+            <span style="font-family:var(--data);font-size:11px;color:var(--paint-dim);letter-spacing:.06em">contact@businessaircraftcenter.com</span>
+          </div>
+        </div>
+      </div>
+      <p class="plates__note">Illustrated stand-ins. The live gallery is a simple upload-and-approve queue — clients submit, BAC approves, the photo appears. No web edits required.</p>
+
+      <div class="frame" style="margin-top:40px">
+        <h3 style="color:#fff;margin-bottom:10px">Submitting a photo</h3>
+        <p class="lede lede--night" style="font-size:16px">Email your picture to <a href="mailto:contact@businessaircraftcenter.com" style="color:var(--papi)">contact@businessaircraftcenter.com</a> with your name, email, and a caption — where it was shot, the aircraft type, what was going on. By sending it you're confirming you have the right to let us share it here and on social.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== NEWS -->
+<div data-page="news">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › News</span>
+      <h1>What's happening on the north side.</h1>
+      <p class="lede lede--night">Field updates, new services, and the occasional reason to stop in.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <div class="news">
+        <a class="news__item" href="#/news">
+          <div class="news__meta"><b>Services</b>Latest</div>
+          <div><h3>GPU service now available</h3><p>Business Aircraft Center is now offering self-propelled ground power for mid- to large-size jets. No cart to chase down, no wait on a borrowed unit from the other side of the field.</p></div>
+          <div class="news__go">→</div>
+        </a>
+        <a class="news__item" href="#/news">
+          <div class="news__meta"><b>Amenities</b>Ongoing</div>
+          <div><h3>Free two-day stay in our new overnight suite</h3><p>Flying into the Danbury area? Take a break and freshen up in our brand-new suite with shower and bath — complimentary for fly-in customers and charter pilots. Call the office to reserve.</p></div>
+          <div class="news__go">→</div>
+        </a>
+        <a class="news__item" href="#/news">
+          <div class="news__meta"><b>On the field</b>Ongoing</div>
+          <div><h3>Office suites available at Danbury Airport</h3><p>Six spaces from 500 to 2,500 square feet, ample parking, pristine facilities, and a location convenient to I-84 and Route 7. Whether you're downsizing or expanding, call 203-943-6758 for the listing.</p></div>
+          <div class="news__go">→</div>
+        </a>
+        <a class="news__item" href="#/news">
+          <div class="news__meta"><b>Community</b>Ongoing</div>
+          <div><h3>Patient Airlift Services needs volunteer pilots</h3><p>PALS arranges free air transportation for people who need medical care far from home. If you have the airplane and the time, you can make a real difference in someone's life.</p></div>
+          <div class="news__go">→</div>
+        </a>
+        <a class="news__item" href="#/news">
+          <div class="news__meta"><b>On the field</b>Ongoing</div>
+          <div><h3>Centennial Helicopters at Danbury</h3><p>Charter, scenic aerial tours, photography and survey work, and a flight school — all based here at KDXR.</p></div>
+          <div class="news__go">→</div>
+        </a>
+        <a class="news__item" href="#/news">
+          <div class="news__meta"><b>Finance</b>Ongoing</div>
+          <div><h3>Aircraft lending contact</h3><p>Looking to purchase and need financing? Lisa McPartland at Tompkins Mahopac Bank specializes in aircraft lending — (845) 278-1058.</p></div>
+          <div class="news__go">→</div>
+        </a>
+      </div>
+      <p style="margin-top:34px"><a class="btn btn--ink" href="#/newsletter">Get this by email <span class="arrow">→</span></a></p>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== NEWSLETTER -->
+<div data-page="newsletter">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › Newsletter</span>
+      <h1>Hangar news, in your inbox.</h1>
+      <p class="lede lede--night">A few times a year: field updates, new amenities, special offers, and the occasional piece on aviation language nobody explains to you properly. No selling, no spam.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap formwrap">
+      <form class="form form--light" data-demo>
+        <div class="form__legend">Sign up for updates</div>
         <div class="form__row">
-          <label><span class="lab">What do you need</span>
-            <select name="need">
-              <option>Fuel on arrival</option><option>Transient hangar</option>
-              <option>Permanent hangar / basing</option><option>GPU</option>
-              <option>Catering</option><option>Ground transportation</option>
-              <option>Maintenance or detailing</option>
-            </select>
+          <label><span class="lab">First name <span class="req">*</span></span><input type="text" required autocomplete="given-name"></label>
+          <label><span class="lab">Last name <span class="req">*</span></span><input type="text" required autocomplete="family-name"></label>
+        </div>
+        <label><span class="lab">Email <span class="req">*</span></span><input type="email" required autocomplete="email"></label>
+        <div class="form__row">
+          <label><span class="lab">Tail number</span><input type="text" placeholder="N123AB"></label>
+          <label><span class="lab">I'm a</span>
+            <select><option>Based aircraft owner</option><option>Transient pilot</option><option>Charter / Part 135 operator</option><option>Flight department</option><option>Student pilot</option><option>Just interested</option></select>
           </label>
-          <label><span class="lab">ETA</span><input type="text" name="eta" placeholder="12 Aug · 1430L"></label>
         </div>
-        <label><span class="lab">Anything else</span><textarea name="notes" placeholder="Passenger count, fuel load, after-hours arrival…"></textarea></label>
-        <button class="btn btn--primary" type="submit">Send request <span class="arrow">→</span></button>
-        <p class="form__ok" id="formOk">Request received — the desk will confirm by phone. (Demo form: nothing was actually sent.)</p>
+        <label class="checkline" style="margin-top:8px"><input type="checkbox" checked> Send me special offers and event invitations</label>
+        <button class="btn btn--primary" type="submit">Subscribe <span class="arrow">→</span></button>
+        <p class="form__ok">You're on the list. (Demo form: nothing was actually sent.)</p>
+      </form>
+
+      <div>
+        <div class="aside">
+          <h3>In the latest issue</h3>
+          <ul class="ticks" style="margin-top:14px">
+            <li>A review of aviation language — the phrases everyone uses and nobody defines</li>
+            <li>Overnight suites at BAC, and who gets them free</li>
+            <li>Special offers and amenities across BAC and Danbury Aviation</li>
+          </ul>
+          <p style="margin-top:22px;margin-bottom:0"><a class="btn btn--ink" href="#/news">Read the news feed <span class="arrow">→</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== ABOUT -->
+<div data-page="about">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › About BAC</span>
+      <h1>On this field since 1980.</h1>
+      <p class="lede lede--night">Business Aircraft Center is a fixed base operation on the north side of Danbury Municipal Airport, occupying five acres and 31,500 square feet of hangar and office space — the largest FBO on the field.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap split">
+      <div>
+        <h2 style="margin-bottom:18px">A family business that happens to run a ramp.</h2>
+        <p class="lede">Tango Yankee, LLC is the parent company of Business Aircraft Center and Danbury Aviation, a self- and full-service aircraft and pilot planning center at Danbury Municipal that includes aircraft management, hangar storage, tie-downs, and detailing.</p>
+        <p class="lede">Tango Yankee is owned and operated by Santo and Lynda Silvestro of New Canaan, who also own Hoyt Livery, New Canaan Auto Body, New Canaan Auto Repair, and the Veggie Barn Deli. They're active in the community and members of the New Canaan Chamber of Commerce — which is why your car is usually already waiting.</p>
+      </div>
+      <div>
+        <div class="stats">
+          <div class="stat"><div class="stat__v">1980</div><span class="stat__k">Established</span></div>
+          <div class="stat"><div class="stat__v">31,500</div><span class="stat__k">Sq ft hangar &amp; office</span></div>
+          <div class="stat"><div class="stat__v">5</div><span class="stat__k">Acres, north side</span></div>
+          <div class="stat"><div class="stat__v">7</div><span class="stat__k">Days a week</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================================================== CONTACT -->
+<div data-page="contact">
+  <section class="phead">
+    <svg class="phead__jet" viewBox="0 0 440 160" aria-hidden="true"><use href="#jet"/></svg>
+    <div class="wrap">
+      <span class="crumb"><a href="#/home">Home</a> › Contact</span>
+      <h1>Tell us when you're inbound.</h1>
+      <p class="lede lede--night">Fuel, hangar, GPU, catering, a car — one call at (203) 748-7000 covers all of it. After-hours arrivals are no problem with advance notice.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--night" style="padding-top:clamp(48px,6vw,72px)">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <ul class="contact-list" style="margin-top:0">
+          <li><span class="k">Phone</span><a class="v" href="tel:+12037487000">(203) 748-7000</a></li>
+          <li><span class="k">General</span><a class="v" href="mailto:info@businessaircraftcenter.com">info@businessaircraftcenter.com</a></li>
+          <li><span class="k">Photos</span><a class="v" href="mailto:contact@businessaircraftcenter.com">contact@businessaircraftcenter.com</a></li>
+          <li><span class="k">Office rentals</span><a class="v" href="tel:+12039436758">(203) 943-6758</a></li>
+          <li><span class="k">Address</span><span class="v">81 Kenosia Avenue<br>Danbury, CT 06810</span></li>
+          <li><span class="k">Hours</span><span class="v">0700–1800 daily<br>24 hrs upon request</span></li>
+        </ul>
+        <div class="social" style="margin-top:28px">
+          <a href="#" aria-label="YouTube"><svg><use href="#s-yt"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg><use href="#s-fb"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg><use href="#s-tw"/></svg></a>
+        </div>
+      </div>
+      <form class="form" data-demo>
+        <div class="form__legend">Send us a message</div>
+        <div class="form__row">
+          <label><span class="lab">Name</span><input type="text" autocomplete="name"></label>
+          <label><span class="lab">Tail number</span><input type="text" placeholder="N123AB"></label>
+        </div>
+        <div class="form__row">
+          <label><span class="lab">Phone</span><input type="tel" autocomplete="tel"></label>
+          <label><span class="lab">Email</span><input type="email" autocomplete="email"></label>
+        </div>
+        <label><span class="lab">What's this about</span>
+          <select><option>General question</option><option>Fuel</option><option>Transient hangar</option><option>Permanent hangar / basing</option><option>Office rental</option><option>Maintenance or detailing</option><option>Something else</option></select>
+        </label>
+        <label><span class="lab">Message</span><textarea></textarea></label>
+        <button class="btn btn--primary" type="submit">Send message <span class="arrow">→</span></button>
+        <p class="form__ok">Message received — we'll be in touch. (Demo form: nothing was actually sent.)</p>
       </form>
     </div>
-  </div>
+  </section>
+</div>
 
-  <div class="wrap foot">
-    <div class="foot__in">
-      <span>© 2026 Business Aircraft Center · Tango Yankee, LLC</span>
-      <span>
-        <a href="https://flightaware.com/live/airport/KDXR" target="_blank" rel="noopener">FlightAware KDXR</a> ·
-        <a href="http://www.palservices.org/" target="_blank" rel="noopener">Patient Airlift Services</a> ·
-        <a href="http://www.centennialhelicopters.com" target="_blank" rel="noopener">Centennial Helicopters</a>
-      </span>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="sitefoot">
+  <div class="wrap foot__cols">
+    <div>
+      <div class="foot__logo"><svg viewBox="0 0 460 116"><use href="#logo"/></svg></div>
+      <p>Fixed base operation on the north side of Danbury Municipal Airport since 1980. A Tango Yankee, LLC company.</p>
+      <div class="social">
+        <a href="#" aria-label="YouTube"><svg><use href="#s-yt"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg><use href="#s-fb"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg><use href="#s-tw"/></svg></a>
+        <a href="mailto:info@businessaircraftcenter.com" aria-label="Email"><svg><use href="#s-mail"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Operations</h4>
+      <ul>
+        <li><a href="#/services">Services</a></li>
+        <li><a href="#/amenities">Amenities</a></li>
+        <li><a href="#/reservations">Reservations</a></li>
+        <li><a href="#/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Community</h4>
+      <ul>
+        <li><a href="#/gallery">Photo gallery</a></li>
+        <li><a href="#/news">News</a></li>
+        <li><a href="#/newsletter">Newsletter</a></li>
+        <li><a href="#/about">About BAC</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>On the field</h4>
+      <ul>
+        <li><a href="https://flightaware.com/live/airport/KDXR" target="_blank" rel="noopener">FlightAware KDXR</a></li>
+        <li><a href="http://www.palservices.org/" target="_blank" rel="noopener">Patient Airlift Services</a></li>
+        <li><a href="http://www.centennialhelicopters.com" target="_blank" rel="noopener">Centennial Helicopters</a></li>
+      </ul>
     </div>
   </div>
-
+  <div class="wrap foot__bar">
+    <div class="foot__bar-in">
+      <span>© 2026 Business Aircraft Center · Tango Yankee, LLC</span>
+      <span>81 Kenosia Avenue · Danbury, CT 06810 · <a href="tel:+12037487000">(203) 748-7000</a></span>
+    </div>
+  </div>
   <div class="kane">
     <div class="wrap kane__in">
       <span><b>Design concept</b> — not a live site. Prepared for Business Aircraft Center.</span>
       <span class="accent"><b>Kane PC</b> · White Plains, NY · kanepc.com</span>
     </div>
   </div>
-</section>
+</footer>
 
 <script>
-/* hero light field */
+/* ---------- hero light field ---------- */
 (function(){
   var svg=document.getElementById('field'); if(!svg) return;
   var NS='http://www.w3.org/2000/svg', VX=600, VY=205;
@@ -781,65 +1038,61 @@ input[type=range]{width:100%;accent-color:var(--papi-deep);height:26px;cursor:po
   svg.appendChild(defs);
   add('rect',{x:0,y:110,width:1200,height:210,fill:'url(#glow)'});
   add('polygon',{points:'150,560 1050,560 '+(VX+26)+','+VY+' '+(VX-26)+','+VY,fill:'#0C2138',opacity:'.85'});
-  function lane(x0,x1,colour,count,r0){
-    for(var i=0;i<count;i++){
-      var t=i/(count-1), p=Math.pow(t,2.1);
-      var x=x0+(x1-x0)*p, y=560+(VY-560)*p;
-      var r=Math.max(0.7,r0*(1-p*0.82)), o=0.95-p*0.55;
-      var c=add('circle',{cx:x.toFixed(1),cy:y.toFixed(1),r:r.toFixed(2),fill:colour,opacity:o.toFixed(2)});
-      if(i%7===3){
-        var a=document.createElementNS(NS,'animate');
+  function lane(x0,x1,c,n,r0){
+    for(var i=0;i<n;i++){
+      var p=Math.pow(i/(n-1),2.1), x=x0+(x1-x0)*p, y=560+(VY-560)*p;
+      var r=Math.max(.7,r0*(1-p*.82)), o=.95-p*.55;
+      var el=add('circle',{cx:x.toFixed(1),cy:y.toFixed(1),r:r.toFixed(2),fill:c,opacity:o.toFixed(2)});
+      if(i%7===3){var a=document.createElementNS(NS,'animate');
         a.setAttribute('attributeName','opacity');
-        a.setAttribute('values',o.toFixed(2)+';'+(o*0.45).toFixed(2)+';'+o.toFixed(2));
-        a.setAttribute('dur',(5+(i%5))+'s'); a.setAttribute('repeatCount','indefinite');
-        c.appendChild(a);
-      }
+        a.setAttribute('values',o.toFixed(2)+';'+(o*.45).toFixed(2)+';'+o.toFixed(2));
+        a.setAttribute('dur',(5+(i%5))+'s');a.setAttribute('repeatCount','indefinite');el.appendChild(a);}
     }
   }
-  lane(148,VX-30,'#EAF3FF',26,5.2);
-  lane(1052,VX+30,'#EAF3FF',26,5.2);
-  lane(40,VX-120,'#3B8FE8',20,4.4);
+  lane(148,VX-30,'#EAF3FF',26,5.2); lane(1052,VX+30,'#EAF3FF',26,5.2); lane(40,VX-120,'#3B8FE8',20,4.4);
   add('circle',{cx:118,cy:496,r:5.5,fill:'#FF9A1F',opacity:'.9'});
   add('circle',{cx:104,cy:496,r:5.5,fill:'#EAF3FF',opacity:'.85'});
   for(var i=0;i<9;i++) add('rect',{x:200+i*90,y:552,width:44,height:3,fill:'#34C27F',opacity:'.5'});
 })();
 
-/* comparator — sample pricing, swap for live fuel-desk feed */
+/* ---------- hash router ---------- */
 (function(){
-  var PRICE={jeta:{us:5.85,them:9.40},'100ll':{us:6.95,them:10.25}};
-  var RAMP_THEM=275, TIE_US=45, TIE_THEM=169, fuel='jeta';
-  var range=document.getElementById('galRange'), galNum=document.getElementById('galNum');
-  var o={save:'saveOut',fuelUs:'fuelUs',fuelThem:'fuelThem',rampThem:'rampThem',tieUs:'tieUs',tieThem:'tieThem',totUs:'totUs',totThem:'totThem'};
-  for(var k in o) o[k]=document.getElementById(o[k]);
-  function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
-  function render(){
-    var g=parseInt(range.value,10), p=PRICE[fuel];
-    var fUs=g*p.us, fThem=g*p.them, tUs=fUs+TIE_US, tThem=fThem+RAMP_THEM+TIE_THEM;
-    galNum.textContent=g.toLocaleString('en-US');
-    o.fuelUs.textContent=money(fUs); o.fuelThem.textContent=money(fThem);
-    o.rampThem.textContent=money(RAMP_THEM);
-    o.tieUs.textContent=money(TIE_US); o.tieThem.textContent=money(TIE_THEM);
-    o.totUs.textContent=money(tUs); o.totThem.textContent=money(tThem);
-    o.save.textContent=money(tThem-tUs);
+  var pages=document.querySelectorAll('[data-page]');
+  var links=document.querySelectorAll('.nav__links a[href^="#/"]');
+  var navlinks=document.getElementById('navlinks');
+  var burger=document.getElementById('burger');
+
+  function route(){
+    var h=(location.hash||'#/home').replace('#/','').split('?')[0] || 'home';
+    var found=false;
+    pages.forEach(function(p){
+      var on = p.dataset.page===h;
+      p.classList.toggle('active',on);
+      if(on) found=true;
+    });
+    if(!found){ document.querySelector('[data-page="home"]').classList.add('active'); h='home'; }
+    links.forEach(function(a){ a.classList.toggle('is-active', a.getAttribute('href')==='#/'+h); });
+    navlinks.classList.remove('open'); burger.setAttribute('aria-expanded','false');
+    window.scrollTo({top:0,behavior:'auto'});
+    document.title = (h==='home' ? '' : h.charAt(0).toUpperCase()+h.slice(1)+' — ') +
+      'Business Aircraft Center — KDXR, Danbury CT';
   }
-  range.addEventListener('input',render);
-  document.querySelectorAll('.chip[data-gal]').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('.chip[data-gal]').forEach(function(x){x.setAttribute('aria-pressed','false');});
-      b.setAttribute('aria-pressed','true'); range.value=b.dataset.gal; render();
-    });
+  window.addEventListener('hashchange',route);
+  route();
+
+  burger.addEventListener('click',function(){
+    var open=navlinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded',String(open));
   });
-  document.querySelectorAll('.chip[data-fuel]').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('.chip[data-fuel]').forEach(function(x){x.setAttribute('aria-pressed','false');});
-      b.setAttribute('aria-pressed','true'); fuel=b.dataset.fuel; render();
-    });
-  });
-  render();
 })();
 
-document.getElementById('reqForm').addEventListener('submit',function(e){
-  e.preventDefault(); document.getElementById('formOk').classList.add('show');
+/* ---------- demo forms ---------- */
+document.querySelectorAll('form[data-demo]').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=f.querySelector('.form__ok');
+    if(ok){ ok.classList.add('show'); ok.scrollIntoView({block:'center',behavior:'smooth'}); }
+  });
 });
 </script>
 </body>
