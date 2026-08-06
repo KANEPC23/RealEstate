@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pyramid Restoration NY — 220 West 42nd Street · The Candler Building · Exterior Restoration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E141B; --blue:#1F5CA8; --blue-deep:#0F2E56; --blue-mid:#2F6FBF;
+  --slate:#8FA8C4; --stone:#C2A878; --rule:#DBE2E9; --wash:#F4F7FA;
+  --muted:#5A6B7C; --paper:#fff;
+  --n:#1F5CA8; --e:#2F6FBF; --s:#0F2E56; --w:#6B8FB8; --mob:#C2A878; --gen:#8A6D3F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{margin:0;background:#EEF2F6;color:var(--ink);
+  font-family:'Archivo',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-size:15px;line-height:1.55}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-.015em}
+a{color:var(--blue)}
+p{margin:0 0 12px}
+
+/* ---------------- top bar ---------------- */
+.topbar{position:sticky;top:0;z-index:60;background:var(--blue-deep);color:#fff;
+  box-shadow:0 1px 0 rgba(255,255,255,.12),0 6px 24px rgba(14,20,27,.16)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:18px}
+.tb-mark{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.tb-mark b{font-size:15px;font-weight:800;letter-spacing:.04em}
+.tb-mark span{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.22em;color:var(--slate);display:block;text-transform:uppercase}
+nav.tabs{display:flex;gap:2px;overflow-x:auto;flex:1;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:#B9CCE0;text-decoration:none;padding:7px 9px;border-radius:2px;white-space:nowrap;border-bottom:2px solid transparent}
+nav.tabs a:hover{background:rgba(255,255,255,.09);color:#fff}
+nav.tabs a.on{color:#fff;border-bottom-color:var(--stone)}
+.tb-act{display:flex;gap:6px;flex-shrink:0}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  background:transparent;color:#C9D8E8;border:1px solid rgba(255,255,255,.28);padding:6px 11px;border-radius:2px;cursor:pointer}
+.btn:hover{background:#fff;color:var(--blue-deep);border-color:#fff}
+.btn.on{background:var(--stone);border-color:var(--stone);color:#2A200E}
+:focus-visible{outline:2px solid var(--stone);outline-offset:2px}
+
+/* ---------------- sheets ---------------- */
+.wrap{max-width:1180px;margin:0 auto;padding:22px}
+section.sheet{background:var(--paper);margin:0 0 22px;padding:44px 52px 48px;position:relative;
+  box-shadow:0 1px 3px rgba(14,20,27,.14),0 10px 34px rgba(14,20,27,.07)}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin:0 0 20px}
+.sec-head h2{font-size:21px;text-transform:uppercase;letter-spacing:.02em}
+.sec-head .idx{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.08em}
+.sec-head .tail{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+h3.sub{font-size:13px;text-transform:uppercase;letter-spacing:.11em;color:var(--blue-deep);margin:26px 0 12px;
+  padding-bottom:5px;border-bottom:1px solid var(--rule)}
+.label{font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:17px;line-height:1.5;color:#1B2733}
+.strip{display:flex;border-top:1px solid var(--rule);margin-top:34px;padding-top:9px;
+  font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.strip span{padding-right:22px}
+.strip span b{color:var(--ink);font-weight:600}
+.strip .right{margin-left:auto;padding-right:0}
+
+/* ---------------- cover ---------------- */
+.cover{background:var(--blue-deep);color:#fff;padding:0;overflow:hidden}
+.cover-in{padding:58px 52px 46px}
+.cover .label{color:var(--slate)}
+.cover h1{font-size:64px;line-height:.93;font-weight:800;letter-spacing:-.035em;margin:30px 0 0}
+.cover h1 em{font-style:normal;color:var(--stone);display:block;font-size:20px;font-weight:600;letter-spacing:.02em;margin-bottom:14px;text-transform:uppercase}
+.cover .addr{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.05em;color:#C9D8E8;margin-top:18px;line-height:1.8}
+.cover-rule{height:3px;background:var(--stone);width:104px;margin:26px 0}
+.cover-meta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.22);margin-top:34px}
+.cover-meta div{padding:16px 18px 0 0}
+.cover-meta .v{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;margin-top:4px}
+.cover-foot{background:#081C36;color:#9FB6CE;padding:14px 52px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase}
+
+/* ---------------- generic bits ---------------- */
+.figs{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-right:0;margin:0 0 24px}
+.figs>div{padding:15px 18px;border-right:1px solid var(--rule)}
+.figs .v{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--blue-deep);letter-spacing:-.02em;margin-top:4px}
+.figs .v small{font-size:13px;color:var(--muted);font-weight:400}
+.two{display:grid;grid-template-columns:1.35fr 1fr;gap:36px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.panel{background:var(--wash);padding:20px 22px;border-left:3px solid var(--blue)}
+.panel.stone{border-left-color:var(--stone);background:#FDFBF7}
+.panel h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.panel ul{margin:0;padding-left:16px;font-size:13.5px;line-height:1.55}
+.panel li{margin-bottom:6px}
+.callout{border:1px solid var(--stone);border-left:4px solid var(--stone);padding:16px 20px;font-size:13.5px;margin:20px 0 0;background:#FDFBF7}
+.callout b.k{display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A6D3F;margin-bottom:6px}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:500;border:1px solid var(--slate);
+  color:var(--blue-deep);padding:2px 6px;letter-spacing:.05em;display:inline-block;margin:0 3px 3px 0}
+.tagrow{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+
+/* ---------------- tables ---------------- */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-family:'IBM Plex Mono',monospace;font-size:8.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);text-align:left;border-bottom:1px solid var(--ink);padding:0 10px 7px 0}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th.num,td.num{text-align:right;padding-right:0}
+td.num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+.code{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--blue);letter-spacing:.04em;white-space:nowrap}
+tr.tot td{border-bottom:0;border-top:2px solid var(--ink);font-weight:700;font-size:15px;padding-top:12px}
+tr.tot td.num{font-size:17px;color:var(--blue-deep)}
+table.tight td{padding:6px 10px 6px 0;font-size:12.5px}
+
+/* ---------------- bid explorer ---------------- */
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--wash);
+  border:1px solid var(--rule);padding:12px 14px;margin-bottom:0;position:sticky;top:52px;z-index:30}
+.toolbar input[type=search]{font-family:'Archivo';font-size:13.5px;padding:7px 11px;border:1px solid var(--rule);
+  background:#fff;min-width:210px;flex:1;border-radius:2px}
+.fbtn{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+  border:1px solid var(--rule);background:#fff;color:var(--muted);padding:6px 10px;cursor:pointer;border-radius:2px}
+.fbtn:hover{border-color:var(--blue);color:var(--blue)}
+.fbtn.on{background:var(--blue-deep);border-color:var(--blue-deep);color:#fff}
+.tally{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.tally b{color:var(--blue-deep);font-size:14px;letter-spacing:0}
+
+.bidsec{border:1px solid var(--rule);border-top:0}
+.bidsec-head{display:flex;align-items:center;gap:14px;padding:13px 14px;background:#fff;
+  border-bottom:1px solid var(--rule);cursor:pointer;user-select:none}
+.bidsec-head:hover{background:#FAFCFE}
+.bidsec-head .caret{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--blue);width:14px;transition:transform .18s}
+.bidsec.closed .caret{transform:rotate(-90deg)}
+.bidsec.closed .bidsec-body{display:none}
+.bidsec-head .swatch{width:9px;height:26px;flex-shrink:0}
+.bidsec-head .nm{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.bidsec-head .meta{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bidsec-head .amt{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:var(--blue-deep)}
+.bidsec-body{padding:0 14px 6px}
+.bidsec table{font-size:12.8px}
+.bidsec th{padding-top:10px}
+tr.asm{cursor:pointer}
+tr.asm:hover>td{background:#F7FAFD}
+tr.asm td{font-weight:600}
+tr.asm .caret2{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--blue);display:inline-block;width:12px}
+tr.subline td{color:var(--muted);font-size:12.2px;background:#FBFCFE}
+tr.subline td.ind{padding-left:26px}
+tr.subline.hidden{display:none}
+tr.secsub td{border-top:1px solid var(--ink);border-bottom:0;font-weight:700;padding-top:10px}
+tr.secsub td.num{color:var(--blue-deep);font-size:14px}
+.excl{background:#FDF6EA!important}
+.excl-flag{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:#8A6D3F;border:1px solid var(--stone);padding:1px 5px;margin-left:8px;white-space:nowrap}
+.grand{display:flex;align-items:baseline;gap:18px;border:2px solid var(--ink);border-top:0;padding:18px 16px;background:#fff}
+.grand .k{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.grand .v{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--blue-deep)}
+.noresult{padding:24px 14px;color:var(--muted);font-size:13.5px;border:1px solid var(--rule);border-top:0;background:#fff}
+
+/* ---------------- distribution bars ---------------- */
+.dist{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:end;
+  border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:20px 0 16px;margin-bottom:22px}
+.dist .col{display:flex;flex-direction:column;gap:8px;cursor:pointer}
+.dist .col:hover .bar{opacity:.82}
+.dist .nm{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.dist .bar{height:126px;background:var(--wash);display:flex;align-items:flex-end;transition:opacity .15s}
+.dist .fill{width:100%}
+.dist .fill i{display:block;height:4px;background:var(--stone)}
+.dist .amt{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600}
+.dist .pct{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------------- gantt ---------------- */
+.gantt{border:1px solid var(--rule);background:#fff;overflow:hidden}
+.g-months{display:flex;border-bottom:1px solid var(--ink);background:var(--wash);padding-left:280px}
+.g-months div{flex:1;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding:6px 0 6px 4px;border-left:1px solid var(--rule)}
+.g-row{display:flex;align-items:stretch;border-bottom:1px solid #EDF1F5;min-height:27px}
+.g-row:hover{background:#F7FAFD}
+.g-row.summary{background:#F2F6FA;border-bottom:1px solid var(--rule)}
+.g-row.summary .g-name{font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.g-name{width:280px;flex-shrink:0;padding:5px 12px 5px 14px;font-size:11.5px;line-height:1.35;
+  border-right:1px solid var(--rule);display:flex;gap:8px;align-items:flex-start}
+.g-name .id{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--slate);padding-top:2px;flex-shrink:0}
+.g-track{flex:1;position:relative;padding:6px 0}
+.g-bar{position:absolute;height:13px;top:7px;border-radius:1px;min-width:3px}
+.g-row.summary .g-bar{height:9px;top:9px}
+.g-lab{position:absolute;top:6px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--muted);
+  white-space:nowrap;padding-left:5px}
+.g-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px;font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-items:center}
+.g-legend i{display:inline-block;width:16px;height:9px;margin-right:6px;vertical-align:-1px}
+
+/* ---------------- accordion ---------------- */
+.acc{border-top:1px solid var(--rule)}
+.acc-item{border-bottom:1px solid var(--rule)}
+.acc-h{display:flex;align-items:center;gap:12px;padding:13px 4px;cursor:pointer;user-select:none}
+.acc-h:hover{background:#FAFCFE}
+.acc-h .caret{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--blue);width:14px;transition:transform .18s}
+.acc-item.open .caret{transform:rotate(90deg)}
+.acc-h h4{font-size:15px;text-transform:uppercase;letter-spacing:.03em}
+.acc-h .n{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--slate);letter-spacing:.1em}
+.acc-b{display:none;padding:0 4px 20px 30px}
+.acc-item.open .acc-b{display:block}
+.acc-b ul{margin:0;padding-left:16px;font-size:13.5px;line-height:1.6;columns:2;column-gap:34px}
+.acc-b li{margin-bottom:5px;break-inside:avoid}
+.acc-b p{font-size:13.5px}
+
+/* ---------------- references ---------------- */
+.refs{display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+.ref{border-top:1px solid var(--rule);padding:15px 0 16px}
+.ref .who{font-size:15px;font-weight:700}
+.ref .org{font-size:13px;color:var(--muted);margin-bottom:6px}
+.ref .site{font-size:13px}
+.ref .scope{font-size:12.5px;color:var(--muted);line-height:1.45;margin-top:3px}
+.ref .val{font-family:'IBM Plex Mono',monospace;font-size:13.5px;font-weight:600;color:var(--blue-deep);margin-top:5px}
+
+/* ---------------- drop map ---------------- */
+.dropmap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:6px}
+.face{border:1px solid var(--rule);padding:16px}
+.face.on{border-color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue)}
+.face h4{font-size:15px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.face .sm{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.face .amt{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:var(--blue-deep);margin-top:10px}
+
+/* ---------------- audit (screen only) ---------------- */
+#audit{display:none;border:2px dashed var(--stone);background:#FDF9F2;padding:20px 24px;margin:0 0 22px}
+#audit.show{display:block}
+#audit h3{font-size:14px;text-transform:uppercase;letter-spacing:.1em;color:#8A6D3F;margin-bottom:4px}
+#audit .note{font-size:13px;color:#6B5426;margin-bottom:14px}
+#audit table{font-size:12.5px}
+.ok{color:#1B6B3A;font-weight:600}
+.warn{color:#A8621B;font-weight:600}
+
+/* ---------------- signature ---------------- */
+.sign{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.sigline{border-bottom:1px solid var(--ink);height:38px}
+.sigcap{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:6px}
+.endmark{margin-top:36px;padding-top:26px;border-top:1px solid var(--rule);text-align:center;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.endmark b{display:block;font-family:'Archivo';font-size:16px;font-weight:800;letter-spacing:.02em;color:var(--blue-deep);margin-bottom:5px}
+
+/* ---------------- print ---------------- */
+@page{size:letter portrait;margin:0.5in}
+@media print{
+  body{background:#fff;font-size:9.5pt}
+  .topbar,.toolbar,#audit,.tb-act,.g-legend .btn{display:none!important}
+  .wrap{max-width:none;padding:0}
+  section.sheet{box-shadow:none;padding:0 0 22pt;margin:0 0 22pt;page-break-after:always;break-after:page}
+  section.sheet:last-of-type{page-break-after:auto}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cover-in{padding:38pt 30pt}
+  .cover h1{font-size:38pt}
+  .cover-foot{padding:10pt 30pt}
+  .bidsec.closed .bidsec-body{display:block!important}
+  .bidsec.closed .caret{transform:none}
+  tr.subline.hidden{display:table-row!important}
+  .acc-b{display:block!important}
+  .bidsec,.gantt,.dist,table,.refs,.two,.three{break-inside:auto}
+  tr,.g-row,.ref,.face,.panel{break-inside:avoid}
+  .dist .fill,.g-bar,.bidsec-head .swatch,.excl{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sec-head{break-after:avoid}
+  h3.sub{break-after:avoid}
+  a{color:var(--ink);text-decoration:none}
+}
+@media screen and (max-width:920px){
+  section.sheet{padding:26px 20px 30px}
+  .cover-in{padding:34px 20px}
+  .cover h1{font-size:38px}
+  .figs,.two,.three,.refs,.dist,.dropmap,.cover-meta,.sign{grid-template-columns:1fr}
+  .figs>div{border-right:0;border-bottom:1px solid var(--rule)}
+  .acc-b ul{columns:1}
+  .g-name{width:150px;font-size:10px}
+  .g-months{padding-left:150px}
+  .dist .bar{height:56px}
+  .toolbar{position:static}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP BAR ===================== -->
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="tb-mark">
+      <svg width="30" height="27" viewBox="0 0 52 46" aria-hidden="true">
+        <path d="M26 0 52 46H0z" fill="#8FA8C4" opacity=".55"/>
+        <rect x="16" y="20" width="6" height="26" fill="#fff"/>
+        <rect x="23.5" y="12" width="6" height="34" fill="#fff"/>
+        <rect x="31" y="18" width="6" height="28" fill="#fff"/>
+      </svg>
+      <div><b>PYRAMID</b><span>220 W 42nd St</span></div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a href="#cover">Cover</a>
+      <a href="#letter">Letter</a>
+      <a href="#firm">Firm</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#project">Project Info</a>
+      <a href="#pricing">Bid Sheet</a>
+      <a href="#schedules">Schedules</a>
+      <a href="#program">Program</a>
+      <a href="#drops">Drops</a>
+      <a href="#refs">References</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#accept">Acceptance</a>
+    </nav>
+    <div class="tb-act">
+      <button class="btn" id="auditBtn" type="button">Audit</button>
+      <button class="btn" onclick="window.print()" type="button">Print / PDF</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ===================== 00 COVER ===================== -->
+<section class="sheet cover" id="cover">
+  <div class="cover-in">
+    <div class="label">Exterior Restoration · Interview Packet · Proposal #11082</div>
+    <h1><em>220 West 42nd Street</em>The Candler<br>Building</h1>
+    <div class="addr">
+      220 WEST 42ND STREET, NEW YORK, NY 10036<br>
+      BLOCK 1013 · LOT 42 · BIN 1017932 · DOB M01136123-I1
+    </div>
+    <div class="cover-rule"></div>
+    <p style="color:#C9D8E8;max-width:640px;font-size:15.5px">
+      Submitted to YS 220W42 Holdings LLC, c/o Yellowstone Real Estate, 1325 Avenue of the Americas,
+      New York, NY 10019. Base bid work per SPAR Architects drawing set 24098 dated 11/14/2024,
+      RA/PE Scott Profetta. Pyramid Restoration NY LLC will supply all materials, permits, equipment
+      and skilled mechanics.
+    </p>
+    <div class="cover-meta">
+      <div><div class="label">Contract sum</div><div class="v">$1,838,533.50</div></div>
+      <div><div class="label">Working days</div><div class="v">240</div></div>
+      <div><div class="label">Elevations</div><div class="v">4 · 27 drops</div></div>
+      <div><div class="label">Issued</div><div class="v">20 Dec 2024</div></div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>Pyramid Restoration NY LLC</span>
+    <span>53-02 11th Street, 2nd Floor · Long Island City NY 11101</span>
+    <span>Info@Pyramidny.com · (914) 515-3919</span>
+  </div>
+</section>
+
+<!-- ===================== AUDIT PANEL ===================== -->
+<div id="audit">
+  <h3>Internal audit — not part of the client deliverable</h3>
+  <p class="note">Every line item below is recomputed from quantity × unit price and rolled up live.
+  This panel is hidden on screen by default and never prints.</p>
+  <div id="auditBody"></div>
+</div>
+
+<!-- ===================== 01 LETTER ===================== -->
+<section class="sheet" id="letter">
+  <div class="sec-head"><span class="idx">01</span><h2>Letter of Transmittal</h2><span class="tail">Proposal #11082</span></div>
+  <p class="label" style="margin-bottom:16px">December 20, 2024 · Attn: Mr. Posner · YS 220W42 Holdings LLC c/o Yellowstone Real Estate</p>
+
+  <p class="lede">Pyramid Restoration NY LLC is pleased to submit our proposal to perform exterior
+  repairs at 220 West 42nd Street. We shall supply all materials, permits, equipment and skilled
+  mechanics.</p>
+
+  <p>Our price is built line by line off the SPAR Architects bid sheet. Every terracotta unit, cast
+  stone and GFRC replica, steel repair and waterproofing assembly is carried at a stated unit rate,
+  so quantities that move in the field settle against numbers the design team has already reviewed.
+  All unit quantities are allowances: the architect confirms work locations after each area is
+  mobilized, we maintain as-built drawings and a running quantity log submitted with each payment
+  requisition, and unused allowance value is credited back to ownership except where material is
+  retained as attic stock.</p>
+
+  <p>The sequence takes the building one elevation at a time — north, east, south, then west — with
+  pipe and suspended scaffold relocated rather than duplicated. That holds equipment cost down and
+  limits the footprint on 42nd Street to a single active face at any time.</p>
+
+  <p>Landmark-grade terracotta is the core of this scope and it is the work we do most. Cast stone
+  and GFRC replicas are shop-glazed to match existing, mock-ups are set for architect review before
+  production, anchorage is submitted under PE-sealed shop drawings, and 10% of post-installed
+  anchors are pull-tested. No grinders are used on historic masonry.</p>
+
+  <div class="two" style="margin-top:26px">
+    <div>
+      <div style="font-family:'Archivo';font-size:28px;font-weight:600;color:var(--blue);font-style:italic;padding-bottom:2px">Jorge Garcia</div>
+      <div style="border-top:1px solid var(--ink);padding-top:7px">
+        <b>Jorge Garcia</b> — President<br>
+        <span class="mono" style="font-size:12.5px">JGarcia@PyramidNY.com · (646) 656-0818 · (914) 515-3919</span>
+      </div>
+      <p style="margin-top:16px;font-size:13.5px;color:var(--muted)">Acceptance of pricing and conditions:
+      if the above meets with your approval, please indicate acceptance by signing the acceptance block
+      at the end of this packet and returning a signed copy to our office. The price is valid for 30 days.</p>
+    </div>
+    <div class="panel">
+      <h4>Proposal terms</h4>
+      <ul>
+        <li><b>Grand total</b> — $1,838,533.50</li>
+        <li><b>Working days</b> — 240</li>
+        <li>Price valid 30 days from issue</li>
+        <li>All materials, permits, equipment and skilled mechanics included</li>
+        <li>Unit quantities are allowances; unused value credited to ownership</li>
+        <li>No substitutions unless originated by the architect</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span>DOB <b>M01136123-I1</b></span><span class="right">Sheet <b>01</b></span></div>
+</section>
+
+<!-- ===================== 02 FIRM ===================== -->
+<section class="sheet" id="firm">
+  <div class="sec-head"><span class="idx">02</span><h2>Introduction to the Restoration Specialists</h2><span class="tail">NYC · NJ · TX</span></div>
+
+  <div class="figs">
+    <div><div class="label">Annual revenue</div><div class="v">$60<small>M</small></div></div>
+    <div><div class="label">Field crew</div><div class="v">320–450</div><div class="label" style="margin-top:2px">seasonal</div></div>
+    <div><div class="label">Office staff</div><div class="v">33</div></div>
+    <div><div class="label">Injuries to date</div><div class="v">ZERO</div></div>
+  </div>
+  <div class="figs" style="margin-top:-1px">
+    <div><div class="label">Projects completed</div><div class="v">1,000+</div></div>
+    <div><div class="label">Ongoing projects</div><div class="v">40+</div></div>
+    <div><div class="label">Project range</div><div class="v">$1.5K–$25M</div></div>
+    <div><div class="label">Insurance limits</div><div class="v">$11<small>M</small></div><div class="label" style="margin-top:2px">no height restriction</div></div>
+  </div>
+
+  <div class="two" style="margin-top:24px">
+    <div>
+      <p>Pyramid Restoration Specialists is a premier provider of comprehensive building restoration
+      services, adept at addressing both exterior and interior projects with unparalleled expertise.
+      While our roots are firmly planted in the five boroughs, our successful ventures extend to New
+      Jersey and Texas, showing our willingness to go above and beyond geographical boundaries.</p>
+      <p>With a steadfast commitment to superior craftsmanship, meticulous attention to detail, and
+      close collaboration with clients and industry professionals, Pyramid Restoration Specialists
+      stand as your trusted partner in exceeding expectations on every project.</p>
+      <p style="font-style:italic;color:var(--muted);border-left:3px solid var(--stone);padding-left:14px">
+      "No project too big or too small, nor too far or too close. Our high level of craftsmanship and
+      attention to detail will ensure all of our clients' satisfaction." — Jorge Garcia, President</p>
+
+      <h3 class="sub">Services we provide</h3>
+      <div class="tagrow">
+        <span class="chip">Façade restoration</span><span class="chip">Structural steel repairs &amp; rehabilitation</span>
+        <span class="chip">Roofing replacement &amp; rehabilitation</span><span class="chip">Landmark preservation &amp; restoration</span>
+        <span class="chip">Scaffolding, rope access &amp; rigging</span><span class="chip">Sidewalk &amp; vault repairs / reconstruction</span>
+        <span class="chip">Parking structures</span><span class="chip">Custom interiors</span>
+      </div>
+    </div>
+    <div>
+      <div class="panel">
+        <h4>Our mission</h4>
+        <p style="font-size:13.5px;margin:0">To provide the greatest service at a competitive rate that
+        aligns with industry standards — achieved through high-end management and top-notch quality. We
+        work closely with architects, engineers, building managers and owners to ensure that expectations
+        and deadlines are met to the highest satisfaction.</p>
+      </div>
+      <div class="panel" style="margin-top:16px">
+        <h4>Company headquarters</h4>
+        <p class="mono" style="font-size:12.5px;margin:0">53-02 11th Street, 2nd Floor<br>Long Island City / Queens, NY 11101<br>
+        (914) 515-3919 · (646) 656-0818<br>Info@Pyramidny.com</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sub">Clients we work with</h3>
+  <div class="three" style="gap:0 26px">
+    <ul style="margin:0;padding-left:16px;font-size:13.5px;line-height:1.7">
+      <li>Stone Engineering &amp; Architecture, DPC</li>
+      <li>Superstructures Engineers &amp; Architects</li>
+      <li>CANY Architecture + Engineering, DPC</li>
+      <li>PVE, LLC</li>
+      <li>Sullivan Engineering, LLC</li>
+      <li>Thornton Tomasetti</li>
+      <li>Falcon Engineering</li>
+    </ul>
+    <ul style="margin:0;padding-left:16px;font-size:13.5px;line-height:1.7">
+      <li>Grace Consulting</li>
+      <li>Lawless &amp; Mangione</li>
+      <li>Merritt Engineering Consultants, PC</li>
+      <li>Howard L. Zimmerman &amp; Associates, PC</li>
+      <li>SRS Architects, PC</li>
+      <li>EDG Architecture and Engineering</li>
+    </ul>
+    <ul style="margin:0;padding-left:16px;font-size:13.5px;line-height:1.7">
+      <li>Argo Realty</li>
+      <li>Brown Harris Stevens Residential Management</li>
+      <li>Douglas Elliman Property Management</li>
+      <li>FirstService Residential / Project Management</li>
+      <li>Columbia Trust</li>
+      <li>Walker Parking</li>
+    </ul>
+  </div>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span class="right">Sheet <b>02</b></span></div>
+</section>
+
+<!-- ===================== 03 CAPABILITIES ===================== -->
+<section class="sheet" id="capabilities">
+  <div class="sec-head"><span class="idx">03</span><h2>Capabilities</h2><span class="tail">Click any discipline to expand</span></div>
+  <p style="max-width:720px">Pyramid provides a range of services that cater to all areas of the building,
+  from exterior to interior and from small scale to large. Each discipline below is performed by our own
+  forces under our own supervision.</p>
+  <div class="acc" id="acc"></div>
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span class="right">Sheet <b>03</b></span></div>
+</section>
+
+<!-- ===================== 04 PROJECT INFO ===================== -->
+<section class="sheet" id="project">
+  <div class="sec-head"><span class="idx">04</span><h2>Project Information</h2><span class="tail">Per SPAR Architects sheet G000.00</span></div>
+
+  <div class="two">
+    <div>
+      <p>The Candler Building is a skyscraper at the southern end of Times Square in the Midtown
+      Manhattan neighborhood of New York City. The 24-story building was designed by the firm of
+      Willauer, Shape and Bready in the Spanish Renaissance style and was constructed between 1912
+      and 1913 for Coca-Cola Company owner Asa Griggs Candler.</p>
+      <p>The proposed scope of work is for general construction at the facade only. No interior work
+      or change in occupancy or egress is proposed as part of this application, and there are no
+      related applications filed under this scope.</p>
+
+      <h3 class="sub">Scope of work</h3>
+      <table class="tight">
+        <tbody>
+          <tr><td style="width:96px"><b>Exterior</b></td><td>Miscellaneous replacement of brick masonry · miscellaneous replacement of terracotta · repair of associated steel structure · waterproofing</td></tr>
+          <tr><td><b>Interior</b></td><td>No scope of work at the interior. No change in use or occupancy.</td></tr>
+          <tr><td><b>Related</b></td><td>No related applications filed as part of this scope of work.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 class="sub" style="margin-top:0">Property information</h3>
+      <table class="tight">
+        <tbody>
+          <tr><td class="label" style="width:88px">Owner</td><td>YS 220W42 Holdings LLC<br>1325 Avenue of the Americas, New York NY 10019</td></tr>
+          <tr><td class="label">Project</td><td>The Candler Building<br>220 West 42nd Street, New York NY 10036</td></tr>
+          <tr><td class="label">Zone</td><td>C6-7</td></tr>
+          <tr><td class="label">Map</td><td>8D</td></tr>
+          <tr><td class="label">Borough</td><td>Manhattan</td></tr>
+          <tr><td class="label">Block / Lot</td><td>1013 / 42</td></tr>
+          <tr><td class="label">BIN</td><td>1017932</td></tr>
+          <tr><td class="label">Landmark</td><td>No</td></tr>
+          <tr><td class="label">Use</td><td>Commercial</td></tr>
+          <tr><td class="label">Type</td><td>Class I Fireproof</td></tr>
+          <tr><td class="label">Dwelling units</td><td>79 per C of O #301772892F — all occupied during construction</td></tr>
+          <tr><td class="label">Flood zone</td><td>Not in a flood zone per the effective FIRM; NYCBC Appendix G not applicable</td></tr>
+          <tr><td class="label">DOB #</td><td>M01136123-I1</td></tr>
+          <tr><td class="label">RA / PE</td><td>Scott Profetta · SPAR Architects, 37 West 39th Street, New York NY 10018</td></tr>
+          <tr><td class="label">Drawing ref</td><td>24098 · issued 11/14/2024 · 21 sheets</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3 class="sub">Project allowance conditions</h3>
+  <ol style="font-size:13.5px;line-height:1.6;padding-left:20px;margin:0">
+    <li>All unit quantities are to be considered allowances unless otherwise stated. The architect reviews and confirms work locations following mobilization of the designated work areas.</li>
+    <li>The contractor maintains working as-built drawings documenting the location of performed work and distinguishing where additional work was performed beyond the unit quantities approved by the architect. These are submitted with each payment requisition.</li>
+    <li>The contractor maintains a working log of all assigned and performed unit quantities for each work-type category, submitted with each payment requisition for architect review.</li>
+    <li>Unused materials are returned to the vendor from which they were obtained and credited back to ownership per Section 012100 of the project manual, except where ownership has specifically requested the material be stored as attic stock.</li>
+    <li>The contractor credits the value of all unused allowances except for the value of materials where ownership has requested purchase as attic stock.</li>
+  </ol>
+
+  <h3 class="sub">Regulatory framework carried in this bid</h3>
+  <div class="three">
+    <div class="panel"><h4>Sidewalk sheds — BC 3307.6 / LL 43-85</h4>
+      <ul>
+        <li>Shed required prior to work above 40 feet; remains until facade work is complete</li>
+        <li>Designed by a registered design professional; heavy-duty 300 psf where material is stored</li>
+        <li>Hunter green, parapet 3'-6" high, 8'-0" minimum clear ceiling</li>
+        <li>Lit along full length, minimum 5 foot-candles, vandal-resistant fixtures</li>
+        <li>Installation inspection, six-month periodic inspections, daily visual inspection with written record</li>
+        <li>Decks broom-swept daily while work is active</li>
+      </ul>
+    </div>
+    <div class="panel"><h4>Pedestrian protection — BC 3307</h4>
+      <ul>
+        <li>Clear path minimum 5 feet, free of obstruction, accessible</li>
+        <li>Walking surface designed for not less than 150 psf</li>
+        <li>Mirrors at all blind corners; ramps at 1:12 max with 5-foot landings</li>
+        <li>Flagpersons for intermittent operations adjacent to public areas</li>
+        <li>Warning signs at vehicle entrances, hoisting areas and chute discharge</li>
+        <li>No illuminated business or advertising signage on any protective structure</li>
+      </ul>
+    </div>
+    <div class="panel"><h4>Tenant protection plan — AC 28-120.1</h4>
+      <ul>
+        <li>No interruption of heating, water or electrical service to tenants</li>
+        <li>No change to existing paths of egress; egress kept clear at all times</li>
+        <li>Dust control per OSHA 3902-07R respirable crystalline silica Table 1</li>
+        <li>Lead per HPD LL1/2004, Title 28 Ch. 11 RCNY; asbestos per DEP Title 15 Ch. 1 RCNY</li>
+        <li>Noise per AC 24-219 and LL113/2005 — weekdays 7am–6pm absent an after-hours permit</li>
+        <li>Owner notifies DOB 72 hours before start; notice posted to each occupied dwelling unit</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span>Sheet ref <b>G000.00 / G001.00 / G002.00</b></span><span class="right">Sheet <b>04</b></span></div>
+</section>
+
+<!-- ===================== 05 PRICING ===================== -->
+<section class="sheet" id="pricing">
+  <div class="sec-head"><span class="idx">05</span><h2>Bid Sheet</h2><span class="tail">Complete — every line item</span></div>
+
+  <p style="max-width:740px">The building is priced face by face. Each elevation carries its own drops,
+  quantities and subtotal, followed by mobilization by zone and general conditions. Assembly items
+  (terracotta lintels, corners, water tables, cornices and unit replacements) expand to show the
+  component work carried inside each assembly.</p>
+
+  <div class="dist" id="dist"></div>
+
+  <div class="toolbar">
+    <input type="search" id="q" placeholder="Search description or detail reference — e.g. cornice, MAS 201, flashing" aria-label="Search bid line items">
+    <button class="fbtn on" data-sec="ALL" type="button">All</button>
+    <button class="fbtn" data-sec="A" type="button">North</button>
+    <button class="fbtn" data-sec="B" type="button">South</button>
+    <button class="fbtn" data-sec="C" type="button">East</button>
+    <button class="fbtn" data-sec="D" type="button">West</button>
+    <button class="fbtn" data-sec="E" type="button">Mobilization</button>
+    <button class="fbtn" data-sec="F" type="button">Gen. Conditions</button>
+    <button class="fbtn" id="expandAll" type="button">Expand all</button>
+    <button class="fbtn" id="collapseAll" type="button">Collapse all</button>
+    <span class="tally" id="tally"></span>
+  </div>
+
+  <div id="bid"></div>
+  <div class="grand">
+    <span class="k">Grand Total</span>
+    <span class="mono" style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">240 working days</span>
+    <span class="v" id="grandTotal">$1,838,533.50</span>
+  </div>
+
+  <div class="callout">
+    <b class="k">Reading the assemblies</b>
+    Line items such as MAS 016 (terracotta lintel replacement) and MAS 035 (terracotta cornice
+    replacement) are priced as assemblies. The quantity shown on the parent line is the count of
+    assemblies; the component lines beneath it — cast stone or GFRC replica, remove/reset of adjacent
+    terracotta, structural steel framing, backup masonry with anchors and ties, flashing, air barrier,
+    expansion joints and steel painting — carry the priced quantities. Expanding a parent shows exactly
+    what is included per assembly.
+  </div>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span>Bid sheet <b>Sections A–H</b></span><span class="right">Sheet <b>05</b></span></div>
+</section>
+
+<!-- ===================== 06 ARCHITECT SCHEDULES ===================== -->
+<section class="sheet" id="schedules">
+  <div class="sec-head"><span class="idx">06</span><h2>Architect Schedules</h2><span class="tail">SPAR set 24098</span></div>
+
+  <h3 class="sub">Project details — total quantities across all elevations</h3>
+  <p style="font-size:13.5px;color:var(--muted);max-width:740px;margin-bottom:14px">Quantities are the sum
+  total for each work type at all elevations and plans. Refer to the schedule of values in Section 05 and
+  to the series of drawings for breakdown of quantities per elevation and plan.</p>
+  <div class="two" style="gap:34px;align-items:start">
+    <table class="tight">
+      <thead><tr><th style="width:66px">Detail ref</th><th>Description</th><th class="num" style="width:60px">Qty</th><th style="width:34px">Unit</th></tr></thead>
+      <tbody>
+        <tr><td class="code">CON 001</td><td>Concrete crack repair</td><td class="num">40</td><td>LF</td></tr>
+        <tr><td class="code">MAS 001</td><td>Brick replacement</td><td class="num">850</td><td>SF</td></tr>
+        <tr><td class="code">MAS 002</td><td>Brick repointing</td><td class="num">450</td><td>SF</td></tr>
+        <tr><td class="code">MAS 003</td><td>Terracotta repointing</td><td class="num">1,000</td><td>LF</td></tr>
+        <tr><td class="code">MAS 004</td><td>Marble repointing</td><td class="num">250</td><td>LF</td></tr>
+        <tr><td class="code">MAS 005</td><td>Backup brick replacement</td><td class="num">1,000</td><td>SF</td></tr>
+        <tr><td class="code">MAS 010</td><td>Sill replacement</td><td class="num">40</td><td>LF</td></tr>
+        <tr><td class="code">MAS 015</td><td>Lintel replacement</td><td class="num">55</td><td>LF</td></tr>
+        <tr><td class="code">MAS 016</td><td>Terracotta lintel replacement</td><td class="num">26</td><td>EA</td></tr>
+        <tr><td class="code">MAS 020</td><td>Terracotta corner replacement</td><td class="num">81</td><td>EA</td></tr>
+        <tr><td class="code">MAS 021</td><td>Masonry opening for window</td><td class="num">—</td><td>EA</td></tr>
+        <tr><td class="code">MAS 025</td><td>Parapet demolition and cap stone</td><td class="num">305</td><td>LF</td></tr>
+        <tr><td class="code">MAS 030</td><td>Terracotta water table replacement</td><td class="num">25</td><td>EA</td></tr>
+        <tr><td class="code">MAS 035</td><td>Terracotta cornice replacement</td><td class="num">28</td><td>EA</td></tr>
+      </tbody>
+    </table>
+    <table class="tight">
+      <thead><tr><th style="width:66px">Detail ref</th><th>Description</th><th class="num" style="width:60px">Qty</th><th style="width:34px">Unit</th></tr></thead>
+      <tbody>
+        <tr><td class="code">MAS 040</td><td>Terracotta patch repair</td><td class="num">85</td><td>SF</td></tr>
+        <tr><td class="code">MAS 041</td><td>Marble patch repair</td><td class="num">65</td><td>SF</td></tr>
+        <tr><td class="code">MAS 045</td><td>Terracotta crack repair</td><td class="num">400</td><td>LF</td></tr>
+        <tr><td class="code">MAS 046</td><td>Marble crack repair</td><td class="num">—</td><td>LF</td></tr>
+        <tr><td class="code">MAS 050</td><td>Marble dutchman repair</td><td class="num">10</td><td>SF</td></tr>
+        <tr><td class="code">MAS 055</td><td>Marble pin repair</td><td class="num">25</td><td>EA</td></tr>
+        <tr><td class="code">MAS 060</td><td>Terracotta glaze repair</td><td class="num">2,550</td><td>SF</td></tr>
+        <tr><td class="code">MAS 100</td><td>Terracotta unit replacement</td><td class="num">4</td><td>EA</td></tr>
+        <tr><td class="code">MAS 200</td><td>Ornamental terracotta removal</td><td class="num">2</td><td>LOC</td></tr>
+        <tr><td class="code">MTL 001</td><td>Web plate and angle repair</td><td class="num">60</td><td>LF</td></tr>
+        <tr><td class="code">MTL 002</td><td>Flange plate repair</td><td class="num">60</td><td>SF</td></tr>
+        <tr><td class="code">TMP 001</td><td>Fluid applied flashing</td><td class="num">245</td><td>SF</td></tr>
+        <tr><td class="code">TMP 020</td><td>Air barrier</td><td class="num">140</td><td>SF</td></tr>
+        <tr><td class="code">TMP 060</td><td>Joint sealant</td><td class="num">1,000</td><td>LF</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub">Replacement unit schedule — cast stone &amp; GFRC replicas as bid</h3>
+  <p style="font-size:13.5px;color:var(--muted);max-width:740px;margin-bottom:14px">Replica units are
+  manufactured to match the existing terracotta profile with shop-applied glaze. Types below are those
+  carried in this bid, with the elevations on which they appear.</p>
+  <table class="tight" id="unitSched"></table>
+
+  <h3 class="sub">Product schedule — specified materials</h3>
+  <table class="tight">
+    <thead><tr><th style="width:64px">Spec key</th><th style="width:150px">Material</th><th>Description</th><th style="width:130px">Manufacturer</th></tr></thead>
+    <tbody>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">03 01 00 — Maintenance of concrete</td></tr>
+      <tr><td class="code">MCC11</td><td>Sikadur crack repair kit</td><td>Epoxy injection adhesive</td><td>Sika</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">03 49 00 — Glass fiber reinforced concrete</td></tr>
+      <tr><td class="code">GRC01</td><td>Replica terracotta</td><td>GFRC replica terracotta with shop-applied glaze to match existing; provide shop drawings</td><td>Town House Restorations</td></tr>
+      <tr><td class="code">GRC11</td><td>Structural steel tubing</td><td>GFRC framing members; provide shop drawings</td><td>—</td></tr>
+      <tr><td class="code">GRC21</td><td>Stainless steel</td><td>Connecting and support devices; provide shop drawings</td><td>—</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">04 01 30 — Terra cotta restoration</td></tr>
+      <tr><td class="code">TCR01</td><td>Jahn M32</td><td>Micro injection grout for soft and historic stone applications</td><td>Cathedral Stone</td></tr>
+      <tr><td class="code">TCR13</td><td>Aquathane UA 210 system</td><td>Repair coating for terra cotta, match existing</td><td>Edison Coatings</td></tr>
+      <tr><td class="code">TCR22</td><td>Jahn back fill</td><td>Infill mortar</td><td>Cathedral Stone</td></tr>
+      <tr><td class="code">TCR23</td><td>Jahn M80</td><td>Anchor setting mortar</td><td>Cathedral Stone</td></tr>
+      <tr><td class="code">TCR32</td><td>Jahn natural adhesive</td><td>Adhesive</td><td>Cathedral Stone</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">04 01 40 — Stone masonry restoration</td></tr>
+      <tr><td class="code">SMR01</td><td>Jahn M31</td><td>Micro injection grout for hard stone applications</td><td>Cathedral Stone</td></tr>
+      <tr><td class="code">SMR14</td><td>Jahn M120</td><td>Patching mortar for marble repair, match existing</td><td>Cathedral Stone</td></tr>
+      <tr><td class="code">SMR17</td><td>Jahn M80</td><td>Anchor setting mortar</td><td>Cathedral Stone</td></tr>
+      <tr><td class="code">SMR23</td><td>Marble</td><td>Marble for dutchman repair, match existing</td><td>—</td></tr>
+      <tr><td class="code">SMR31</td><td>Jahn natural adhesive</td><td>Adhesive</td><td>Cathedral Stone</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">04 05 11 — Masonry mortaring and grouting</td></tr>
+      <tr><td class="code">MMG01</td><td>Spec Mix tuckpointing mortar Type N</td><td>Historic exterior masonry pointing mortar; minimum three samples for selection; match existing</td><td>SpecMix</td></tr>
+      <tr><td class="code">MMG02</td><td>Spec Mix portland lime &amp; sand Type N</td><td>Exterior masonry bedding, jointing and parging mortar; match existing</td><td>SpecMix</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">04 05 19 — Masonry anchorage and reinforcing</td></tr>
+      <tr><td class="code">MAR01</td><td>Kwik Bolt TZ SS 304</td><td>Expansion anchor, stainless steel</td><td>Hilti</td></tr>
+      <tr><td class="code">MAR11</td><td>HIT HY 200A/R hybrid mortar</td><td>Adhesive anchor system for concrete substrates</td><td>Hilti</td></tr>
+      <tr><td class="code">MAR12</td><td>HIT-HY 270 hybrid mortar</td><td>Adhesive anchor system for CMU substrates</td><td>Hilti</td></tr>
+      <tr><td class="code">MAR13</td><td>HIT-HY 270 hybrid mortar</td><td>Adhesive anchor system for brick substrates</td><td>Hilti</td></tr>
+      <tr><td class="code">MAR15</td><td>HAS-R 316 anchor rod</td><td>Threaded rod with nut and washer, stainless steel</td><td>Hilti</td></tr>
+      <tr><td class="code">MAR21</td><td>DW-10HS anchor, Byna-Lok wire tie</td><td>Continuous wire veneer anchor, stainless steel 12 gauge</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR22</td><td>Slip-Set stabilizer</td><td>Expansion joint stabilizer, stainless steel 9 gauge</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR30</td><td>Stone anchor #406</td><td>Dowel, stainless steel; provide shop drawings</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR31</td><td>Stone anchor #407</td><td>Threaded rod, stainless steel; provide shop drawings</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR32</td><td>Stone anchor #408</td><td>Eyebolt, stainless steel; provide shop drawings</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR35</td><td>Stone anchor #434/435/436</td><td>Split tail, stainless steel; provide shop drawings</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR38</td><td>Stone anchor #441</td><td>U-anchor, stainless steel; provide shop drawings</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR39</td><td>Stone anchor #431/432/433</td><td>L with dowel, stainless steel; provide shop drawings</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR42</td><td>Stitch-Tie</td><td>Friction helical pin for façade stabilization; pull test minimum 10%</td><td>Prosoco Inc</td></tr>
+      <tr><td class="code">MAR43</td><td>Grout-Tie</td><td>Grouted helical pin for façade stabilization; pull test minimum 10%</td><td>Prosoco Inc</td></tr>
+      <tr><td class="code">MAR61</td><td>120 Tuss Mesh</td><td>Horizontal joint reinforcement, stainless steel 9 gauge</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td class="code">MAR71</td><td>Reinforcing steel</td><td>Epoxy coated rebar; provide shop drawings</td><td>—</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">04 20 00 — Unit masonry</td></tr>
+      <tr><td class="code">UMA01</td><td>Face brick</td><td>Complying with ASTM C216; provide samples for selection; match existing</td><td>—</td></tr>
+      <tr><td class="code">UMA04</td><td>Backup brick</td><td>Complying with ASTM C62; match existing; no cored brick permitted</td><td>—</td></tr>
+      <tr><td class="code">UMA21</td><td>Mortairvent-CW</td><td>Cavity mortar control</td><td>Advanced Building Products</td></tr>
+      <tr><td class="code">UMA22</td><td>Open head joint weeps</td><td>Weeps</td><td>—</td></tr>
+      <tr><td class="code">UMA23</td><td>NS closed cell neoprene sponge</td><td>Neoprene pad for soft joint</td><td>Hohmann &amp; Barnard</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">04 27 00 — Cast stone masonry &amp; metal fabrications</td></tr>
+      <tr><td class="code">CSM01</td><td>Cast stone</td><td>Cast stone units, color selected by owner; provide samples and shop drawings</td><td>Town House Restorations</td></tr>
+      <tr><td class="code">CSM02</td><td>Replica terracotta</td><td>Cast stone units matching existing terra cotta with shop-applied glaze</td><td>Town House Restorations</td></tr>
+      <tr><td class="code">CSM22</td><td>Cast stone welded wire reinforcing</td><td>Type 304 stainless steel</td><td>—</td></tr>
+      <tr><td class="code">SSF01</td><td>Steel angles, plates, channels</td><td>ASTM A36/A36M; paint per EXP01; provide shop drawings</td><td>—</td></tr>
+      <tr><td class="code">SSF03</td><td>Structural bolts and nuts</td><td>ASTM A307; paint per EXP01</td><td>—</td></tr>
+      <tr><td class="code">SSF04</td><td>Welding materials</td><td>AWS D1.1/D1.1M; paint per EXP01</td><td>—</td></tr>
+      <tr><td class="code">MTF01</td><td>Support of masonry</td><td>Ledge angles, shelf angles, channels, plates, lintels, outriggers and brackets; prime paint per EXP01</td><td>—</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">07 14 00 / 07 27 00 / 07 62 00 — Waterproofing, air barriers, sheet metal</td></tr>
+      <tr><td class="code">FAW01</td><td>Alsan Flashing</td><td>One-part flashing system</td><td>Soprema</td></tr>
+      <tr><td class="code">FAW02</td><td>Alsan RS 230 Flash</td><td>Two-part flashing system</td><td>Soprema</td></tr>
+      <tr><td class="code">AB01</td><td>Sopraseal LM 204 VP</td><td>Fluid applied, vapor permeable air barrier</td><td>Soprema</td></tr>
+      <tr><td class="code">AB05</td><td>Polyurethane foam sealant</td><td>Gap filler</td><td>—</td></tr>
+      <tr><td class="code">SMF02</td><td>York 304 SA</td><td>Self-adhering flexible flashing, stainless steel</td><td>York</td></tr>
+      <tr><td class="code">SMF11</td><td>Drip edge</td><td>Type 304 stainless steel 28 ga with 1/2" hemmed edge</td><td>—</td></tr>
+      <tr><td class="code">SMF22</td><td>Counter flashing</td><td>Two-piece copper counterflashing 16 oz hard temper, 1/2" hemmed edge</td><td>—</td></tr>
+      <tr><td colspan="4" class="label" style="background:var(--wash);padding:6px 8px">07 92 00 / 09 91 13 — Joint sealants &amp; exterior painting</td></tr>
+      <tr><td class="code">JS01</td><td>790 silicone building sealant</td><td>General purpose silicone sealant</td><td>Dow</td></tr>
+      <tr><td class="code">JS21</td><td>Backer rod</td><td>Cylindrical foam backer rod</td><td>—</td></tr>
+      <tr><td class="code">JS22</td><td>Backing tape</td><td>Self-adhesive polyethylene tape</td><td>—</td></tr>
+      <tr><td class="code">JS23</td><td>Neoprene sponge</td><td>Compressible expansion joint filler</td><td>—</td></tr>
+      <tr><td class="code">EXP01</td><td>Exterior metal painting system</td><td>Spot prime Series V 69, full prime Series V 69, finish coat urethane Series 1095</td><td>Tnemec</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Drawing index — SPAR set 24098, 21 sheets</h3>
+  <div class="three" style="gap:0 26px">
+    <table class="tight"><tbody>
+      <tr><td class="code" style="width:74px">G000.00</td><td>Title page</td></tr>
+      <tr><td class="code">G001.00</td><td>General notes</td></tr>
+      <tr><td class="code">G002.00</td><td>Special inspections &amp; energy notes</td></tr>
+      <tr><td class="code">G101.00</td><td>North mobilization</td></tr>
+      <tr><td class="code">G102.00</td><td>South mobilization</td></tr>
+      <tr><td class="code">G103.00</td><td>East mobilization</td></tr>
+      <tr><td class="code">G104.00</td><td>West mobilization</td></tr>
+    </tbody></table>
+    <table class="tight"><tbody>
+      <tr><td class="code" style="width:74px">A101.00</td><td>Roof plan</td></tr>
+      <tr><td class="code">A201.00</td><td>North elevation</td></tr>
+      <tr><td class="code">A202.00</td><td>South elevation</td></tr>
+      <tr><td class="code">A203.00</td><td>East elevation</td></tr>
+      <tr><td class="code">A204.00</td><td>West elevation</td></tr>
+      <tr><td class="code">A701.00</td><td>Concrete details</td></tr>
+      <tr><td class="code">A711.00</td><td>Masonry details</td></tr>
+    </tbody></table>
+    <table class="tight"><tbody>
+      <tr><td class="code" style="width:74px">A712.00</td><td>Masonry details</td></tr>
+      <tr><td class="code">A713.00</td><td>Masonry details</td></tr>
+      <tr><td class="code">A714.00</td><td>Masonry details</td></tr>
+      <tr><td class="code">A715.00</td><td>Masonry details</td></tr>
+      <tr><td class="code">A721.00</td><td>Metals details</td></tr>
+      <tr><td class="code">A741.00</td><td>Thermal &amp; moisture protection details</td></tr>
+      <tr><td class="code">A801.00</td><td>Product schedule</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span>Sheet ref <b>G000.00 / A801.00</b></span><span class="right">Sheet <b>06</b></span></div>
+</section>
+
+<!-- ===================== 07 PROGRAM / GANTT ===================== -->
+<section class="sheet" id="program">
+  <div class="sec-head"><span class="idx">07</span><h2>Preliminary Project Schedule</h2><span class="tail">240 working days · 47 activities</span></div>
+  <p style="max-width:740px">Contract award 13 January 2025 through jobsite demobilization 30 March 2026.
+  One elevation at a time, with pipe and suspended scaffold relocated between faces rather than duplicated.
+  Each face opens with initial inspections by SPAR Architects, runs base bid work against approved
+  quantities, and closes with a final inspection before the rig moves.</p>
+
+  <div class="toolbar" style="position:static;margin-bottom:0">
+    <span class="label">Filter phase</span>
+    <button class="fbtn on" data-ph="ALL" type="button">All</button>
+    <button class="fbtn" data-ph="PRE" type="button">Pre-construction</button>
+    <button class="fbtn" data-ph="MOB" type="button">Mobilization</button>
+    <button class="fbtn" data-ph="N" type="button">North</button>
+    <button class="fbtn" data-ph="E" type="button">East</button>
+    <button class="fbtn" data-ph="S" type="button">South</button>
+    <button class="fbtn" data-ph="W" type="button">West</button>
+    <button class="fbtn" data-ph="DEM" type="button">Demobilization</button>
+    <span class="tally" id="gTally"></span>
+  </div>
+  <div class="gantt" id="gantt"></div>
+  <div class="g-legend">
+    <span><i style="background:var(--slate)"></i>Pre-construction</span>
+    <span><i style="background:var(--stone)"></i>Mobilization / demobilization</span>
+    <span><i style="background:var(--n)"></i>North</span>
+    <span><i style="background:var(--e)"></i>East</span>
+    <span><i style="background:var(--s)"></i>South</span>
+    <span><i style="background:var(--w)"></i>West</span>
+  </div>
+
+  <div class="three" style="margin-top:26px">
+    <div class="panel"><h4>Site safety &amp; occupancy</h4>
+      <ul>
+        <li>Code-compliant site safety plan and full-duration site safety manager</li>
+        <li>Occupant protection plan prepared and maintained for the life of the job</li>
+        <li>Tenant protection plan prepared and filed by a registered design professional</li>
+        <li>79 occupied dwelling units maintained in service throughout</li>
+        <li>Work confined to weekdays 7am–6pm absent an after-hours work permit</li>
+      </ul>
+    </div>
+    <div class="panel"><h4>Quality control</h4>
+      <ul>
+        <li>Physical samples and mock-ups for every unique brick and terracotta type</li>
+        <li>Mock-ups prepared to meet LPC material approval requirements</li>
+        <li>Cast stone and GFRC replicas shop-glazed to match existing</li>
+        <li>PE-sealed shoring and shop drawings for all steel and anchorage</li>
+        <li>Pull tests on 10% of all post-installed anchors</li>
+        <li>Hand or specialized masonry tools only on historic masonry — no grinders</li>
+        <li>Active dust collection using vacuums during demolition</li>
+      </ul>
+    </div>
+    <div class="panel"><h4>Equipment on site</h4>
+      <ul>
+        <li>Sidewalk shed — installed first, removed last</li>
+        <li>Pipe scaffold — 2 to 3 per elevation depending on face</li>
+        <li>Suspended scaffold — 2 to 4 per elevation, relocated between faces</li>
+        <li>Neighboring roof protection at east, south and west elevations</li>
+        <li>24 mobilization zones priced individually across the four faces</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span>Schedule dated <b>1/13/25</b></span><span class="right">Sheet <b>07</b></span></div>
+</section>
+
+<!-- ===================== 08 DROPS ===================== -->
+<section class="sheet" id="drops">
+  <div class="sec-head"><span class="idx">08</span><h2>Drop Plan</h2><span class="tail">Drawing ref 24098 · drawn O.V. · 1/9/25</span></div>
+  <p style="max-width:740px">Drops are numbered by elevation and correspond to the mobilization zones
+  priced in the bid sheet. Sidewalk bridge runs the 42nd Street frontage; supported scaffold and roof
+  protection are set at adjacent buildings on the east, south and west exposures. Select a face to see
+  its drops, duration and value.</p>
+  <div class="dropmap" id="dropmap"></div>
+
+  <h3 class="sub">Mobilization zones as bid</h3>
+  <table class="tight" id="mobTable"></table>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span>Drop plan <b>PG.01</b></span><span class="right">Sheet <b>08</b></span></div>
+</section>
+
+<!-- ===================== 09 REFERENCES ===================== -->
+<section class="sheet" id="refs">
+  <div class="sec-head"><span class="idx">09</span><h2>References</h2><span class="tail">2025 · comparable scope</span></div>
+  <div class="refs">
+    <div class="ref"><div class="who">John Foley</div>
+      <div class="org">Vice President · First Service Project Management · (917) 655-7963</div>
+      <div class="site">333 East 23rd Street, New York NY 10010</div>
+      <div class="scope">Concrete sidewalk, façade repairs, sidewalk bridge, waterproofing</div>
+      <div class="val">$6,673,631.00</div></div>
+    <div class="ref"><div class="who">Nick Xagorarakis</div>
+      <div class="org">Senior Project Manager · Stone Engineering · (347) 525-3328</div>
+      <div class="site">2 Tudor City Place, New York NY 10017</div>
+      <div class="scope">Roof replacement, façade repairs, balcony restoration</div>
+      <div class="val">$2,500,000.00</div></div>
+    <div class="ref"><div class="who">Johnny Colon</div>
+      <div class="org">Resident Manager · Akam Associates · (929) 364-3821</div>
+      <div class="site">58 West 58th Street, New York NY 10019</div>
+      <div class="scope">Façade repairs, interior upgrades</div>
+      <div class="val">$3,663,894.00</div></div>
+    <div class="ref"><div class="who">Vincent Lorenzo</div>
+      <div class="org">Owner's Representative · B-U Realty Corporation · (917) 418-8791</div>
+      <div class="site">301 West 106th Street, New York NY 10025</div>
+      <div class="scope">Sidewalk bridging, terra-cotta replacement, steel reinforcement, waterproofing, façade repairs</div>
+      <div class="val">$1,100,000.00</div></div>
+    <div class="ref"><div class="who">Claudia Velez</div>
+      <div class="org">Director of Management · Leiter Property Management · (718) 473-3680</div>
+      <div class="site">144 North 8th Street, Brooklyn NY 11249</div>
+      <div class="scope">FISP repairs, roof repairs, waterproofing, panel replacement, inspections</div>
+      <div class="val">$1,662,041.00</div></div>
+    <div class="ref"><div class="who">Ricky Shum</div>
+      <div class="org">Project Manager · EDG Architecture and Engineering · (212) 683-5680</div>
+      <div class="site">306 East 59th Street — Humane Society of NY, New York NY 10022</div>
+      <div class="scope">Concrete sidewalk, façade repairs, sidewalk bridge, waterproofing</div>
+      <div class="val">$2,462,000.00</div></div>
+  </div>
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span class="right">Sheet <b>09</b></span></div>
+</section>
+
+<!-- ===================== 10 PORTFOLIO ===================== -->
+<section class="sheet" id="portfolio">
+  <div class="sec-head"><span class="idx">10</span><h2>Projects Across the Boroughs</h2><span class="tail">Selected work</span></div>
+  <table class="tight">
+    <thead><tr><th style="width:34px">#</th><th>Property</th><th style="width:220px">Address</th></tr></thead>
+    <tbody>
+      <tr><td class="code">01</td><td>49 Chambers</td><td>49 Chambers Street, Manhattan</td></tr>
+      <tr><td class="code">02</td><td>The Worth Building</td><td>73 Worth Street, Manhattan</td></tr>
+      <tr><td class="code">03</td><td>70 Battery Place</td><td>70 Battery Place, Manhattan</td></tr>
+      <tr><td class="code">04</td><td>242 West 104th Street</td><td>242 West 104th Street, Manhattan</td></tr>
+      <tr><td class="code">05</td><td>Bethune Towers Harlem</td><td>650 Lenox Avenue, Manhattan</td></tr>
+      <tr><td class="code">06</td><td>150 Delancey Street</td><td>150 Delancey Street, Manhattan</td></tr>
+      <tr><td class="code">07</td><td>40 East 94th Street</td><td>40 East 94th Street, Manhattan</td></tr>
+      <tr><td class="code">08</td><td>345 East 50th Street</td><td>345 East 50th Street, Manhattan</td></tr>
+      <tr><td class="code">09</td><td>144 North 208th Street</td><td>144 North 208th Street</td></tr>
+      <tr><td class="code">10</td><td>The Grand at Sky-View Park</td><td>131-03 40th Road, Queens</td></tr>
+      <tr><td class="code">11</td><td>Cooper Gramercy</td><td>401 2nd Avenue, Manhattan</td></tr>
+      <tr><td class="code">12</td><td>146 Spring Street</td><td>146 Spring Street, Manhattan</td></tr>
+    </tbody>
+  </table>
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span class="right">Sheet <b>10</b></span></div>
+</section>
+
+<!-- ===================== 11 INSURANCE ===================== -->
+<section class="sheet" id="insurance">
+  <div class="sec-head"><span class="idx">11</span><h2>Certificate of Liability Insurance</h2><span class="tail">ACORD 25 · issued 11/14/2024</span></div>
+
+  <div class="two">
+    <div>
+      <h3 class="sub" style="margin-top:0">Insured</h3>
+      <p class="mono" style="font-size:12.5px">Pyramid Restoration NY LLC<br>53-02 11th Street, 2nd Floor<br>Long Island City, NY 11101</p>
+      <h3 class="sub">Producer</h3>
+      <p class="mono" style="font-size:12.5px">Singh &amp; Company, Inc.<br>111-11 101st Avenue<br>S Richmond Hill, NY 11419<br>
+      Contact: Sukhwinder Singh<br>Tel 718-785-4238 · Fax 718-709-7788<br>insurance@singhandcompany.com</p>
+    </div>
+    <div>
+      <h3 class="sub" style="margin-top:0">Insurers affording coverage</h3>
+      <table class="tight">
+        <thead><tr><th style="width:20px">&nbsp;</th><th>Carrier</th><th class="num" style="width:56px">NAIC</th></tr></thead>
+        <tbody>
+          <tr><td class="code">A</td><td>Clear Blue Insurance Company</td><td class="num">28860</td></tr>
+          <tr><td class="code">B</td><td>Progressive Northwestern Ins Co</td><td class="num">11851</td></tr>
+          <tr><td class="code">C</td><td>Axis Surplus Insurance Company</td><td class="num">26620</td></tr>
+          <tr><td class="code">D</td><td>Arch Specialty Insurance Company</td><td class="num">21199</td></tr>
+          <tr><td class="code">E</td><td>New York State Insurance Fund</td><td class="num">36102</td></tr>
+          <tr><td class="code">F</td><td>Shelterpoint Insurance Company</td><td class="num">81344</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3 class="sub">Coverages</h3>
+  <table class="tight">
+    <thead><tr><th style="width:20px">Insr</th><th style="width:190px">Type of insurance</th><th style="width:150px">Policy number</th><th style="width:78px">Effective</th><th style="width:78px">Expires</th><th>Limits</th></tr></thead>
+    <tbody>
+      <tr><td class="code">A</td><td><b>Commercial general liability</b><br><span style="color:var(--muted);font-size:12px">Occurrence · contractual liability · primary &amp; non-contributory · additional insured · waiver of subrogation</span></td>
+        <td class="mono" style="font-size:11.5px">CZ01TPNYGL230115-01</td><td class="mono" style="font-size:11.5px">09/30/2024</td><td class="mono" style="font-size:11.5px">09/30/2025</td>
+        <td style="font-size:12.2px">Each occurrence <b class="mono">$2,000,000</b><br>Damage to rented premises <b class="mono">$300,000</b><br>Med exp (any one person) <b class="mono">$5,000</b><br>Personal &amp; adv injury <b class="mono">$2,000,000</b><br>General aggregate <b class="mono">$4,000,000</b><br>Products comp/op agg <b class="mono">$4,000,000</b><br>Policy general aggregate <b class="mono">$10,000,000</b></td></tr>
+      <tr><td class="code">B</td><td><b>Automobile liability</b><br><span style="color:var(--muted);font-size:12px">Scheduled autos · hired autos · non-owned autos</span></td>
+        <td class="mono" style="font-size:11.5px">988725780</td><td class="mono" style="font-size:11.5px">10/29/2024</td><td class="mono" style="font-size:11.5px">10/29/2025</td>
+        <td style="font-size:12.2px">Combined single limit <b class="mono">$1,000,000</b></td></tr>
+      <tr><td class="code">A</td><td><b>Umbrella / excess liability</b><br><span style="color:var(--muted);font-size:12px">Occurrence</span></td>
+        <td class="mono" style="font-size:11.5px">CZ11TPNY3X230587-01</td><td class="mono" style="font-size:11.5px">09/30/2024</td><td class="mono" style="font-size:11.5px">09/30/2025</td>
+        <td style="font-size:12.2px">Each occurrence <b class="mono">$3,000,000</b><br>Aggregate <b class="mono">$3,000,000</b><br>Products comp/op agg <b class="mono">$3,000,000</b></td></tr>
+      <tr><td class="code">E</td><td><b>Workers compensation &amp; employers' liability</b><br><span style="color:var(--muted);font-size:12px">Per statute · waiver of subrogation</span></td>
+        <td class="mono" style="font-size:11.5px">Q 2631 9442</td><td class="mono" style="font-size:11.5px">09/30/2024</td><td class="mono" style="font-size:11.5px">09/30/2025</td>
+        <td style="font-size:12.2px">E.L. each accident <b class="mono">$1,000,000</b><br>E.L. disease – ea employee <b class="mono">$1,000,000</b><br>E.L. disease – policy limit <b class="mono">$1,000,000</b></td></tr>
+      <tr><td class="code">A</td><td><b>Excess liability – 2</b></td><td class="mono" style="font-size:11.5px">CZ12TPNY5X230820-01</td>
+        <td class="mono" style="font-size:11.5px">09/30/2024</td><td class="mono" style="font-size:11.5px">09/30/2025</td>
+        <td style="font-size:12.2px">Occurrence / aggregate <b class="mono">$5,000,000 / $5,000,000</b></td></tr>
+      <tr><td class="code">D</td><td><b>Excess liability – 3</b></td><td class="mono" style="font-size:11.5px">UXP1056858-00</td>
+        <td class="mono" style="font-size:11.5px">10/18/2024</td><td class="mono" style="font-size:11.5px">09/30/2025</td>
+        <td style="font-size:12.2px">Occurrence / aggregate <b class="mono">$2,000,000 / $2,000,000</b></td></tr>
+      <tr><td class="code">C</td><td><b>Excess auto</b></td><td class="mono" style="font-size:11.5px">P-001-001452800-01</td>
+        <td class="mono" style="font-size:11.5px">10/30/2024</td><td class="mono" style="font-size:11.5px">09/30/2025</td>
+        <td style="font-size:12.2px">Occurrence / aggregate <b class="mono">$5,000,000 / $5,000,000</b></td></tr>
+      <tr><td class="code">F</td><td><b>Disability</b></td><td class="mono" style="font-size:11.5px">DBL652654</td>
+        <td class="mono" style="font-size:11.5px">09/30/2024</td><td class="mono" style="font-size:11.5px">09/30/2025</td>
+        <td style="font-size:12.2px">Each covered person — statutory</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout"><b class="k">Description of operations</b>
+    The coverage is broad enough to cover all the operations of the insured as per policy terms and
+    conditions. Certificates naming the owner, managing agent and architect as additional insured are
+    issued on award.</div>
+
+  <div class="strip"><span>Project <b>220 W 42ND ST</b></span><span>Ref <b>24098</b></span>
+    <span>ACORD <b>25 (2016/03)</b></span><span class="right">Sheet <b>11</b></span></div>
+</section>
+
+<!-- ===================== 12 ACCEPTANCE ===================== -->
+<section class="sheet" id="accept">
+  <div class="sec-head"><span class="idx">12</span><h2>Acceptance of Pricing &amp; Conditions</h2><span class="tail">Price valid 30 days</span></div>
+
+  <div class="figs" style="margin-bottom:26px">
+    <div><div class="label">Grand total</div><div class="v">$1,838,533.50</div></div>
+    <div><div class="label">Working days</div><div class="v">240</div></div>
+    <div><div class="label">Proposal</div><div class="v">#11082</div></div>
+    <div><div class="label">Dated</div><div class="v">20 Dec 2024</div></div>
+  </div>
+
+  <p>If the above meets with your approval, please indicate acceptance by signing in the space provided
+  below and return a signed copy to our office. The price is valid for 30 days.</p>
+
+  <div class="sign">
+    <div><div class="sigline"></div><div class="sigcap">Name</div></div>
+    <div><div class="sigline"></div><div class="sigcap">Title</div></div>
+    <div><div class="sigline"></div><div class="sigcap">Signature</div></div>
+    <div><div class="sigline"></div><div class="sigcap">Date</div></div>
+  </div>
+
+  <div style="margin-top:34px;padding-top:20px;border-top:1px solid var(--rule)">
+    <div class="label">Respectfully submitted</div>
+    <div style="font-family:'Archivo';font-size:28px;font-weight:600;color:var(--blue);font-style:italic;padding:6px 0 2px">Jorge Garcia</div>
+    <div style="border-top:1px solid var(--ink);padding-top:7px;max-width:340px">
+      <b>Jorge Garcia</b> — President<br>
+      <span class="mono" style="font-size:12.5px">JGarcia@PyramidNY.com</span>
+    </div>
+  </div>
+
+  <div class="endmark">
+    <b>PYRAMID RESTORATION NY LLC</b>
+    Restoration Specialists — Façade Restoration · Garage Rehabilitation · Landmark Preservation<br>
+    Structural Steel Restoration · Balcony Restoration · Roofing · Scaffolding<br><br>
+    53-02 11th Street, Long Island City NY 11101 · Info@Pyramidny.com · (914) 515-3919
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<script>
+"use strict";
+const money = n => n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const money0 = n => '$'+n.toLocaleString('en-US',{maximumFractionDigits:0});
+const qty = n => n.toLocaleString('en-US');
+
+/* ============================================================
+   BID DATA — transcribed complete from bid sheet sections A–H
+   ============================================================ */
+const BID = [
+{id:'A',name:'North Elevation',color:'var(--n)',printed:300763.50,drops:['N1','N2','N3','N4','N5','N6'],days:65,items:[
+  {n:1,ref:'CON 001',desc:'Concrete crack repair',q:5,u:'LF',r:45,a:225},
+  {n:2,ref:'MAS 003',desc:'Terracotta repointing',q:250,u:'LF',r:18,a:4500},
+  {n:3,ref:'MAS 004',desc:'Marble repointing',q:250,u:'LF',r:18,a:4500},
+  {n:4,ref:'MAS 005',desc:'Backup brick replacement',q:250,u:'SF',r:55,a:13750},
+  {n:5,ref:'MAS 016',desc:'Terracotta lintel replacement',q:5,u:'assy',subs:[
+    {ref:'MAS 107',desc:'Cast stone replacement type 107',q:5,u:'EA',r:1250,a:6250},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:10,u:'EA',r:450,a:4500},
+    {ref:'',desc:'Structural steel framing',q:15,u:'LF',r:395,a:5925},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:30,u:'SF',r:60,a:1800},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:23,u:'SF',r:35,a:787.50},
+    {ref:'TMP 020',desc:'Air barrier',q:45,u:'SF',r:15,a:675},
+    {ref:'TMP 060',desc:'Sealant replacement',q:15,u:'LF',r:13,a:195},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:30,u:'LF',r:18,a:540}]},
+  {n:6,ref:'MAS 020',desc:'Terracotta corner replacement',q:18,u:'assy',subs:[
+    {ref:'MAS 101',desc:'Cast stone replacement type 101',q:13,u:'EA',r:1170,a:15210},
+    {ref:'MAS 102',desc:'Cast stone replacement type 102',q:5,u:'EA',r:1275,a:6375},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:20,u:'EA',r:450,a:9000},
+    {ref:'MAS 202',desc:'Remove / reset terracotta type 102',q:20,u:'EA',r:450,a:9000},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 2–3 wythes)',q:150,u:'SF',r:150,a:22500},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:20,u:'SF',r:35,a:700},
+    {ref:'TMP 020',desc:'Air barrier',q:150,u:'SF',r:15,a:2250},
+    {ref:'',desc:'Counter flashing',q:8,u:'LF',r:95,a:760},
+    {ref:'TMP 061',desc:'Vertical expansion joints',q:80,u:'LF',r:25,a:2000},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:80,u:'LF',r:18,a:1440}]},
+  {n:7,ref:'MAS 025',desc:'Parapet demolition and cap stone',q:80,u:'LF',r:790,a:63200},
+  {n:8,ref:'MAS 030',desc:'Terracotta water table replacement',q:3,u:'assy',subs:[
+    {ref:'MAS 120',desc:'Cast stone replacement type 120',q:3,u:'EA',r:1505,a:4515},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:6,u:'EA',r:450,a:2700},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:23,u:'SF',r:60,a:1350},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:36,u:'SF',r:35,a:1260},
+    {ref:'',desc:'Sheet metal capping',q:9,u:'LF',r:250,a:2250},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:18,u:'LF',r:18,a:324}]},
+  {n:9,ref:'MAS 035',desc:'Terracotta cornice replacement',q:3,u:'assy',subs:[
+    {ref:'MAS 124',desc:'GFRC stone replacement type 124',q:3,u:'EA',r:1850,a:5550},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:6,u:'EA',r:450,a:2700},
+    {ref:'',desc:'Structural steel framing',q:3,u:'LOC',r:250,a:750},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1–2 wythes)',q:23,u:'SF',r:100,a:2250},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:72,u:'SF',r:35,a:2520},
+    {ref:'TMP 062',desc:'Horizontal soft joint',q:9,u:'LF',r:15,a:135},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:9,u:'LF',r:18,a:162}]},
+  {n:10,ref:'MAS 040',desc:'Terracotta patch repair',q:30,u:'SF',r:345,a:10350},
+  {n:11,ref:'MAS 041',desc:'Marble patch repair',q:65,u:'SF',r:185,a:12025},
+  {n:12,ref:'MAS 045',desc:'Terracotta crack repair',q:150,u:'LF',r:130,a:19500},
+  {n:13,ref:'MAS 050',desc:'Marble dutchman repair',q:10,u:'SF',r:425,a:4250},
+  {n:14,ref:'MAS 055',desc:'Marble pin repair',q:25,u:'EA',r:45,a:1125},
+  {n:15,ref:'MAS 060',desc:'Terracotta glaze repair',q:950,u:'SF',r:38,a:36100},
+  {n:16,ref:'MAS 100',desc:'Terracotta unit replacement',q:4,u:'assy',subs:[
+    {ref:'MAS 101',desc:'Cast stone replacement type 101',q:2,u:'EA',r:1170,a:2340},
+    {ref:'MAS 102',desc:'Cast stone replacement type 102',q:2,u:'EA',r:1275,a:2550},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1–2 wythes)',q:6,u:'SF',r:100,a:600}]},
+  {n:17,ref:'MAS 200',desc:'Ornamental terracotta removal',q:1,u:'LOC',r:null,a:6000,excl:true},
+  {n:18,ref:'MTL 001',desc:'Web plate and angle repair',q:15,u:'LF',r:105,a:1575},
+  {n:19,ref:'MTL 002',desc:'Flange plate repair',q:15,u:'LF',r:160,a:2400},
+  {n:20,ref:'TMP 001',desc:'Fluid applied flashing',q:40,u:'SF',r:35,a:1400},
+  {n:21,ref:'TMP 020',desc:'Air barrier',q:50,u:'SF',r:15,a:750},
+  {n:22,ref:'TMP 060',desc:'Joint sealant',q:250,u:'LF',r:13,a:3250}]},
+
+{id:'B',name:'South Elevation',color:'var(--s)',printed:334347.50,drops:['S1','S2','S3','S4','S5','S6','S7'],days:68,items:[
+  {n:1,ref:'CON 001',desc:'Concrete crack repair',q:25,u:'LF',r:45,a:1125},
+  {n:2,ref:'MAS 001',desc:'Brick replacement',q:500,u:'SF',r:65,a:32500},
+  {n:3,ref:'MAS 002',desc:'Brick repointing',q:250,u:'SF',r:14,a:3500},
+  {n:4,ref:'MAS 003',desc:'Terracotta repointing',q:250,u:'LF',r:18,a:4500},
+  {n:5,ref:'MAS 005',desc:'Backup brick replacement',q:250,u:'SF',r:55,a:13750},
+  {n:6,ref:'MAS 010',desc:'Sill replacement',q:40,u:'LF',r:205,a:8200},
+  {n:7,ref:'MAS 015',desc:'Lintel replacement',q:0,u:'LF',r:295,a:0},
+  {n:8,ref:'MAS 016',desc:'Terracotta lintel replacement',q:14,u:'assy',subs:[
+    {ref:'MAS 104',desc:'Cast stone replacement type 104',q:2,u:'EA',r:1250,a:2500},
+    {ref:'MAS 105',desc:'Cast stone replacement type 105',q:3,u:'EA',r:1350,a:4050},
+    {ref:'MAS 106',desc:'Cast stone replacement type 106',q:2,u:'EA',r:1250,a:2500},
+    {ref:'MAS 107',desc:'Cast stone replacement type 107',q:7,u:'EA',r:1250,a:8750},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:14,u:'EA',r:450,a:6300},
+    {ref:'MAS 203',desc:'Remove / reset terracotta type 103',q:10,u:'EA',r:450,a:4500},
+    {ref:'',desc:'Structural steel framing',q:36,u:'LF',r:395,a:14220},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:44,u:'SF',r:60,a:2610},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:23,u:'SF',r:35,a:787.50},
+    {ref:'TMP 020',desc:'Air barrier',q:45,u:'SF',r:15,a:675},
+    {ref:'TMP 060',desc:'Sealant replacement',q:15,u:'LF',r:13,a:195},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:72,u:'LF',r:18,a:1296}]},
+  {n:9,ref:'MAS 020',desc:'Terracotta corner replacement',q:27,u:'assy',subs:[
+    {ref:'MAS 101',desc:'Cast stone replacement type 101',q:23,u:'EA',r:1170,a:26910},
+    {ref:'MAS 102',desc:'Cast stone replacement type 102',q:4,u:'EA',r:1275,a:5100},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:5,u:'EA',r:450,a:2250},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 2–3 wythes)',q:96,u:'SF',r:150,a:14400},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:20,u:'SF',r:35,a:700},
+    {ref:'TMP 020',desc:'Air barrier',q:96,u:'SF',r:15,a:1440},
+    {ref:'',desc:'Counter flashing',q:8,u:'LF',r:95,a:760},
+    {ref:'TMP 061',desc:'Vertical expansion joints',q:40,u:'LF',r:25,a:1000},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:40,u:'LF',r:18,a:720}]},
+  {n:10,ref:'MAS 025',desc:'Parapet demolition and cap stone',q:80,u:'LF',r:790,a:63200},
+  {n:11,ref:'MAS 030',desc:'Terracotta water table replacement',q:3,u:'assy',subs:[
+    {ref:'MAS 110',desc:'Cast stone replacement type 110',q:2,u:'EA',r:1450,a:2900},
+    {ref:'MAS 111',desc:'Cast stone replacement type 111',q:1,u:'EA',r:2300,a:2300},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:6,u:'EA',r:450,a:2700},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:23,u:'SF',r:60,a:1350},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:36,u:'SF',r:35,a:1260},
+    {ref:'',desc:'Sheet metal capping',q:9,u:'LF',r:250,a:2250},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:18,u:'LF',r:18,a:324}]},
+  {n:12,ref:'MAS 035',desc:'Terracotta cornice replacement',q:10,u:'assy',subs:[
+    {ref:'MAS 123',desc:'GFRC stone replacement type 123',q:1,u:'EA',r:3200,a:3200},
+    {ref:'MAS 124',desc:'GFRC stone replacement type 124',q:5,u:'EA',r:1850,a:9250},
+    {ref:'MAS 126',desc:'GFRC stone replacement type 126',q:2,u:'EA',r:1850,a:3700},
+    {ref:'MAS 128',desc:'GFRC stone replacement type 128',q:1,u:'EA',r:1850,a:1850},
+    {ref:'MAS 132',desc:'GFRC stone replacement type 132',q:1,u:'EA',r:3100,a:3100},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:14,u:'EA',r:450,a:6300},
+    {ref:'',desc:'Structural steel framing',q:9,u:'LOC',r:250,a:2250},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1–2 wythes)',q:62,u:'SF',r:100,a:6150},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:168,u:'SF',r:35,a:5880},
+    {ref:'TMP 062',desc:'Horizontal soft joint',q:33,u:'LF',r:15,a:495},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:27,u:'LF',r:0,a:0}]},
+  {n:13,ref:'MAS 040',desc:'Terracotta patch repair',q:25,u:'SF',r:345,a:8625},
+  {n:14,ref:'MAS 045',desc:'Terracotta crack repair',q:100,u:'LF',r:130,a:13000},
+  {n:15,ref:'MAS 060',desc:'Terracotta glaze repair',q:500,u:'SF',r:38,a:19000},
+  {n:16,ref:'MAS 200',desc:'Ornamental terracotta removal',q:1,u:'LOC',r:null,a:6000,excl:true},
+  {n:17,ref:'MTL 001',desc:'Web plate and angle repair',q:15,u:'LF',r:105,a:1575},
+  {n:18,ref:'MTL 002',desc:'Flange plate repair',q:15,u:'LF',r:160,a:2400},
+  {n:19,ref:'TMP 001',desc:'Fluid applied flashing',q:65,u:'SF',r:35,a:2275},
+  {n:20,ref:'TMP 020',desc:'Air barrier',q:35,u:'SF',r:15,a:525},
+  {n:21,ref:'TMP 060',desc:'Joint sealant',q:250,u:'LF',r:13,a:3250}]},
+
+{id:'C',name:'East Elevation',color:'var(--e)',printed:301251.50,drops:['E1','E2','E3','E4','E5','E6','E7'],days:70,items:[
+  {n:1,ref:'CON 001',desc:'Concrete crack repair',q:5,u:'LF',r:45,a:225},
+  {n:2,ref:'MAS 001',desc:'Brick replacement',q:250,u:'SF',r:65,a:16250},
+  {n:3,ref:'MAS 002',desc:'Brick repointing',q:100,u:'SF',r:14,a:1400},
+  {n:4,ref:'MAS 003',desc:'Terracotta repointing',q:250,u:'LF',r:18,a:4500},
+  {n:5,ref:'MAS 005',desc:'Backup brick replacement',q:250,u:'SF',r:55,a:13750},
+  {n:6,ref:'MAS 010',desc:'Sill replacement',q:0,u:'LF',r:205,a:0},
+  {n:7,ref:'MAS 015',desc:'Lintel replacement',q:55,u:'LF',r:295,a:16225},
+  {n:8,ref:'MAS 016',desc:'Terracotta lintel replacement',q:1,u:'assy',subs:[
+    {ref:'MAS 107',desc:'Cast stone replacement type 107',q:1,u:'EA',r:1250,a:1250},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:2,u:'EA',r:450,a:900},
+    {ref:'',desc:'Structural steel framing',q:3,u:'LF',r:395,a:1185},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:5,u:'SF',r:60,a:270},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:5,u:'SF',r:35,a:157.50},
+    {ref:'TMP 020',desc:'Air barrier',q:9,u:'SF',r:15,a:135},
+    {ref:'TMP 060',desc:'Sealant replacement',q:3,u:'LF',r:13,a:39},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:6,u:'LF',r:18,a:108}]},
+  {n:9,ref:'MAS 020',desc:'Terracotta corner replacement',q:23,u:'assy',subs:[
+    {ref:'MAS 101',desc:'Cast stone replacement type 101',q:18,u:'EA',r:1170,a:21060},
+    {ref:'MAS 102',desc:'Cast stone replacement type 102',q:5,u:'EA',r:1275,a:6375},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:5,u:'EA',r:450,a:2250},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 2–3 wythes)',q:84,u:'SF',r:150,a:12600},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:20,u:'SF',r:35,a:700},
+    {ref:'TMP 020',desc:'Air barrier',q:84,u:'SF',r:15,a:1260},
+    {ref:'',desc:'Counter flashing',q:8,u:'LF',r:95,a:760},
+    {ref:'TMP 061',desc:'Vertical expansion joints',q:40,u:'LF',r:25,a:1000},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:40,u:'LF',r:18,a:720}]},
+  {n:10,ref:'MAS 025',desc:'Parapet demolition and cap stone',q:50,u:'LF',r:790,a:39500},
+  {n:11,ref:'MAS 030',desc:'Terracotta water table replacement',q:18,u:'assy',subs:[
+    {ref:'MAS 110',desc:'Cast stone replacement type 110',q:6,u:'EA',r:1450,a:8700},
+    {ref:'MAS 116',desc:'Cast stone replacement type 116',q:8,u:'EA',r:1350,a:10800},
+    {ref:'MAS 120',desc:'Cast stone replacement type 120',q:2,u:'EA',r:1505,a:3010},
+    {ref:'MAS 121',desc:'Cast stone replacement type 121',q:2,u:'EA',r:1865,a:3730},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:36,u:'EA',r:450,a:16200},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:135,u:'SF',r:60,a:8100},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:216,u:'SF',r:35,a:7560},
+    {ref:'',desc:'Sheet metal capping',q:42,u:'LF',r:250,a:10500},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:108,u:'LF',r:18,a:1944}]},
+  {n:12,ref:'MAS 035',desc:'Terracotta cornice replacement',q:7,u:'assy',subs:[
+    {ref:'MAS 124',desc:'GFRC stone replacement type 124',q:2,u:'EA',r:1850,a:3700},
+    {ref:'MAS 126',desc:'GFRC stone replacement type 126',q:3,u:'EA',r:1850,a:5550},
+    {ref:'MAS 131',desc:'GFRC stone replacement type 131',q:2,u:'EA',r:2300,a:4600},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:8,u:'EA',r:450,a:3600},
+    {ref:'',desc:'Structural steel framing',q:7,u:'LOC',r:250,a:1750},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1–2 wythes)',q:44,u:'SF',r:100,a:4350},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:96,u:'SF',r:35,a:3360},
+    {ref:'TMP 062',desc:'Horizontal soft joint',q:30,u:'LF',r:15,a:450},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:21,u:'LF',r:18,a:378}]},
+  {n:13,ref:'MAS 040',desc:'Terracotta patch repair',q:15,u:'SF',r:345,a:5175},
+  {n:14,ref:'MAS 045',desc:'Terracotta crack repair',q:80,u:'LF',r:130,a:10400},
+  {n:15,ref:'MAS 060',desc:'Terracotta glaze repair',q:900,u:'SF',r:38,a:34200},
+  {n:16,ref:'MTL 001',desc:'Web plate and angle repair',q:15,u:'LF',r:105,a:1575},
+  {n:17,ref:'MTL 002',desc:'Flange plate repair',q:15,u:'LF',r:160,a:2400},
+  {n:18,ref:'TMP 001',desc:'Fluid applied flashing',q:85,u:'SF',r:35,a:2975},
+  {n:19,ref:'TMP 020',desc:'Air barrier',q:25,u:'SF',r:15,a:375},
+  {n:20,ref:'TMP 060',desc:'Joint sealant',q:250,u:'LF',r:13,a:3250}]},
+
+{id:'D',name:'West Elevation',color:'var(--w)',printed:222386.00,drops:['W1','W2','W3','W4','W5','W6','W7'],days:62,items:[
+  {n:1,ref:'CON 001',desc:'Concrete crack repair',q:5,u:'LF',r:45,a:225},
+  {n:2,ref:'MAS 001',desc:'Brick replacement',q:100,u:'SF',r:65,a:6500},
+  {n:3,ref:'MAS 002',desc:'Brick repointing',q:100,u:'SF',r:14,a:1400},
+  {n:4,ref:'MAS 003',desc:'Terracotta repointing',q:250,u:'LF',r:18,a:4500},
+  {n:5,ref:'MAS 005',desc:'Backup brick replacement',q:250,u:'SF',r:55,a:13750},
+  {n:6,ref:'MAS 010',desc:'Sill replacement',q:0,u:'LF',r:205,a:0},
+  {n:7,ref:'MAS 015',desc:'Lintel replacement',q:0,u:'LF',r:295,a:0},
+  {n:8,ref:'MAS 016',desc:'Terracotta lintel replacement',q:6,u:'assy',subs:[
+    {ref:'MAS 107',desc:'Cast stone replacement type 107',q:6,u:'EA',r:1250,a:7500},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:12,u:'EA',r:450,a:5400},
+    {ref:'',desc:'Structural steel framing',q:18,u:'LF',r:395,a:7110},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:27,u:'SF',r:60,a:1620},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:27,u:'SF',r:35,a:945},
+    {ref:'TMP 020',desc:'Air barrier',q:54,u:'SF',r:15,a:810},
+    {ref:'TMP 060',desc:'Sealant replacement',q:18,u:'LF',r:13,a:234},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:36,u:'LF',r:18,a:648}]},
+  {n:9,ref:'MAS 020',desc:'Terracotta corner replacement',q:13,u:'assy',subs:[
+    {ref:'MAS 101',desc:'Cast stone replacement type 101',q:2,u:'EA',r:1170,a:2340},
+    {ref:'MAS 102',desc:'Cast stone replacement type 102',q:11,u:'EA',r:1275,a:14025},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:5,u:'EA',r:450,a:2250},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 2–3 wythes)',q:54,u:'SF',r:150,a:8100},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:20,u:'SF',r:35,a:700},
+    {ref:'TMP 020',desc:'Air barrier',q:54,u:'SF',r:15,a:810},
+    {ref:'',desc:'Counter flashing',q:8,u:'LF',r:95,a:760},
+    {ref:'TMP 061',desc:'Vertical expansion joints',q:40,u:'LF',r:25,a:1000},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:40,u:'LF',r:18,a:720}]},
+  {n:10,ref:'MAS 025',desc:'Parapet demolition and cap stone',q:95,u:'LF',r:790,a:75050},
+  {n:11,ref:'MAS 030',desc:'Terracotta water table replacement',q:1,u:'assy',subs:[
+    {ref:'MAS 109',desc:'Cast stone replacement type 109',q:1,u:'EA',r:2300,a:2300},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:2,u:'EA',r:450,a:900},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1 wythe)',q:8,u:'SF',r:60,a:450},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:12,u:'SF',r:35,a:420},
+    {ref:'',desc:'Sheet metal capping',q:3,u:'LF',r:250,a:750},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:6,u:'LF',r:18,a:108}]},
+  {n:12,ref:'MAS 035',desc:'Terracotta cornice replacement',q:8,u:'assy',subs:[
+    {ref:'MAS 124',desc:'GFRC stone replacement type 124',q:3,u:'EA',r:1850,a:5550},
+    {ref:'MAS 128',desc:'GFRC stone replacement type 128',q:2,u:'EA',r:1850,a:3700},
+    {ref:'MAS 129',desc:'GFRC stone replacement type 129',q:2,u:'EA',r:1300,a:2600},
+    {ref:'MAS 131',desc:'GFRC stone replacement type 131',q:1,u:'EA',r:2300,a:2300},
+    {ref:'MAS 201',desc:'Remove / reset terracotta type 101',q:12,u:'EA',r:450,a:5400},
+    {ref:'',desc:'Structural steel framing',q:4,u:'LOC',r:250,a:1000},
+    {ref:'',desc:'Backup masonry, anchors and ties (assume 1–2 wythes)',q:36,u:'SF',r:100,a:3600},
+    {ref:'TMP 001',desc:'Fluid applied flashing',q:144,u:'SF',r:35,a:5040},
+    {ref:'TMP 062',desc:'Horizontal soft joint',q:12,u:'LF',r:15,a:180},
+    {ref:'',desc:'Scrape, prime, paint all steel',q:12,u:'LF',r:18,a:216}]},
+  {n:13,ref:'MAS 040',desc:'Terracotta patch repair',q:15,u:'SF',r:345,a:5175},
+  {n:14,ref:'MAS 045',desc:'Terracotta crack repair',q:70,u:'LF',r:130,a:9100},
+  {n:15,ref:'MAS 060',desc:'Terracotta glaze repair',q:200,u:'SF',r:38,a:7600},
+  {n:16,ref:'MTL 001',desc:'Web plate and angle repair',q:15,u:'LF',r:105,a:1575},
+  {n:17,ref:'MTL 002',desc:'Flange plate repair',q:15,u:'LF',r:160,a:2400},
+  {n:18,ref:'TMP 001',desc:'Fluid applied flashing',q:55,u:'SF',r:35,a:1925},
+  {n:19,ref:'TMP 020',desc:'Air barrier',q:30,u:'SF',r:15,a:450},
+  {n:20,ref:'TMP 060',desc:'Joint sealant',q:250,u:'LF',r:13,a:3250}]},
+
+{id:'E',name:'Mobilization',color:'var(--mob)',printed:292585.00,drops:[],days:20,items:[
+  {n:1,ref:'MOB 001',desc:'North — mobilization zone 001',q:1,u:'LS',r:12935,a:12935},
+  {n:2,ref:'MOB 002',desc:'North — mobilization zone 002',q:1,u:'LS',r:10000,a:10000},
+  {n:3,ref:'MOB 003',desc:'North — mobilization zone 003',q:1,u:'LS',r:12615,a:12615},
+  {n:4,ref:'MOB 004',desc:'North — mobilization zone 004',q:1,u:'LS',r:4500,a:4500},
+  {n:5,ref:'MOB 005',desc:'North — mobilization zone 005',q:1,u:'LS',r:4500,a:4500},
+  {n:6,ref:'MOB 006',desc:'South — mobilization zone 006',q:1,u:'LS',r:12445,a:12445},
+  {n:7,ref:'MOB 007',desc:'South — mobilization zone 007',q:1,u:'LS',r:10000,a:10000},
+  {n:8,ref:'MOB 008',desc:'South — mobilization zone 008',q:1,u:'LS',r:12265,a:12265},
+  {n:9,ref:'MOB 009',desc:'South — mobilization zone 009',q:1,u:'LS',r:4500,a:4500},
+  {n:10,ref:'MOB 010',desc:'South — mobilization zone 010',q:1,u:'LS',r:4500,a:4500},
+  {n:11,ref:'MOB 011',desc:'South — mobilization zone 011',q:1,u:'LS',r:12500,a:12500},
+  {n:12,ref:'MOB 012',desc:'East — mobilization zone 012',q:1,u:'LS',r:13615,a:13615},
+  {n:13,ref:'MOB 013',desc:'East — mobilization zone 013',q:1,u:'LS',r:91305,a:91305},
+  {n:14,ref:'MOB 014',desc:'East — mobilization zone 014',q:1,u:'LS',r:13615,a:13615},
+  {n:15,ref:'MOB 015',desc:'East — mobilization zone 015',q:1,u:'LS',r:4500,a:4500},
+  {n:16,ref:'MOB 016',desc:'East — mobilization zone 016',q:1,u:'LS',r:4500,a:4500},
+  {n:17,ref:'MOB 017',desc:'East — mobilization zone 017',q:1,u:'LS',r:4500,a:4500},
+  {n:18,ref:'MOB 018',desc:'East — mobilization zone 018',q:1,u:'LS',r:4500,a:4500},
+  {n:19,ref:'MOB 019',desc:'West — mobilization zone 019',q:1,u:'LS',r:15845,a:15845},
+  {n:20,ref:'MOB 020',desc:'West — mobilization zone 020',q:1,u:'LS',r:10000,a:10000},
+  {n:21,ref:'MOB 021',desc:'West — mobilization zone 021',q:1,u:'LS',r:15945,a:15945},
+  {n:22,ref:'MOB 022',desc:'West — mobilization zone 022',q:1,u:'LS',r:4500,a:4500},
+  {n:23,ref:'MOB 023',desc:'West — mobilization zone 023',q:1,u:'LS',r:4500,a:4500},
+  {n:24,ref:'MOB 024',desc:'West — mobilization zone 024',q:1,u:'LS',r:4500,a:4500}]},
+
+{id:'F',name:'General Conditions',color:'var(--gen)',printed:387200.00,drops:[],days:240,items:[
+  {n:1,ref:'GEN 001',desc:'General conditions — all soft cost required for completion of the project including but not limited to permitting, insurance, administration, quality control, scheduling, submittals and overhead',q:1,u:'LS',r:140000,a:140000},
+  {n:2,ref:'GEN 002',desc:'Occupant protection plan — prepare and maintain code-required OPP for the duration of the project',q:1,u:'LS',r:1600,a:1600},
+  {n:3,ref:'GEN 003',desc:'Site safety plan — submit code-compliant site safety plan',q:1,u:'LS',r:8500,a:8500},
+  {n:4,ref:'GEN 004',desc:'Site safety — provide site safety for the full duration of the job as required by code',q:1,u:'LS',r:90000,a:90000},
+  {n:5,ref:'GEN 005',desc:'Engineered shoring — provide PE-sealed shoring drawings for all shoring required by scope; install per engineered drawings',q:1,u:'LS',r:4500,a:4500},
+  {n:6,ref:'GEN 006',desc:'Engineered shop drawings — provide PE-sealed shop drawings as required by scope of work',q:1,u:'LS',r:15000,a:15000},
+  {n:7,ref:'GEN 007',desc:'Protection — furnish and install all protection both interior and exterior, roof protection and otherwise, as required by scope of work',q:1,u:'LS',r:127600,a:127600}]}
+];
+const GRAND = 1838533.50;
+
+/* ============================================================
+   SCHEDULE DATA — 47 activities
+   ============================================================ */
+const SCHED = [
+ {id:1,name:'220 West 42nd Street',d:240,s:'2025-01-13',f:'2025-12-12',sum:1,ph:'ALL'},
+ {id:2,name:'Contract awarded',d:10,s:'2025-01-13',f:'2025-01-24',ph:'PRE'},
+ {id:3,name:'Permit filing',d:10,s:'2025-01-13',f:'2025-01-24',ph:'PRE'},
+ {id:4,name:'Samples / mock-ups',d:10,s:'2025-01-13',f:'2025-01-24',ph:'PRE'},
+ {id:5,name:'Access agreement',d:10,s:'2025-01-13',f:'2025-01-24',ph:'PRE'},
+ {id:6,name:'Mobilization',d:20,s:'2025-02-03',f:'2025-02-28',sum:1,ph:'MOB'},
+ {id:7,name:'Sidewalk shed installation',d:5,s:'2025-02-03',f:'2025-02-07',ph:'MOB'},
+ {id:8,name:'Pipe scaffold installation',d:8,s:'2025-02-10',f:'2025-02-19',ph:'MOB'},
+ {id:9,name:'Suspended scaffold delivery / installation',d:7,s:'2025-02-20',f:'2025-02-28',ph:'MOB'},
+ {id:10,name:'North Elevation',d:65,s:'2025-03-03',f:'2025-05-30',sum:1,ph:'N'},
+ {id:11,name:'Initial inspections — 2 pipe scaffolds, 4 suspended scaffolds, by SPAR Architects, N1–N6',d:5,s:'2025-03-03',f:'2025-03-07',ph:'N'},
+ {id:12,name:'Perform base bid work per drawings and engineer inspections, N1–N6',d:50,s:'2025-03-10',f:'2025-05-16',ph:'N'},
+ {id:13,name:'Final inspection by SPAR Architects on drops N1–N6',d:5,s:'2025-05-19',f:'2025-05-23',ph:'N'},
+ {id:14,name:'Pipe / suspended scaffold relocation to east',d:5,s:'2025-05-26',f:'2025-05-30',ph:'N'},
+ {id:15,name:'East Elevation',d:70,s:'2025-06-02',f:'2025-09-05',sum:1,ph:'E'},
+ {id:16,name:'Install neighboring roof protection',d:2,s:'2025-06-02',f:'2025-06-03',ph:'E'},
+ {id:17,name:'Initial inspection — 3 pipe scaffolds, 2 suspended scaffolds, E1–E5',d:3,s:'2025-06-04',f:'2025-06-06',ph:'E'},
+ {id:18,name:'Perform base bid work per drawings and engineer inspections, E1–E5',d:35,s:'2025-06-09',f:'2025-07-25',ph:'E'},
+ {id:19,name:'Final inspection by SPAR Architects on drops E1–E5',d:3,s:'2025-07-28',f:'2025-07-30',ph:'E'},
+ {id:20,name:'Suspended scaffold relocation to drops E6, E7',d:2,s:'2025-08-01',f:'2025-08-04',ph:'E'},
+ {id:21,name:'Initial inspection by SPAR Architects on drops E6, E7',d:2,s:'2025-08-05',f:'2025-08-06',ph:'E'},
+ {id:22,name:'Perform base bid work per drawings and inspections on drops E6, E7',d:15,s:'2025-08-07',f:'2025-08-27',ph:'E'},
+ {id:23,name:'Final inspection by SPAR Architects on drops E6, E7',d:1,s:'2025-08-28',f:'2025-08-28',ph:'E'},
+ {id:24,name:'Scaffold relocation to south',d:2,s:'2025-08-29',f:'2025-09-01',ph:'E'},
+ {id:25,name:'South Elevation',d:68,s:'2025-09-02',f:'2025-12-04',sum:1,ph:'S'},
+ {id:26,name:'Install neighboring roof protection',d:2,s:'2025-09-10',f:'2025-09-11',ph:'S'},
+ {id:27,name:'Initial inspection — 2 pipe scaffolds, 3 suspended scaffolds, S1–S5',d:5,s:'2025-09-12',f:'2025-09-18',ph:'S'},
+ {id:28,name:'Perform base bid work per drawings and engineer inspections, S1–S5',d:30,s:'2025-09-19',f:'2025-10-30',ph:'S'},
+ {id:29,name:'Final inspection by SPAR Architects on drops S1–S5',d:3,s:'2025-10-31',f:'2025-11-04',ph:'S'},
+ {id:30,name:'Suspended scaffold relocation to drops S6, S7',d:2,s:'2025-11-05',f:'2025-11-06',ph:'S'},
+ {id:31,name:'Initial inspection by SPAR Architects on drops S6, S7',d:1,s:'2025-11-07',f:'2025-11-07',ph:'S'},
+ {id:32,name:'Perform base bid work per drawings and engineer inspections, S6, S7',d:18,s:'2025-11-10',f:'2025-12-03',ph:'S'},
+ {id:33,name:'Final inspection by SPAR Architects on drops S6, S7',d:1,s:'2025-12-04',f:'2025-12-04',ph:'S'},
+ {id:34,name:'West Elevation',d:62,s:'2025-12-05',f:'2026-03-02',sum:1,ph:'W'},
+ {id:35,name:'Install neighboring roof protection',d:2,s:'2025-12-05',f:'2025-12-08',ph:'W'},
+ {id:36,name:'Initial inspection — 3 pipe scaffolds, 2 suspended scaffolds, W1–W5',d:5,s:'2025-12-09',f:'2025-12-15',ph:'W'},
+ {id:37,name:'Perform base bid work per drawings and engineer inspections, W1–W5',d:30,s:'2025-12-16',f:'2026-01-26',ph:'W'},
+ {id:38,name:'Final inspection by SPAR Architects on drops W1–W5',d:3,s:'2026-01-27',f:'2026-01-29',ph:'W'},
+ {id:39,name:'Suspended scaffold relocation to drops W6, W7',d:2,s:'2026-01-30',f:'2026-02-02',ph:'W'},
+ {id:40,name:'Initial inspection by SPAR Architects on drops W6, W7',d:1,s:'2026-02-03',f:'2026-02-03',ph:'W'},
+ {id:41,name:'Perform base bid work per drawings and inspections on drops W6, W7',d:18,s:'2026-02-04',f:'2026-02-27',ph:'W'},
+ {id:42,name:'Final inspection by SPAR Architects on drops W6, W7',d:1,s:'2026-03-02',f:'2026-03-02',ph:'W'},
+ {id:43,name:'Jobsite demobilization',d:20,s:'2026-03-03',f:'2026-03-30',sum:1,ph:'DEM'},
+ {id:44,name:'Pipe scaffold removal',d:5,s:'2026-03-03',f:'2026-03-09',ph:'DEM'},
+ {id:45,name:'Suspended scaffold removal',d:4,s:'2026-03-10',f:'2026-03-13',ph:'DEM'},
+ {id:46,name:'Equipment removal',d:3,s:'2026-03-16',f:'2026-03-18',ph:'DEM'},
+ {id:47,name:'Sidewalk shed removal',d:4,s:'2026-03-19',f:'2026-03-24',ph:'DEM'}
+];
+const PHCOLOR = {PRE:'var(--slate)',MOB:'var(--stone)',N:'var(--n)',E:'var(--e)',S:'var(--s)',W:'var(--w)',DEM:'var(--stone)',ALL:'var(--ink)'};
+
+/* ============================================================
+   CAPABILITIES
+   ============================================================ */
+const CAPS = [
+ {t:'Façade repairs, restoration and rehabilitation',n:'01',
+  p:'With hundreds of different buildings in and around the tri-state area, Pyramid provides unrivaled façade restoration and repair services. No project is too difficult or too complex for our team. We cater to all properties — residential, commercial and educational.',
+  items:['Brick replacement at all areas of the façade','Masonry and decorative stone repointing','Masonry and decorative stone corner reconstruction','Parapet replacement and modification, railing installations, coping cover and stone rehabilitation','Decorative stone patching, pinning and replacement','Lintel and shelf angle repairs and replacement','Façade crack repairs regardless of material','Provision of site safety and managers at construction sites','Window and door replacements','Façade redesign — panel installations, façade systems, stucco repairs and restoration','Lighting installation','Façade re-cladding — decorative stone, GFRC, EIFS','Local Law 11 / FISP inspections','Investigation and probing'],
+  note:'Working closely with building management and owners, Pyramid understands the need to keep a building looking new, maintenance costs low, and operations safe and effective for all those residing.'},
+ {t:'Roofing system replacement, recovery and repairs',n:'02',
+  p:'With an abundance of buildings in and around New York there are just as many roofs. Our expertise with roofing system rehabilitation allows a seamless transition from an existing roof to an updated system that benefits the building in energy efficiency, heat retention and reduced energy costs.',
+  items:['Roofing replacement and recovery — wood or concrete deck','Roof repairs — base flashing, patching, curb enlargement, roof field area modifications','Green roof installation, solar panel design and installation','Pavers installation and modification','Dunnage repairs and replacement','Water tower repairs and bulkhead roof rehabilitation','Skylight installation','Drain installation, modification and replacement','Wood deck replacement and rehabilitation','Investigation, probing and asbestos testing services'],
+  note:'Approved installer for Siplast, Kemper, Firestone, GAF, Sika, Soprema and TQ3. We take into consideration budget, seasonal time constraints and building construction to accommodate a steadfast project completion.'},
+ {t:'Landmark property preservation and restoration',n:'03',
+  p:'New York is home to hundreds of landmarked properties with rich history and elegance. Our team pays the utmost attention to detail when performing restorative work at landmarked properties, guaranteeing a seamless and exact match to existing that exemplifies the historic appeal of the building.',
+  items:['Decorative cornice repairs and replacement','Decorative stone patching, replacement or re-anchoring','GFRC installation and replacement','Water table repairs and replacement','Dutchman stone repairs','Façade pressure washing, cleaning and re-coating','Water tank steel structure repairs and replacement','Historic window restoration and replacement','Sheet metal fabrication and repairs','Historic masonry and decorative stone mortar replacement'],
+  note:'The Department of Landmarks Preservation requires that all elements be reproduced in kind with no alteration to existing appeal. Pyramid works closely with the architect to ensure LPC is satisfied with all project deliverables — material samples, mock-ups and replacement options.'},
+ {t:'Structural steel repairs and restoration',n:'04',
+  p:"With today's building construction consisting mostly of structural steel, there are times when the structure requires repairs, modification or replacement due to age, weathering and other factors. The Pyramid team does its due diligence in understanding each connection and each structural member's importance to ensure a seamless restorative process.",
+  items:['Structural steel beam repairs','Structural steel beam modification and reinforcement','Structural steel installation and re-framing','Column repairs and reinforcement','Spandrel beam repairs and replacement','Steel dunnage installation, replacement or reinforcement','Water tank steel structure repairs and replacement','Scrape, priming and painting of structural members','Waterproofing of structural members'],
+  note:'We secure all required permits with building agencies in and around New York, as well as management and ownership approval, to ensure a seamless transition and successful completion.'},
+ {t:'Rigging, scaffolding and sidewalk shed installation',n:'05',
+  p:'Safety goes hand in hand with construction. When something is getting built or fixed, proper safety measures must be in effect prior to the commencement of any work. Pyramid works closely with all agencies and building management to ensure all safety precautions are met.',
+  items:['Suspended scaffold installation at all areas of the building for inspections and repairs','Pipe scaffolding installation','Sidewalk bridge installation for short or long term safety measures','Special rigger for construction operations','Provision of sidewalk shed plans','Provision of site safety plans and managers for buildings over 16 stories','Installation of decorative sidewalk shed such as Urban Umbrella to showcase commercial properties throughout construction'],
+  note:'No item is overlooked in ensuring safety requirements are met while delivering the highest level of craftsmanship.'},
+ {t:'Sidewalk repairs, replacement and restoration',n:'06',
+  p:'With so many streets in and around New York there are bound to be locations that require repair. Pyramid accommodates everything from the simplest curb patching to full vault repair and sidewalk replacement, and pulls all required permits from the corresponding agency to ensure a seamless job from inception to completion.',
+  items:['Sidewalk replacement and curb patching','Full vault repair and reconstruction','Concrete refinishing','Permit coordination with all city agencies','Pedestrian routing and protection during work','Restoration of adjacent landscape and tree pits'],
+  note:'A struggling sidewalk affects both the aesthetic of a property and pedestrian safety. Pyramid ensures sidewalk repairs do not impede surrounding traffic or the business in front of the work.'},
+ {t:'Balcony and terrace repairs, restoration and rehabilitation',n:'07',
+  p:'A balcony or terrace provides extra space and an open atmosphere. Pyramid understands the importance of keeping it well maintained for future use and safe for its users.',
+  items:['Balcony or terrace slab restoration and patching','Balcony or terrace curb repairs, modification or installation','Pedestrian traffic coating application','Railing code compliance modification','Railing re-coating and repairs','New railing installation or replacement of existing','Drain replacement and installation','Ponding and drainage solutions'],
+  note:'Our team works diligently to guarantee that our repairs leave clients assured of their safety and enjoyment of their private space for years to come.'},
+ {t:'Garage rehabilitation and repairs',n:'08',
+  p:'Parking garages accompany a majority of buildings. Over time wear and tear occurs from vehicular traffic and movement. Pyramid provides garage restorative services and repairs to ensure a safe surface for future traffic.',
+  items:['Concrete topside and underside repairs','Concrete refinishing and traffic coating application','Steel beam and structural repairs','Q-decking repairs and replacement','Expansion joint replacement and repairs','Striping application','Post tension repairs','Wheel stop and curb installations and replacement'],
+  note:'We diligently assess all aspects and areas of the garage requiring rehabilitation prior to performing any repairs. Our restorative work is durable for constant vehicular traffic for years ahead.'}
+];
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+const secTotal = s => s.items.reduce((t,i)=> t + (i.excl ? 0 : (i.subs ? i.subs.reduce((x,y)=>x+y.a,0) : i.a)),0);
+const secAll   = s => s.items.reduce((t,i)=> t + (i.subs ? i.subs.reduce((x,y)=>x+y.a,0) : i.a),0);
+const lineCount = s => s.items.reduce((t,i)=> t + (i.subs ? i.subs.length : 1),0);
+
+/* ============================================================
+   RENDER — capabilities accordion
+   ============================================================ */
+document.getElementById('acc').innerHTML = CAPS.map((c,i)=>`
+ <div class="acc-item${i===0?' open':''}">
+   <div class="acc-h" role="button" tabindex="0"><span class="caret">▸</span>
+     <span class="n">${c.n}</span><h4>${c.t}</h4></div>
+   <div class="acc-b">
+     <p>${c.p}</p>
+     <p class="label" style="margin:14px 0 8px">The scope of work in this category can range from</p>
+     <ul>${c.items.map(x=>`<li>${x}</li>`).join('')}</ul>
+     <div class="callout" style="margin-top:16px"><b class="k">Note</b>${c.note}</div>
+   </div>
+ </div>`).join('');
+document.querySelectorAll('.acc-h').forEach(h=>{
+  const go=()=>h.parentElement.classList.toggle('open');
+  h.addEventListener('click',go);
+  h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+});
+
+/* ============================================================
+   RENDER — distribution bars
+   ============================================================ */
+const maxSec = Math.max(...BID.map(secTotal));
+document.getElementById('dist').innerHTML = BID.map(s=>{
+  const t = secTotal(s);
+  return `<div class="col" data-jump="${s.id}" role="button" tabindex="0">
+    <div class="nm">${s.name.replace(' Elevation','')}</div>
+    <div class="bar"><div class="fill" style="height:${Math.round(t/maxSec*100)}%;background:${s.color}"><i></i></div></div>
+    <div class="amt">${money0(t)}</div>
+    <div class="pct">${(t/GRAND*100).toFixed(1)}% of bid</div>
+  </div>`;}).join('');
+
+/* ============================================================
+   RENDER — bid explorer
+   ============================================================ */
+let filterSec = 'ALL', query = '';
+const bidEl = document.getElementById('bid');
+
+function matches(item, q){
+  if(!q) return true;
+  const hay = (item.ref+' '+item.desc).toLowerCase();
+  if(hay.includes(q)) return true;
+  if(item.subs) return item.subs.some(s => (s.ref+' '+s.desc).toLowerCase().includes(q));
+  return false;
+}
+
+function renderBid(){
+  const q = query.trim().toLowerCase();
+  let shown = 0, shownVal = 0, html = '';
+
+  BID.forEach(sec=>{
+    if(filterSec!=='ALL' && filterSec!==sec.id) return;
+    const items = sec.items.filter(i=>matches(i,q));
+    if(!items.length) return;
+    const secVal = items.reduce((t,i)=> t + (i.excl?0:(i.subs?i.subs.reduce((x,y)=>x+y.a,0):i.a)),0);
+    shown += items.length; shownVal += secVal;
+    const partial = items.length !== sec.items.length;
+
+    html += `<div class="bidsec" id="sec-${sec.id}">
+      <div class="bidsec-head" role="button" tabindex="0">
+        <span class="caret">▾</span>
+        <span class="swatch" style="background:${sec.color}"></span>
+        <span>
+          <span class="nm">${sec.id} · ${sec.name}</span><br>
+          <span class="meta">${items.length} of ${sec.items.length} items${sec.drops.length?' · drops '+sec.drops.join(' '):''}${sec.days?' · '+sec.days+' days':''}</span>
+        </span>
+        <span class="amt">$${money(secVal)}${partial?' <span class="meta">filtered</span>':''}</span>
+      </div>
+      <div class="bidsec-body">
+        <table>
+          <thead><tr>
+            <th style="width:26px">#</th><th style="width:72px">Detail ref</th><th>Description</th>
+            <th class="num" style="width:62px">Qty</th><th style="width:40px">Unit</th>
+            <th class="num" style="width:76px">Unit cost</th><th class="num" style="width:92px">Total</th>
+          </tr></thead>
+          <tbody>`;
+
+    items.forEach(it=>{
+      if(it.subs){
+        const sub = it.subs.reduce((x,y)=>x+y.a,0);
+        html += `<tr class="asm" data-asm="${sec.id}-${it.n}">
+          <td class="code">${it.n}</td><td class="code">${it.ref}</td>
+          <td><span class="caret2">▸</span>${it.desc}</td>
+          <td class="num">${qty(it.q)}</td><td>${it.u}</td>
+          <td class="num" style="color:var(--muted);font-size:11px">${it.subs.length} components</td>
+          <td class="num">${money(sub)}</td></tr>`;
+        it.subs.forEach(s=>{
+          html += `<tr class="subline hidden" data-parent="${sec.id}-${it.n}">
+            <td></td><td class="code">${s.ref||''}</td><td class="ind">${s.desc}</td>
+            <td class="num">${qty(s.q)}</td><td>${s.u}</td>
+            <td class="num">${s.r===null?'—':money(s.r)}</td><td class="num">${money(s.a)}</td></tr>`;
+        });
+      } else {
+        html += `<tr${it.excl?' class="excl"':''}>
+          <td class="code">${it.n}</td><td class="code">${it.ref}</td>
+          <td>${it.desc}${it.excl?'<span class="excl-flag">not in section subtotal</span>':''}</td>
+          <td class="num">${qty(it.q)}</td><td>${it.u}</td>
+          <td class="num">${it.r===null?'—':money(it.r)}</td><td class="num">${money(it.a)}</td></tr>`;
+      }
+    });
+
+    html += `<tr class="secsub"><td colspan="6">${sec.name} total${partial?' (filtered)':''}</td>
+      <td class="num">$${money(secVal)}</td></tr>
+      </tbody></table></div></div>`;
+  });
+
+  if(!html) html = `<div class="noresult">No line items match “${query}”. Try a detail reference such as <b>MAS 201</b>, or a material such as <b>flashing</b>.</div>`;
+  bidEl.innerHTML = html;
+
+  document.getElementById('tally').innerHTML =
+    (filterSec==='ALL' && !q)
+      ? `Showing all ${BID.reduce((t,s)=>t+lineCount(s),0)} priced lines`
+      : `${shown} items shown · <b>$${money(shownVal)}</b>`;
+  document.getElementById('grandTotal').textContent = '$'+money(GRAND);
+
+  wireBid();
+}
+
+function wireBid(){
+  document.querySelectorAll('.bidsec-head').forEach(h=>{
+    const go=()=>h.parentElement.classList.toggle('closed');
+    h.addEventListener('click',go);
+    h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
+  document.querySelectorAll('tr.asm').forEach(r=>{
+    r.addEventListener('click',()=>{
+      const k = r.dataset.asm, c = r.querySelector('.caret2');
+      let open=false;
+      document.querySelectorAll(`tr.subline[data-parent="${k}"]`).forEach(s=>{
+        s.classList.toggle('hidden'); open = !s.classList.contains('hidden');
+      });
+      c.textContent = open ? '▾' : '▸';
+    });
+  });
+}
+
+document.getElementById('q').addEventListener('input',e=>{query=e.target.value;renderBid();});
+document.querySelectorAll('.fbtn[data-sec]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.fbtn[data-sec]').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); filterSec=b.dataset.sec; renderBid();
+  });
+});
+document.getElementById('expandAll').addEventListener('click',()=>{
+  document.querySelectorAll('.bidsec').forEach(s=>s.classList.remove('closed'));
+  document.querySelectorAll('tr.subline').forEach(s=>s.classList.remove('hidden'));
+  document.querySelectorAll('.caret2').forEach(c=>c.textContent='▾');
+});
+document.getElementById('collapseAll').addEventListener('click',()=>{
+  document.querySelectorAll('tr.subline').forEach(s=>s.classList.add('hidden'));
+  document.querySelectorAll('.caret2').forEach(c=>c.textContent='▸');
+});
+document.querySelectorAll('#dist .col').forEach(c=>{
+  const go=()=>{
+    const id=c.dataset.jump;
+    document.querySelectorAll('.fbtn[data-sec]').forEach(x=>x.classList.toggle('on',x.dataset.sec===id));
+    filterSec=id; renderBid();
+    document.getElementById('sec-'+id)?.scrollIntoView({block:'center'});
+  };
+  c.addEventListener('click',go);
+  c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+});
+renderBid();
+
+/* ============================================================
+   RENDER — replacement unit schedule
+   ============================================================ */
+(function(){
+  const map = {};
+  BID.forEach(sec=>sec.items.forEach(it=>{
+    (it.subs||[]).forEach(s=>{
+      const m = s.ref.match(/^MAS (1\d\d)$/);
+      if(!m) return;
+      const k = s.ref;
+      map[k] = map[k] || {ref:k,type:s.desc.replace(/^.*type /,'Type '),kind:s.desc.includes('GFRC')?'GFRC':'Cast stone',rate:s.r,q:0,faces:new Set()};
+      map[k].q += s.q; map[k].faces.add(sec.name.replace(' Elevation',''));
+      map[k].rate = s.r;
+    });
+  }));
+  const rows = Object.values(map).sort((a,b)=>a.ref.localeCompare(b.ref));
+  const tot = rows.reduce((t,r)=>t+r.q*r.rate,0);
+  document.getElementById('unitSched').innerHTML =
+   `<thead><tr><th style="width:72px">Unit ref</th><th style="width:78px">Material</th><th>Type</th>
+     <th style="width:150px">Elevations</th><th class="num" style="width:52px">Qty</th>
+     <th class="num" style="width:76px">Unit cost</th><th class="num" style="width:88px">Extended</th></tr></thead>
+    <tbody>${rows.map(r=>`<tr>
+      <td class="code">${r.ref}</td><td>${r.kind}</td><td>${r.type}</td>
+      <td style="color:var(--muted);font-size:12px">${[...r.faces].join(' · ')}</td>
+      <td class="num">${r.q}</td><td class="num">${money(r.rate)}</td>
+      <td class="num">${money(r.q*r.rate)}</td></tr>`).join('')}
+      <tr class="tot"><td colspan="4">Replica units — all elevations</td>
+      <td class="num">${rows.reduce((t,r)=>t+r.q,0)}</td><td></td><td class="num">$${money(tot)}</td></tr>
+    </tbody>`;
+})();
+
+/* ============================================================
+   RENDER — mobilization table
+   ============================================================ */
+(function(){
+  const mob = BID.find(s=>s.id==='E');
+  document.getElementById('mobTable').innerHTML =
+   `<thead><tr><th style="width:72px">Ref</th><th>Zone</th><th style="width:64px">Face</th>
+     <th style="width:40px">Unit</th><th class="num" style="width:92px">Lump sum</th></tr></thead>
+    <tbody>${mob.items.map(i=>{
+      const face = i.desc.split(' —')[0];
+      return `<tr><td class="code">${i.ref}</td><td>${i.desc.split('— ')[1]}</td>
+        <td>${face}</td><td>${i.u}</td><td class="num">${money(i.a)}</td></tr>`;}).join('')}
+      <tr class="tot"><td colspan="4">Mobilization total — 24 zones</td>
+      <td class="num">$${money(secTotal(mob))}</td></tr></tbody>`;
+})();
+
+/* ============================================================
+   RENDER — drop map
+   ============================================================ */
+(function(){
+  const faces = BID.filter(s=>s.drops.length);
+  document.getElementById('dropmap').innerHTML = faces.map(s=>`
+    <div class="face" data-face="${s.id}" role="button" tabindex="0">
+      <h4>${s.name.replace(' Elevation','')}</h4>
+      <div class="sm">${s.drops.length} drops · ${s.days} working days</div>
+      <div class="tagrow" style="margin-top:10px">${s.drops.map(d=>`<span class="chip">${d}</span>`).join('')}</div>
+      <div class="amt">$${money(secTotal(s))}</div>
+    </div>`).join('');
+  document.querySelectorAll('.face').forEach(f=>{
+    const go=()=>{
+      document.querySelectorAll('.face').forEach(x=>x.classList.toggle('on',x===f));
+      const id=f.dataset.face;
+      document.querySelectorAll('.fbtn[data-sec]').forEach(x=>x.classList.toggle('on',x.dataset.sec===id));
+      filterSec=id; renderBid();
+    };
+    f.addEventListener('click',go);
+    f.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
+})();
+
+/* ============================================================
+   RENDER — gantt
+   ============================================================ */
+const T0 = new Date('2025-01-13'), T1 = new Date('2026-03-30');
+const SPAN = (T1-T0)/86400000;
+const pos = d => ((new Date(d)-T0)/86400000)/SPAN*100;
+let phFilter = 'ALL';
+
+function renderGantt(){
+  const months = [];
+  let cur = new Date(2025,0,1);
+  while(cur <= T1){ months.push(new Date(cur)); cur.setMonth(cur.getMonth()+1); }
+  let html = `<div class="g-months">${months.map(m=>
+    `<div>${m.toLocaleDateString('en-US',{month:'short'})}${m.getMonth()===0?" '"+String(m.getFullYear()).slice(2):''}</div>`).join('')}</div>`;
+
+  const rows = SCHED.filter(t=> phFilter==='ALL' ? true : (t.ph===phFilter || (t.sum && t.ph===phFilter)));
+  rows.forEach(t=>{
+    const L = pos(t.s), W = Math.max(pos(t.f)-pos(t.s), 0.45);
+    const c = PHCOLOR[t.ph]||'var(--blue)';
+    html += `<div class="g-row${t.sum?' summary':''}" title="${t.name} — ${t.d} days, ${t.s} to ${t.f}">
+      <div class="g-name"><span class="id">${String(t.id).padStart(2,'0')}</span><span>${t.name}</span></div>
+      <div class="g-track">
+        <div class="g-bar" style="left:${L}%;width:${W}%;background:${c}"></div>
+        <div class="g-lab" style="left:${Math.min(L+W,88)}%">${t.d}d</div>
+      </div></div>`;
+  });
+  document.getElementById('gantt').innerHTML = html;
+  document.getElementById('gTally').innerHTML =
+    `${rows.length} activities · <b>${rows.filter(r=>!r.sum).reduce((t,r)=>t+r.d,0)} days shown</b>`;
+}
+document.querySelectorAll('.fbtn[data-ph]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.fbtn[data-ph]').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); phFilter=b.dataset.ph; renderGantt();
+  });
+});
+renderGantt();
+
+/* ============================================================
+   AUDIT PANEL
+   ============================================================ */
+(function(){
+  const rows = BID.map(s=>{
+    const c = secTotal(s), all = secAll(s), d = c - s.printed;
+    return `<tr><td><b>${s.id} · ${s.name}</b></td>
+      <td class="num">${money(s.printed)}</td>
+      <td class="num">${money(c)}</td>
+      <td class="num ${Math.abs(d)<0.005?'ok':'warn'}">${Math.abs(d)<0.005?'match':money(d)}</td>
+      <td class="num">${money(all)}</td></tr>`;}).join('');
+  const sumPrinted = BID.reduce((t,s)=>t+s.printed,0);
+  const sumCalc = BID.reduce((t,s)=>t+secTotal(s),0);
+  const sumAll = BID.reduce((t,s)=>t+secAll(s),0);
+  document.getElementById('auditBody').innerHTML = `
+   <table><thead><tr><th>Section</th>
+     <th class="num">Printed subtotal</th><th class="num">Computed (as printed)</th>
+     <th class="num">Delta</th><th class="num">Computed incl. all lines</th></tr></thead>
+    <tbody>${rows}
+     <tr class="tot"><td>Total</td><td class="num">${money(sumPrinted)}</td>
+       <td class="num">${money(sumCalc)}</td>
+       <td class="num ${Math.abs(sumCalc-sumPrinted)<0.005?'ok':'warn'}">${Math.abs(sumCalc-sumPrinted)<0.005?'match':money(sumCalc-sumPrinted)}</td>
+       <td class="num">${money(sumAll)}</td></tr>
+    </tbody></table>
+   <p style="margin-top:14px;font-size:13px">
+     <b>Grand total printed on the bid sheet:</b> $${money(GRAND)} — ties exactly to the sum of the six printed section subtotals.
+   </p>
+   <p style="font-size:13px">
+     <b class="warn">Open item:</b> MAS 200 <i>Ornamental terracotta removal</i> appears as a priced line on both
+     the North ($6,000) and South ($6,000) elevations, but neither amount is carried into its section subtotal.
+     $${money(sumAll-sumCalc)} of listed scope therefore sits outside the contract sum. Either fold it in
+     (revised grand total $${money(GRAND + (sumAll-sumCalc))}) or mark the line "by others / not in contract"
+     so it reads as a deliberate exclusion.
+   </p>`;
+  const btn = document.getElementById('auditBtn');
+  btn.addEventListener('click',()=>{
+    const p = document.getElementById('audit');
+    p.classList.toggle('show'); btn.classList.toggle('on');
+    if(p.classList.contains('show')) p.scrollIntoView({block:'start'});
+  });
+})();
+
+/* ============================================================
+   SCROLLSPY
+   ============================================================ */
+(function(){
+  const links = [...document.querySelectorAll('#tabs a')];
+  const secs = links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(s=>io.observe(s));
+})();
+</script>
+</body>
+</html>
